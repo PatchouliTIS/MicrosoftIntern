@@ -6,6 +6,7 @@ When add module code to this repo, it is recommended to put all required code he
 # Folder structure
 When adding module code to this repo, it is recommended to organize them as below.
 
+```
 root folder
 |- README.md
 |- Modules
@@ -16,3 +17,4 @@ root folder
       |- other_repo  (if it is previously in other repo, put its link here)
       |- src
    |- Module 2
+```
