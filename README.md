@@ -1,20 +1,18 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+In STCA deep ranking team, we created many Aether modules. This repo will be used to host source code of all these modules. It could help us to better maintain these modules, and could help us to improve module qualities.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+When add module code to this repo, it is recommended to put all required code here. That is to say, the module could be re-created with the code in this repo.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+# Folder structure
+When adding module code to this repo, it is recommended to organize them as below.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+root folder
+|- README.md
+|- Modules
+   |- Module 1
+      |- README.md (a description)
+      |- aether_experiment (a link to an existing Aether experiment which uses this module)
+      |- module_id
+      |- other_repo  (if it is previously in other repo, put its link here)
+      |- src
+   |- Module 2
