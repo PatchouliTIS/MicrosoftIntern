@@ -1,0 +1,38 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1daeb5cb-6e22-4762-8ceb-5d1cbda74139</ProjectGuid>
+    <OutputType>File</OutputType>
+    <AssemblyName>Algebra.xml</AssemblyName>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <Name>FeatureMeanValue</Name>
+    <RootNamespace>FeatureMeanValue</RootNamespace>
+    <VCSelectionInProjectProperty>&lt;Use Current VC in VC Selector&gt;</VCSelectionInProjectProperty>
+    <CosmosRuntimeVersion>Default</CosmosRuntimeVersion>
+    <ScopePath>%24(SCRIPT_DIR);%24(CLUSTER_ROOT);%24(SCOPE_DIR);%24(PROJECT_DIR)</ScopePath>
+    <InputStreamSearchPath>%24(PROJECT_DIR);%24(SCRIPT_DIR);%24(CLUSTER_ROOT)</InputStreamSearchPath>
+    <VertexDebugSolution>false</VertexDebugSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Script Include="Scope.script">
+      <RemoveUselessParameters>True</RemoveUselessParameters>
+      <ScopeOldParameters>InputDataPath=(\"data2.txt\"),Output_avg=(\"avgs.txt\"),Output_sqrt=(\"sqrt.txt\")</ScopeOldParameters>
+      <ScopeClusterParameters>InputDataPath=(\"/projects/aether/_b/zhaotaipan/b866e3fb-5f09-43a1-a6f7-59f3e544a5d7@@@Fill_Extraction_Missing_Value@@@9b3bfa74@@@12-22-2021_08-15-57_AM/Out/Out_2111e988-6648-4f66-b359-24d7cb1ace48\"),Output_avg=(\"/local/users/zhaotaipan/resilient_ranker/feature_mean.txt\"),Output_sqrt=(\"/local/users/zhaotaipan/resilient_ranker/feature_std.txt\")</ScopeClusterParameters>
+    </Script>
+    <ScriptCode Include="Scope.script.cs">
+      <DependentUpon>Scope.script</DependentUpon>
+    </ScriptCode>
+  </ItemGroup>
+  <Import Project="$(AppData)\Microsoft\ScopeStudio\MsBuild\1.0\Scope.targets" />
+</Project>

@@ -1,0 +1,373 @@
+﻿//Script GUID:de5296b4-4edf-4676-ab97-762bd265e5d7
+//Used for tracking history
+
+#DECLARE JOIN_MARKET_WITH_QU bool = @@JoinMarketWithQU@@;
+#DECLARE TIME_BUCKET_UNIT string = @"minute";  // minute or day
+#DECLARE TIME_BUCKET_STEP int = @@TimeBucketStep@@;  // step size to discretize time
+
+#IF (LOCAL)
+// local run    
+#DECLARE N_META int = 5;
+#DECLARE N_FEATURE int = 3; 
+
+// using a generated view instead of custom extractor 
+// for fast extraction
+rs = 
+    VIEW "view/view_5_3"
+    PARAMS (
+        inputdata=@"@@InputDataPath@@",
+        arg=@"silent:true");
+
+boundaries = 
+    VIEW "view/view_0_3"
+    PARAMS (
+        inputdata=@"@@InputBoundaryPath@@",
+        arg=@"silent:true");
+
+#ELSE
+// run on COSMOS
+#DECLARE N_META int = 18;
+#DECLARE N_FEATURE int = 3055; 
+
+// using a generated view instead of custom extractor 
+// for fast extraction
+rs = VIEW "view/view_18_3055"
+    PARAMS (
+        inputdata=@"@@InputDataPath@@",
+        arg=@"silent:true");
+    
+boundaries = 
+    VIEW "view/view_0_3055"
+    PARAMS (
+        inputdata=@"@@InputBoundaryPath@@",
+        arg=@"silent:true");    
+#ENDIF
+
+// output number of rows of input data
+SELECT COUNT() AS cnt FROM rs;
+OUTPUT TO @@data_summary@@;
+
+// append timebucket and qu to columns
+row_with_ts_qu = 
+SELECT Utils.DiscretizeTime(ts, @TIME_BUCKET_UNIT, @TIME_BUCKET_STEP) AS timebucket,
+#IF (@JOIN_MARKET_WITH_QU)   // filter with market + query + url
+       market + query + url AS qu,
+#ELSE   // filter with query + url
+       query + url AS qu,
+#ENDIF
+       * 
+FROM rs;
+
+
+SELECT *
+FROM row_with_ts_qu
+     CROSS JOIN
+         boundaries;
+
+// produces timebucket, qu, metas and feature_index
+row_idx = 
+PROCESS USING FeatureToIndex(n_meta:@N_META + 2, n_feature:@N_FEATURE); // +2: timebucket and qu
+
+// produces timebucket, qu, qu_cnt and all feature diff
+REDUCE row_idx ON timebucket,qu
+USING MyReducer(n_meta:@N_META+2,n_feature:@N_FEATURE); // n_meta: meta + qu + timebucket
+
+rg2 = 
+SELECT  *
+WHERE qu_cnt > 1;
+
+// produce qu, qu_cnt, and feature max diffs
+rqu = 
+REDUCE rg2 ON qu USING FeatureMaxReducer(n_feature:@N_FEATURE,n_meta:3);
+
+// output number of rows of <Q,U> pairs
+SELECT COUNT() AS cnt FROM rqu;
+OUTPUT TO @@qu_summary@@;
+
+
+// produces all feature diff count
+REDUCE rqu ALL
+USING FeatureFlucCntReducer(n_feature:@N_FEATURE,n_meta:2);
+
+OUTPUT TO @"@@OutputCntPath@@"
+USING DefaultTextOutputter();
+
+// produces all feature diff average
+REDUCE rqu ALL
+USING FeatureFlucAvgReducer(n_feature:@N_FEATURE,n_meta:2);
+
+OUTPUT TO @"@@OutputAvgPath@@"
+USING DefaultTextOutputter();
+
+
+#CS
+
+public static class Utils
+{
+    public static int DiscretizeTime(string ts, string unit, int step)
+    { // convert timestamp (e.g. 2021-08-02 20:34:02Z) to discete values
+        if (unit.Equals("minute")) {
+            // Seems it would convert time zone. Not sure the way to handle it now.
+            DateTime dt = DateTime.Parse(ts, CultureInfo.InvariantCulture, DateTimeStyles.None);
+            int totalminutes = dt.Hour * 60 + dt.Minute;
+            return totalminutes / step;
+        } else {
+            return 0;
+        }
+    }
+}
+
+class BinMapper 
+{
+    double[] _boundaries;
+
+    public BinMapper(string boundaries)
+    {
+        char separator = ',';
+        char[] separators = new char[] {separator};
+        if (boundaries.Contains(separator)) {
+            _boundaries = boundaries.Split(separators, StringSplitOptions.RemoveEmptyEntries).Select(s => double.Parse(s)).ToArray();
+        } else {
+            _boundaries = new double[1];
+            _boundaries[0] = double.Parse(boundaries.Trim());
+        }
+    }
+
+    public int Convert(long v) 
+    {
+        int idx = 0;
+        while (idx < _boundaries.Length && v > _boundaries[idx]) {
+            idx++;
+        }
+        return idx;
+    }
+}
+
+public class FeatureToIndex : Processor
+{
+    int _n_feature;
+    int _n_meta;
+
+    public FeatureToIndex(int n_meta, int n_feature)
+    {
+        _n_feature = n_feature;
+        _n_meta = n_meta;
+    }
+
+    public override Schema Produces(string[] requested_columns, string[] args, Schema input_schema)
+    {
+        // The output schema removes the last _n_feature columns because these are bin boundaries
+        Schema output_schema = new Schema();
+        int i = 0;
+        foreach (ColumnInfo culumn in input_schema.Columns) {
+            if (i++ <input_schema.Count - _n_feature) { // input_schema.Count = _n_meta + 2 x _n_feature
+                output_schema.Add(culumn);
+            } else {
+                break;
+            }
+        }
+        return output_schema;
+    }
+
+    public override IEnumerable<Row> Process(RowSet input_rowset, Row output_row, string[] args)
+    {
+        BinMapper[] bin_mappers = new BinMapper[_n_feature];
+        bool bin_mapper_inited = false;
+
+        foreach (Row input_row in input_rowset.Rows)
+        {
+            if (!bin_mapper_inited) 
+            {
+                for (int i = 0; i < _n_feature; i++)
+                {
+                    bin_mappers[i] = new BinMapper(input_row[_n_meta + _n_feature + i].String);
+                }
+                bin_mapper_inited = true;
+            }
+            for (int i = 0; i < _n_meta; i++) 
+            {
+                input_row[i].CopyTo(output_row[i]);
+            }
+            for (int i = 0; i < _n_feature; i++) 
+            {
+                output_row[i + _n_meta].Set(bin_mappers[i].Convert(input_row[i + _n_meta].Long));
+            }
+            yield return output_row;
+        }
+    }
+}
+
+public class MyReducerBase: Reducer
+{
+    protected int _n_features = 0;
+    protected int _n_meta = 3;
+    protected int _extra_meta = 1;
+    protected string[] _extra_meta_list;
+    protected string _column_prefix;
+    protected string _output_type;
+
+    public MyReducerBase(int n_feature, int n_meta, string column_prefix, string[] extra_metas, string output_type = "long")
+    {
+        _n_features = n_feature;
+        _n_meta = n_meta;
+        _extra_meta = extra_metas.Length;
+        _extra_meta_list = new string[_extra_meta];
+        extra_metas.CopyTo(_extra_meta_list, 0);
+        _column_prefix = column_prefix;
+        _output_type = output_type;
+    }
+
+    public override Schema Produces(string[] requestedColumns, string[] args, Schema inputSchema)
+    {
+        string[] columns = new string[_n_features + _extra_meta];
+        _extra_meta_list.CopyTo(columns, 0);
+        for (int i = 0; i < _n_features; i++) {
+            columns[i + _extra_meta] = string.Format("{0}{1}:{2}", _column_prefix, i + 1, _output_type);
+        }
+
+        Schema schema = new Schema(string.Join(",", columns));
+        return schema;
+    } 
+
+    public override IEnumerable<Row> Reduce(RowSet input, Row outputRow, string[] args)
+    { 
+        yield return outputRow;
+    } 
+
+//    public override bool IsRecursive { get { return true; } }
+}
+
+public class MyReducer: MyReducerBase
+{
+    public MyReducer(int n_meta = 0, int n_feature = 0) : base(n_feature, n_meta, "delta_feature", new string[] {"timebucket:int","qu:string","qu_cnt:long"})
+    { }
+
+    public override IEnumerable<Row> Reduce(RowSet input, Row outputRow, string[] args)
+    { 
+        long[] maxvalues = new long[_n_features];
+        long[] minvalues = new long[_n_features];
+        for (int i = 0; i < _n_features; i++) {
+            maxvalues[i] = -1;
+            minvalues[i] = 0;
+        }
+        long cnt = 0;
+        foreach(Row row in input.Rows)
+        {
+            row[0].CopyTo(outputRow[0]); 
+            row[1].CopyTo(outputRow[1]); 
+            for (int i = 0; i < _n_features; i++) {
+                if (row[i + _n_meta].Long > maxvalues[i]) {
+                    maxvalues[i] = row[i + _n_meta].Long;
+                }
+                if (row[i + _n_meta].Long > 0 && (minvalues[i] == 0 || row[i + _n_meta].Long < minvalues[i])) {
+                    minvalues[i] = row[i + _n_meta].Long;
+                }
+            }
+            cnt++;
+        } 
+
+        outputRow[2].Set(cnt); // column 2 is the cnt
+        for (int i = 0; i < _n_features; i++) {
+            outputRow[i + _extra_meta].Set(maxvalues[i] - minvalues[i]);
+        }
+        yield return outputRow;
+    } 
+
+//    public override bool IsRecursive { get { return true; } }
+}
+
+
+public class FeatureFlucCntReducer: MyReducerBase
+{
+    public FeatureFlucCntReducer(int n_feature, int n_meta) : base(n_feature, n_meta, "feature_fluc_cnt", new string[] {})
+    { }
+
+    public override IEnumerable<Row> Reduce(RowSet input, Row outputRow, string[] args)
+    { 
+        long[] non_zero_cnt = new long[_n_features];
+        for (int i = 0; i < _n_features; i++) {
+            non_zero_cnt[i] = 0;
+        }
+        foreach(Row row in input.Rows)
+        {
+            for (int i = 0; i < _n_features; i++) {
+                if (row[i + _n_meta].Long > 0) {
+                    non_zero_cnt[i]++;
+                }
+            }
+        } 
+
+        for (int i = 0; i < _n_features; i++) {
+            outputRow[i + _extra_meta].Set(non_zero_cnt[i]);
+        }
+        yield return outputRow;
+    } 
+}
+
+public class FeatureFlucAvgReducer: MyReducerBase
+{
+    public FeatureFlucAvgReducer(int n_feature, int n_meta) : base(n_feature, n_meta, "feature_fluc_avg", new string[] {}, "double")
+    { }
+
+    public override IEnumerable<Row> Reduce(RowSet input, Row outputRow, string[] args)
+    { 
+        long[] non_zero_cnt = new long[_n_features];
+        double[] feature_sum = new double[_n_features];
+        for (int i = 0; i < _n_features; i++) {
+            non_zero_cnt[i] = 0;
+            feature_sum[i] = 0;
+        }
+        foreach(Row row in input.Rows)
+        {
+            for (int i = 0; i < _n_features; i++) {
+                if (row[i + _n_meta].Long > 0) { // skip extra meta
+                    non_zero_cnt[i]++;
+                    feature_sum[i] += row[i + _n_meta].Long;
+                }
+            }
+        } 
+
+        for (int i = 0; i < _n_features; i++) {
+            if (non_zero_cnt[i] > 0) {
+                outputRow[i + _extra_meta].Set(feature_sum[i] / non_zero_cnt[i]);
+            } else {
+                outputRow[i + _extra_meta].Set(0);
+            }
+        }
+        yield return outputRow;
+    } 
+}
+
+public class FeatureMaxReducer: MyReducerBase
+{
+    public FeatureMaxReducer(int n_feature, int n_meta) : base(n_feature, n_meta, "feature_fluc_max", new string[] {"qu:string","qu_cnt:long"})
+    { }
+
+    public override IEnumerable<Row> Reduce(RowSet input, Row outputRow, string[] args)
+    { 
+        long[] max_diff = new long[_n_features];
+        long total_cnt = 0;
+        for (int i = 0; i < _n_features; i++) {
+            max_diff[i] = 0;
+        }
+        foreach(Row row in input.Rows)
+        {
+            // Row schema: timebucket, qu, qu_cnt
+            row[1].CopyTo(outputRow[0]);
+            total_cnt += row[2].Long;
+            for (int i = 0; i < _n_features; i++) {
+                if (row[i + _n_meta].Long > max_diff[i]) { // skip extra meta
+                    max_diff[i] = row[i + _n_meta].Long;
+                }
+            }
+        } 
+
+        outputRow[1].Set(total_cnt);
+        for (int i = 0; i < _n_features; i++) {
+            outputRow[i + _extra_meta].Set(max_diff[i]);
+        }
+        yield return outputRow;
+    } 
+}
+
+#ENDCS 

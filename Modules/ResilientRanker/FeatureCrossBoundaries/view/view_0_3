@@ -1,0 +1,17 @@
+CREATE VIEW SearchLog SCHEMA ( 
+            boundary1: string,
+            boundary2: string,
+            boundary3: string
+)
+PARAMS (
+	inputdata string,
+	arg string
+)
+AS BEGIN
+searchlog = 
+    EXTRACT boundary1: string,
+            boundary2: string,
+            boundary3: string
+    FROM @inputdata
+    USING DefaultTextExtractor(@arg);
+END;

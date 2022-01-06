@@ -1,0 +1,25 @@
+CREATE VIEW SearchLog SCHEMA ( 
+            key: string,
+            query: string,
+            market: string,
+            url: string,
+            feature1: long,
+            feature2: long,
+            feature3: long
+)
+PARAMS (
+	inputdata string,
+	arg string
+)
+AS BEGIN
+searchlog = 
+    EXTRACT key: string,
+            query: string,
+            market: string,
+            url: string,
+            feature1: long,
+            feature2: long,
+            feature3: long
+    FROM @inputdata
+    USING DefaultTextExtractor(@arg);
+END;
