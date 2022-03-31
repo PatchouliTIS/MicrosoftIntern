@@ -125,7 +125,7 @@ namespace PolarisClient
                 {
                     "st|serviceType=",
                     $"<Optional> The {{serviceType}}. Default value is \"{serviceType}\".",
-                    v => serviceType = string.IsNullOrEmpty(v) ? serviceType : (v=="V100"?"InferenceServiceV15WinV100":(v=="CPU"?"InferenceServiceWin":(v=="T4"?"InferenceServiceWinT4":(v=="M60"?"InferenceServiceWinM60" : serviceType))))
+                    v => serviceType = string.IsNullOrEmpty(v) ? serviceType : (v=="V100"?"DLIS-Win-GPU-V100":(v=="CPU"?"InferenceServiceWin":(v=="T4"?"DLIS-Win-GPU-T4":(v=="A100"?"DLIS-Win-GPU-A100":(v=="M60"?"DLIS-Win-GPU-M60" : serviceType)))))
 
                 },
                 {
@@ -373,7 +373,18 @@ namespace PolarisClient
             TimeSpan waitTime = new TimeSpan(0, totalRunningTimeInHour, 0, 0);
             PolarisV2Proxy.Init(host);
             var job = new JobNewDTO();
-            job.Type = serviceType;
+
+            if(serviceType != "InferenceServiceWin")
+            {
+                job.Type = "InferenceServiceWinGpu";
+                job.MachineType = serviceType;
+            }
+            else
+            {
+                job.Type = serviceType;
+                job.MachineType = "DLIS-Win-V15";
+            }
+
             job.Name = name;
             job.User = user;
             job.Note = note;
