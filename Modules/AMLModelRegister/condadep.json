@@ -1,0 +1,23 @@
+{
+    "name": "project_environment",
+    "dependencies": [
+      "python=3.7.6",
+      "pip=20.2",
+      {
+        "pip": [
+          "--extra-index-url https://azuremlsdktestpypi.azureedge.net/CLI-SDK-Runners-Validation/37808734",
+          "--extra-index-url https://dataprepdownloads.azureedge.net/pypi/test-M3ME5B1GMEM3SW0W/37834002/",
+          "azureml-defaults==1.41.0",
+          "azureml-sdk==1.41.0",
+          "azureml-core==1.41.0.post3",
+          "azure-ml-component==0.9.9.post3",
+          "azureml-dataprep==4.0.1",
+          "azureml-dataprep-rslex==2.6.1",
+          "dataclasses",
+          "jsonref",
+          "addict"
+        ]
+      }
+    ]
+  }
+  
