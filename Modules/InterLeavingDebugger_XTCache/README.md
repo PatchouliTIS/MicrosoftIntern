@@ -1,9 +1,8 @@
-this module is used to get impressions corresponding to specified flight from Bing Logs. Its reference module id is 48dec5e6-0ed5-490a-9779-8ee5e3f5792d. When we migrated from unified cache to XTCache, we discard many columns like: 
+This module is used to get impressions corresponding to specified flight from Bing Logs. It has 4 parameters：
 
-- ForayMetrics_ClickCondition,
-- ForayMetrics_ClickConditionAt1,
-- ForayMetrics_ClickConditionAt3,
-- ForayMetrics_ClickConditionAt5
-  ...
+- FlightId: used to filter some flights you need, you can use 'ir.+' to collect all flights. 
+- StartTime：the start time to collect IL data
+- EndTime: the end time to collect IL data
+- HeavyDebugger: bool varibale. "False" means we collect IL data from XTCache, it can only output limitted columns and runs very fast. "True" means we collect data from MSLAPI, it can output extra debugger columns, but runs much slower. If you want to further debug IL, please select it as "True."
 
-If anyone wants to add those columns back, please contact wewa@microsoft.com. 
+Detail information about IL debugger/Inline metrics, please refer this [link](https://microsoftapc-my.sharepoint.com/:o:/r/personal/binxjia_microsoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B64aac550-a171-48d6-a496-97c7d2bd2365%7D&action=edit&wd=target(Relevance%2FKnowledge.one%7C2DC9FBCA-5ED9-4202-9B0B-71B07CE4FC3C%2FInterleaving%20Debugger%5C%2FInline%20Metrics%7C97D3FA0B-6D93-40A7-9A10-D0CC24BEC518%2F)&share=IgFQxapkcaHWSKSWl8fSvSNlATGkst_axaYZYoVNyBXqsSQ).

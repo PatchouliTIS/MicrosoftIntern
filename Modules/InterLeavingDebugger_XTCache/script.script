@@ -9,6 +9,7 @@ USING XTCache.LiveSearch.DataMining.Foray.JsonLog;
 
 #DECLARE EndTime DateTime = DateTime.ParseExact("@@EndTime@@", "yyyy-MM-dd_HH:mm:ss", null);
 #DECLARE EndDate string = @EndTime.ToString("yyyy-MM-dd");
+#DECLARE HeavyDebugger bool = bool.Parse("@@HeavyDebugger@@"); 
 
 #DECLARE Columns string = String.Join(",", new [] {
     "Request_ImpressionGuid", 
@@ -22,7 +23,90 @@ USING XTCache.LiveSearch.DataMining.Foray.JsonLog;
     "FDFilter_TRUEMKT" 
     });
     
+QuerySeg = VIEW @"/shares/searchDM/distrib/released/BFT/BFTSearchView/QuerySegSideStream.view" PARAMS (
+    StartDate = @StartDate,
+    EndDate = @EndDate );
 
+#IF (@HeavyDebugger)
+MSLAPI =
+    VIEW @"/shares/searchDM/distrib/released/XTCacheProd/MSLAPI/MetricsSearchLogPageView.view"
+    PARAMS
+    (
+        UseSample = false ,
+        ReturnAbnormalTraffic = false ,
+        UseLocalSample = false ,
+        Addon = "/shares/searchDM/distrib/released/XTCacheProd/MSLAPI/DMMetrics" ,
+        Start =  @StartDate,
+        End = @EndDate,
+        MetricsMode = "_DMINTERNAL" ,
+        Dataset = "Bing.com" ,
+        InternalSettings = "EnableLoadBalancing=true;UseEoDUnionAllResults=false"
+    );
+
+FlightData = SELECT 
+    Request_ImpressionGuid AS ImpressionGuid,
+    ClientId,
+    Query_RawQuery.Trim().ToLower() AS RawQuery,
+    Request_RequestTime_Copy AS Request_RequestTime, 
+    Request_RequestTime_Copy.ToString("d") AS RequestDate,
+    Market,
+    Metrics_FDFilter_TrueMkt,
+    Metrics_FDFilter_IsMobile,
+    Request_UserAgent,
+    ForayMetrics_ResultInterleavingCount AS IsGoodInterleaving,
+    ForayMetrics_ClickCondition AS ClickCondition,
+    ForayMetrics_ClickConditionAt1 AS ClickConditionAt1,
+    ForayMetrics_ClickConditionAt3 AS ClickConditionAt3,
+    ForayMetrics_ClickConditionAt5 AS ClickConditionAt5,
+    ForayMetrics_ClickSatCondition AS ClickSatCondition,
+    ForayMetrics_ClickQuickBackCondition AS ClickQBCondition,
+    ForayMetrics_ClickSuperQuickBackCondition AS ClickSQBCondition,
+    ForayMetrics_DifferAtClickCondition AS DifferAtClickCondition,
+    ForayMetrics_DifferAtClickConditionAt1 AS DifferAtClickConditionAt1,
+    ForayMetrics_DifferAtClickConditionAt3 AS DifferAtClickConditionAt3,
+    ForayMetrics_DifferAtClickConditionAt5 AS DifferAtClickConditionAt5,
+    ForayMetrics_DifferAtClickSatCondition AS DifferAtClickSatCondition,
+    ForayMetrics_DifferAtClickQuickBackCondition AS DifferAtClickQBCondition,
+    ForayMetrics_DifferAtClickSuperQuickBackCondition AS DifferAtClickSQBCondition,
+
+    //// Interleaving winners
+    ////// Overall Preference columns
+    ForayMetrics_RankerBOverallPreferenceV2Base AS RankerBOverallPreference,
+    ForayMetrics_RankerBOverallPreferenceV2At1Base AS RankerBOverallPreferenceAt1,
+    ForayMetrics_RankerBOverallPreferenceV2At3Base AS RankerBOverallPreferenceAt3,
+    ForayMetrics_RankerBOverallPreferenceV2At5Base AS RankerBOverallPreferenceAt5,
+    ForayMetrics_RankerBOverallPreferenceSatV2Base AS RankerBOverallPreferenceSat,
+    ForayMetrics_RankerBOverallPreferenceQuickBackV2Base AS RankerBOverallPreferenceQB,
+    ForayMetrics_RankerBOverallPreferenceSuperQuickBackV2Base AS RankerBOverallPreferenceSQB,
+
+    ////// CLIP columns
+    ForayMetrics_RankerBClickPreferenceV2Base AS RankerBClickPreference,
+    ForayMetrics_RankerBClickPreferenceV2At1Base AS RankerBClickPreferenceAt1,
+    ForayMetrics_RankerBClickPreferenceV2At3Base AS RankerBClickPreferenceAt3,
+    ForayMetrics_RankerBClickPreferenceV2At5Base AS RankerBClickPreferenceAt5,
+    ForayMetrics_RankerBClickPreferenceSatV2Base AS RankerBClickPreferenceSat,
+    ForayMetrics_RankerBClickPreferenceQuickBackV2Base AS RankerBClickPreferenceQB,
+    ForayMetrics_RankerBClickPreferenceSuperQuickBackV2Base AS RankerBClickPreferenceSQB,
+
+    ////// DAC Preference
+    ForayMetrics_RankerBDifferAtClickPreferenceBase AS RankerB_DACPreference,
+    ForayMetrics_RankerBDifferAtClickPreferenceAt1Base AS RankerB_DACPreferenceAt1,
+    ForayMetrics_RankerBDifferAtClickPreferenceAt3Base AS RankerB_DACPreferenceAt3,
+    ForayMetrics_RankerBDifferAtClickPreferenceAt5Base AS RankerB_DACPreferenceAt5,
+    ForayMetrics_RankerBDifferAtClickPreferenceSatBase AS RankerB_DACPreferenceSat,
+    ForayMetrics_RankerBDifferAtClickPreferenceQuickBackBase AS RankerB_DACPreferenceQB,
+    ForayMetrics_RankerBDifferAtClickPreferenceSuperQuickBackBase AS RankerB_DACPreferenceSQB
+FROM 
+    MSLAPI
+WHERE (Vertical == "web" AND Dataset == "Bing.com" AND Request_IsNormalTraffic AND Admin_Partition != "bing.onedrive"  AND !Query_IsAutoSuggest AND NOT Metrics_IsSpartanTraffic AND NOT(REGEX(@"^(?i:\s*)$")).IsMatch      (Foray_RawMUID) AND NOT(REGEX(@"^(?i:Page\.AppCacheManifest)$")).IsMatch(Page_Name) AND Page_Name != "")  
+      && REGEX(@"^(?i:" + @FlightId + ")$").IsMatch(XTCache.LiveSearch.DataMining.Foray.JsonLog.ForayUtilities.uc(XTCache.LiveSearch.DataMining.Foray.JsonLog.ForayUtilities.GetFlightPropertyForNumberline(AllFlightFactors, AllFlightLevels, "flt")))
+      && Query_IsNormal
+      && DateTime.Compare(@StartTime, Request_RequestTime_Copy) <= 0
+      && DateTime.Compare(Request_RequestTime_Copy, @EndTime) <= 0 
+      && Metrics_FDFilter_TrueMkt == Market;
+
+
+#ELSE
 
 UnifiedCache = VIEW @"/shares/searchDM/distrib/released/XTCacheProd/XTCache/XTCacheView.view" PARAMS (
     Cache = "MSLAPI_ForayWeb_BaseLevel",
@@ -33,13 +117,6 @@ UnifiedCache = VIEW @"/shares/searchDM/distrib/released/XTCacheProd/XTCache/XTCa
     Datasets = "Bing.com",
     Filter = "(((REGEX(@\"^(?i:www\\.bing\\.com)$\").IsMatch(AppInfoServerName)) AND (REGEX(@\"^(?i:SERP|Web)$\").IsMatch(XTCache.LiveSearch.DataMining.Foray.JsonLog.ForayUtilities.uc(Vertical))) AND ((Vertical.ToLower() == \"web\" && Page_Name == \"\")==(false))) AND (NOT(REGEX(@\"^(?i:\\s*)$\")).IsMatch(Foray_RawMUID)) AND (REGEX(@\"^(?i:Bing\\.com)$\").IsMatch(Dataset)) AND (NOT(REGEX(@\"^(?i:beta.*)$\")).IsMatch(Request_Domain)) AND (NOT(REGEX(@\"^(?i:Page\\.AppCacheManifest)$\")).IsMatch(Page_Name)) AND XTCache.LiveSearch.DataMining.Foray.JsonLog.ForayUtilities.GetFlightPropertyForNumberline(AllFlightFactors, AllFlightOverrides, \"preallocation\").ToLower()!= \"true\")"
 );
-
-
-QuerySeg = VIEW @"/shares/searchDM/distrib/released/BFT/BFTSearchView/QuerySegSideStream.view" PARAMS (
-    StartDate = @StartDate,
-    EndDate = @EndDate );
-
-
 
 FlightData = SELECT 
     Request_ImpressionGuid AS ImpressionGuid,
@@ -58,6 +135,7 @@ WHERE
     && REGEX(@"^(?i:" + @FlightId + ")$").IsMatch(XTCache.LiveSearch.DataMining.Foray.JsonLog.ForayUtilities.uc(XTCache.LiveSearch.DataMining.Foray.JsonLog.ForayUtilities.GetFlightPropertyForNumberline(AllFlightFactors, AllFlightLevels, "flt")))
     && FDFilter_TRUEMKT == Market;
 
+#ENDIF
 
 FlightData = SELECT 
     F.*,
