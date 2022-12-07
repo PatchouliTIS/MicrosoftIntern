@@ -117,6 +117,8 @@ const std::unordered_map<std::string, std::string>& Config::alias_table() {
   {"has_header", "header"},
   {"label", "label_column"},
   {"weight", "weight_column"},
+  {"secondary_label", "secondary_label_column"},
+  {"pos_discount_exp", "pos_discount_exp"},
   {"group", "group_column"},
   {"group_id", "group_column"},
   {"query_column", "group_column"},
@@ -258,6 +260,8 @@ const std::unordered_set<std::string>& Config::parameter_set() {
   "header",
   "label_column",
   "weight_column",
+  "secondary_label_column",
+  "pos_discount_exp",
   "group_column",
   "ignore_column",
   "categorical_feature",
@@ -289,6 +293,8 @@ const std::unordered_set<std::string>& Config::parameter_set() {
   "lambdarank_truncation_level",
   "lambdarank_norm",
   "label_gain",
+  "secondary_label_gain",
+  "secondary_label_weight",
   "scorediff_alpha",
   "scorediff_beta",
   "rankdiff_alpha",
@@ -527,6 +533,10 @@ void Config::GetMembersFromString(const std::unordered_map<std::string, std::str
 
   GetString(params, "weight_column", &weight_column);
 
+  GetString(params, "secondary_label_column", &secondary_label_column);
+
+  GetString(params, "pos_discount_exp", &pos_discount_exp);
+
   GetString(params, "group_column", &group_column);
 
   GetString(params, "ignore_column", &ignore_column);
@@ -599,6 +609,13 @@ void Config::GetMembersFromString(const std::unordered_map<std::string, std::str
   if (GetString(params, "label_gain", &tmp_str)) {
     label_gain = Common::StringToArray<double>(tmp_str, ',');
   }
+
+  if (GetString(params, "secondary_label_gain", &tmp_str)) {
+    secondary_label_gain = Common::StringToArray<double>(tmp_str, ',');
+  }
+
+  GetDouble(params, "secondary_label_weight", &secondary_label_weight);
+  CHECK_GE(secondary_label_weight, 0.0);
 
   GetDouble(params, "scorediff_alpha", &scorediff_alpha);
   CHECK_GE(scorediff_alpha, 0.0);
@@ -731,6 +748,8 @@ std::string Config::SaveMembersToString() const {
   str_buf << "[header: " << header << "]\n";
   str_buf << "[label_column: " << label_column << "]\n";
   str_buf << "[weight_column: " << weight_column << "]\n";
+  str_buf << "[secondary_label_column: " << secondary_label_column << "]\n";
+  str_buf << "[pos_discount_exp: " << pos_discount_exp << "]\n";
   str_buf << "[group_column: " << group_column << "]\n";
   str_buf << "[ignore_column: " << ignore_column << "]\n";
   str_buf << "[categorical_feature: " << categorical_feature << "]\n";
@@ -749,6 +768,8 @@ std::string Config::SaveMembersToString() const {
   str_buf << "[lambdarank_truncation_level: " << lambdarank_truncation_level << "]\n";
   str_buf << "[lambdarank_norm: " << lambdarank_norm << "]\n";
   str_buf << "[label_gain: " << Common::Join(label_gain, ",") << "]\n";
+  str_buf << "[secondary_label_gain: " << Common::Join(secondary_label_gain, ",") << "]\n";
+  str_buf << "[secondary_label_weight: " << secondary_label_weight << "]\n";
   str_buf << "[scorediff_alpha: " << scorediff_alpha << "]\n";
   str_buf << "[scorediff_beta: " << scorediff_beta << "]\n";
   str_buf << "[rankdiff_alpha: " << rankdiff_alpha << "]\n";

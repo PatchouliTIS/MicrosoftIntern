@@ -78,6 +78,8 @@ class DatasetLoader {
   int doc_idx_;
   /*! \brief index of imp_id column */
   int imp_idx_;
+  /*! \brief index of econdary_label column */
+  int secondary_label_idx_;
   /*! \brief index of group column */
   int group_idx_;
   /*! \brief Mapper from real feature index to used index*/

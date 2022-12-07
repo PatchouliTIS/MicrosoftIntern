@@ -760,6 +760,26 @@ Dataset Parameters
 
    -  **Note**: index starts from ``0`` and it doesn't count the label column when passing type is ``int``, e.g. when label is column\_0, and weight is column\_1, the correct parameter is ``weight=0``
 
+-  ``secondary_label_column`` :raw-html:`<a id="secondary_label_column" title="Permalink to this parameter" href="#secondary_label_column">&#x1F517;&#xFE0E;</a>`, default = ``""``, type = int or string, aliases: ``secondary_label``
+
+   -  used to specify the secondary_label column
+
+   -  use number for index, e.g. ``secondary_label=0`` means column\_0 is the secondary_label
+
+   -  add a prefix ``name:`` for column name, e.g. ``secondary_label=name:secondary_label``
+
+   -  **Note**: works only in case of loading data directly from file
+
+   -  **Note**: index starts from ``0`` and it doesn't count the label column when passing type is ``int``, e.g. when label is column\_0, and secondary_label is column\_1, the correct parameter is ``secondary_label=0``
+
+-  ``pos_discount_exp`` :raw-html:`<a id="pos_discount_exp" title="Permalink to this parameter" href="#pos_discount_exp">&#x1F517;&#xFE0E;</a>`, default = ``""``, type = string, aliases: ``pos_discount_exp``
+
+   -  used to specify the position discount expression
+
+   -  use ``p`` for position, starting from zero, e.g. ``pos_discount_exp=pow(0.6,p)``
+
+   -  http://www.partow.net/programming/exprtk/index.html
+
 -  ``group_column`` :raw-html:`<a id="group_column" title="Permalink to this parameter" href="#group_column">&#x1F517;&#xFE0E;</a>`, default = ``""``, type = int or string, aliases: ``group``, ``group_id``, ``query_column``, ``query``, ``query_id``
 
    -  used to specify the query/group id column
@@ -1035,11 +1055,31 @@ Objective Parameters
 
    -  separate by ``,``
 
+-  ``secondary_label_gain`` :raw-html:`<a id="secondary_label_gain" title="Permalink to this parameter" href="#secondary_label_gain">&#x1F517;&#xFE0E;</a>`, default = ``same as label_gain``, type = multi-double
+
+   -  used only in ``lambdarank`` application
+
+   -  relevant gain for labels. For example, the gain of label ``2`` is ``3`` in case of default label gains
+
+   -  separate by ``,``
+
+-  ``secondary_label_weight`` :raw-html:`<a id="secondary_label_weight" title="Permalink to this parameter" href="#secondary_label_weight">&#x1F517;&#xFE0E;</a>`, default = ``1.0``, type = double, constraints: ``secondary_label_weight >= 0.0``
+
+   -  used only in ``lambdarank`` applications
+
+   -  weight of secondary_labels contribution, default 1.0
+
 -  ``scorediff_alpha`` :raw-html:`<a id="scorediff_alpha" title="Permalink to this parameter" href="#scorediff_alpha">&#x1F517;&#xFE0E;</a>`, default = ``0.0``, type = double, constraints: ``scorediff_alpha >= 0.0``
 
    -  used only in ``lambdarank_scorediff`` application
 
    -  used to control the weight of scorediff in loss function
+
+-  ``scorediff_beta`` :raw-html:`<a id="scorediff_beta" title="Permalink to this parameter" href="#scorediff_beta">&#x1F517;&#xFE0E;</a>`, default = ``0.0``, type = double, constraints: ``scorediff_beta >= 0.0``
+
+   -  used only in ``lambdarank_scorediff`` application
+
+   -  used to control the work point of scorediff in loss function
 
 -  ``rankdiff_alpha`` :raw-html:`<a id="rankdiff_alpha" title="Permalink to this parameter" href="#rankdiff_alpha">&#x1F517;&#xFE0E;</a>`, default = ``0.0``, type = double, constraints: ``rankdiff_alpha >= 0.0``
 
@@ -1071,7 +1111,7 @@ Objective Parameters
 
    -  **Note**: index starts from ``0`` and it doesn't count the label column when passing type is ``int``, e.g. when label is column\_0, and imp_id is column\_1, the correct parameter is ``imp_id=0``
 
--  ``normalize_gradient_scorediff`` :raw-html:`<a id="normalize_gradient_scorediff" title="Permalink to this parameter" href="#normalize_gradient_scorediff">&#x1F517;&#xFE0E;</a>`, default = ``false``, type = bool
+-  ``normalize_gradient_scorediff`` :raw-html:`<a id="normalize_gradient_scorediff" title="Permalink to this parameter" href="#normalize_gradient_scorediff">&#x1F517;&#xFE0E;</a>`, default = ``true``, type = bool
 
    -  used only in ``lambdarank_scorediff2`` application
 

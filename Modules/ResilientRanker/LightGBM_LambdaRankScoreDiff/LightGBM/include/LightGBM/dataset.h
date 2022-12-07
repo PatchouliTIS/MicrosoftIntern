@@ -71,8 +71,9 @@ class Metadata {
   * \param query_idx Index of query id column, < 0 means doesn't exists
   * \param doc_idx Index of doc id column, < 0 means doesn't exists
   * \param imp_idx Index of impression id column, < 0 means doesn't exists
+  * \param secondary_label_idx Index of secondary_label column, < 0 means doesn't exists
   */
-  void Init(data_size_t num_data, int weight_idx, int query_idx, int doc_idx, int imp_idx);
+  void Init(data_size_t num_data, int weight_idx, int query_idx, int doc_idx, int imp_idx, int secondary_label_idx);
 
   /*!
   * \brief Partition label by used indices
@@ -89,6 +90,8 @@ class Metadata {
                         const std::vector<data_size_t>& used_data_indices);
 
   void SetLabel(const label_t* label, data_size_t len);
+
+  void SetSecondaryLabel(const label_t* label, data_size_t len);
 
   void SetWeights(const label_t* weights, data_size_t len);
 
@@ -123,12 +126,29 @@ class Metadata {
   inline const label_t* label() const { return label_.data(); }
 
   /*!
+  * \brief Get pointer of secondary_label
+  * \return Pointer of secondary_label
+  */
+  inline const label_t* secondary_label() const { return secondary_label_.data(); }
+
+  /*!
   * \brief Set label for one record
   * \param idx Index of this record
   * \param value Label value of this record
   */
   inline void SetLabelAt(data_size_t idx, label_t value) {
     label_[idx] = value;
+  }
+
+  /*!
+  * \brief Set secondary_label for one record
+  * \param idx Index of this record
+  * \param value secondary_label value of this record
+  */
+  inline void SetSecondaryLabelAt(data_size_t idx, label_t value) {
+    secondary_label_[idx] = value;
+    last_secondary_label_ = idx;
+    total_set_secondary_label_++;
   }
 
   /*!
@@ -267,6 +287,8 @@ class Metadata {
  private:
   /*! \brief Load initial scores from file */
   void LoadInitialScore();
+  /*! \brief Load secondary_labels from file */
+  void LoadSecondaryLabels();
   /*! \brief Load wights from file */
   void LoadWeights();
   /*! \brief Load doc id from file */
@@ -285,10 +307,14 @@ class Metadata {
   std::string data_filename_;
   /*! \brief Number of data */
   data_size_t num_data_;
+  /*! \brief Number of secondary_labels, used to check correct secondary_labels file */
+  data_size_t num_secondary_labels_;
   /*! \brief Number of weights, used to check correct weight file */
   data_size_t num_weights_;
   /*! \brief Label data */
   std::vector<label_t> label_;
+  /*! \brief Secondary Label data */
+  std::vector<label_t> secondary_label_;
   /*! \brief Weights data */
   std::vector<label_t> weights_;
   /*! \brief Query boundaries */
@@ -314,6 +340,8 @@ class Metadata {
   /*! \brief For debug purpose */
   long last_impression_id_;
   long total_set_impression_;
+  long last_secondary_label_;
+  long total_set_secondary_label_;
   /*! \brief Number of impressions */
   std::vector<data_size_t> num_impressions_;
   /*! \brief mutex for threading safe call */
@@ -323,6 +351,7 @@ class Metadata {
   bool init_score_load_from_file_;
   bool doc_load_from_file_;
   bool impression_load_from_file_;
+  bool secondary_labels_load_from_file_;
 };
 
 

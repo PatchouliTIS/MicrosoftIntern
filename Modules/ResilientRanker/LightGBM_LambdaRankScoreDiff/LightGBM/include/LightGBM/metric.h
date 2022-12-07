@@ -71,6 +71,18 @@ class DCGCalculator {
   static void Init(const std::vector<double>& label_gain);
 
   /*!
+  * \brief Set label_gain
+  * \param label_gain Gain for labels
+  */
+  static void SetLabelGain(const std::vector<double>& label_gain);
+
+  /*!
+  * \brief set position discount accordding to given expression
+  * \param pos_discount_exp: position discount expression, use ``p`` for position, starting from zero, e.g. ``pos_discount_exp=pow(0.6,p)``
+  */
+  static void SetPositionDiscount(std::string pos_discount_exp);
+
+  /*!
   * \brief Calculate the DCG score at position k
   * \param k The position to evaluate
   * \param label Pointer of label

@@ -671,6 +671,22 @@ struct Config {
   std::string weight_column = "";
 
   // type = int or string
+  // alias = secondary_label
+  // desc = used to specify the secondary_label column
+  // desc = use number for index, e.g. ``secondary_label=0`` means column\_0 is the secondary_label
+  // desc = add a prefix ``name:`` for column name, e.g. ``secondary_label=name:secondary_label``
+  // desc = **Note**: works only in case of loading data directly from file
+  // desc = **Note**: index starts from ``0`` and it doesn't count the label column when passing type is ``int``, e.g. when label is column\_0, and secondary_label is column\_1, the correct parameter is ``secondary_label=0``
+  std::string secondary_label_column = "";
+
+  // type = string
+  // alias = pos_discount_exp
+  // desc = used to specify the position discount expression
+  // desc = use ``p`` for position, starting from zero, e.g. ``pos_discount_exp=pow(0.6,p)``
+  // desc = http://www.partow.net/programming/exprtk/index.html
+  std::string pos_discount_exp = "";
+
+  // type = int or string
   // alias = group, group_id, query_column, query, query_id
   // desc = used to specify the query/group id column
   // desc = use number for index, e.g. ``query=0`` means column\_0 is the query id
@@ -885,6 +901,18 @@ struct Config {
   // desc = relevant gain for labels. For example, the gain of label ``2`` is ``3`` in case of default label gains
   // desc = separate by ``,``
   std::vector<double> label_gain;
+
+  // type = multi-double
+  // default = same as label_gain
+  // desc = used only in ``lambdarank`` application
+  // desc = relevant gain for labels. For example, the gain of label ``2`` is ``3`` in case of default label gains
+  // desc = separate by ``,``
+  std::vector<double> secondary_label_gain;
+
+  // check = >=0.0
+  // desc = used only in ``lambdarank`` applications
+  // desc = weight of secondary_labels contribution, default 1.0
+  double secondary_label_weight = 1.0;
 
   // check = >=0.0
   // desc = used only in ``lambdarank_scorediff`` application

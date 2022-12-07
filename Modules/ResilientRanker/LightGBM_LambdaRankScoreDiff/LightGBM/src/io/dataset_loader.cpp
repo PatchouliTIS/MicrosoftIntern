@@ -22,6 +22,7 @@ DatasetLoader::DatasetLoader(const Config& io_config, const PredictFunction& pre
   :config_(io_config), random_(config_.data_random_seed), predict_fun_(predict_fun), num_class_(num_class), dump_bin_boundaries_(config_.dump_bin_boundary) {
   label_idx_ = 0;
   weight_idx_ = NO_SPECIFIC;
+  secondary_label_idx_ = NO_SPECIFIC;
   group_idx_ = NO_SPECIFIC;
   doc_idx_ = NO_SPECIFIC;
   imp_idx_ = NO_SPECIFIC;
@@ -127,6 +128,28 @@ void DatasetLoader::SetHeader(const char* filename) {
         Log::Info("Using column number %d as weight", weight_idx_);
       }
       ignore_features_.emplace(weight_idx_);
+    }
+    // load secondary_label idx
+    if (config_.secondary_label_column.size() > 0) {
+      if (Common::StartsWith(config_.secondary_label_column, name_prefix)) {
+        std::string name = config_.secondary_label_column.substr(name_prefix.size());
+        if (name2idx.count(name) > 0) {
+          secondary_label_idx_ = name2idx[name];
+          Log::Info("Using column %s as secondary_label", name.c_str());
+        }
+        else {
+          Log::Fatal("Could not find secondary_label column %s in data file", name.c_str());
+        }
+      }
+      else {
+        if (!Common::AtoiAndCheck(config_.secondary_label_column.c_str(), &secondary_label_idx_)) {
+          Log::Fatal("secondary_label_column is not a number,\n"
+            "if you want to use a column name,\n"
+            "please add the prefix \"name:\" to the column name");
+        }
+        Log::Info("Using column number %d as secondary_label", secondary_label_idx_);
+      }
+      ignore_features_.emplace(secondary_label_idx_);
     }
     // load group idx
     if (config_.group_column.size() > 0) {
@@ -266,7 +289,7 @@ Dataset* DatasetLoader::LoadFromFile(const char* filename, int rank, int num_mac
         dataset->ResizeRaw(dataset->num_data_);
       }
       // initialize label
-      dataset->metadata_.Init(dataset->num_data_, weight_idx_, group_idx_, doc_idx_, imp_idx_);
+      dataset->metadata_.Init(dataset->num_data_, weight_idx_, group_idx_, doc_idx_, imp_idx_, secondary_label_idx_);
       // extract features
       ExtractFeaturesFromMemory(&text_data, parser.get(), dataset.get());
       text_data.clear();
@@ -286,7 +309,7 @@ Dataset* DatasetLoader::LoadFromFile(const char* filename, int rank, int num_mac
         dataset->ResizeRaw(dataset->num_data_);
       }
       // initialize label
-      dataset->metadata_.Init(dataset->num_data_, weight_idx_, group_idx_, doc_idx_, imp_idx_);
+      dataset->metadata_.Init(dataset->num_data_, weight_idx_, group_idx_, doc_idx_, imp_idx_, secondary_label_idx_);
       Log::Info("Making second pass...");
       // extract features
       ExtractFeaturesFromFile(filename, parser.get(), used_data_indices, dataset.get());
@@ -328,7 +351,7 @@ Dataset* DatasetLoader::LoadFromFileAlignWithOtherDataset(const char* filename, 
       auto text_data = LoadTextDataToMemory(filename, dataset->metadata_, 0, 1, &num_global_data, &used_data_indices);
       dataset->num_data_ = static_cast<data_size_t>(text_data.size());
       // initialize label
-      dataset->metadata_.Init(dataset->num_data_, weight_idx_, group_idx_, doc_idx_, imp_idx_);
+      dataset->metadata_.Init(dataset->num_data_, weight_idx_, group_idx_, doc_idx_, imp_idx_, secondary_label_idx_);
       dataset->CreateValid(train_data);
       if (dataset->has_raw()) {
         dataset->ResizeRaw(dataset->num_data_);
@@ -342,7 +365,7 @@ Dataset* DatasetLoader::LoadFromFileAlignWithOtherDataset(const char* filename, 
       dataset->num_data_ = static_cast<data_size_t>(text_reader.CountLine());
       num_global_data = dataset->num_data_;
       // initialize label
-      dataset->metadata_.Init(dataset->num_data_, weight_idx_, group_idx_, doc_idx_, imp_idx_);
+      dataset->metadata_.Init(dataset->num_data_, weight_idx_, group_idx_, doc_idx_, imp_idx_, secondary_label_idx_);
       dataset->CreateValid(train_data);
       if (dataset->has_raw()) {
         dataset->ResizeRaw(dataset->num_data_);
@@ -1276,6 +1299,8 @@ void DatasetLoader::ExtractFeaturesFromMemory(std::vector<std::string>* text_dat
             dataset->metadata_.SetDocAt(i, static_cast<doc_id_t>(inner_data.second));
           } else if (inner_data.first == imp_idx_) {
             dataset->metadata_.SetImpressionAt(i, static_cast<data_size_t>(inner_data.second));
+          } else if (inner_data.first == secondary_label_idx_) {
+            dataset->metadata_.SetSecondaryLabelAt(i, static_cast<label_t>(inner_data.second));
           }
         }
       }
@@ -1337,6 +1362,8 @@ void DatasetLoader::ExtractFeaturesFromMemory(std::vector<std::string>* text_dat
             dataset->metadata_.SetDocAt(i, static_cast<doc_id_t>(inner_data.second));
           } else if (inner_data.first == imp_idx_) {
             dataset->metadata_.SetImpressionAt(i, static_cast<data_size_t>(inner_data.second));
+          } else if (inner_data.first == secondary_label_idx_) {
+            dataset->metadata_.SetSecondaryLabelAt(i, static_cast<label_t>(inner_data.second));
           }
         }
       }
@@ -1414,6 +1441,8 @@ void DatasetLoader::ExtractFeaturesFromFile(const char* filename, const Parser* 
             dataset->metadata_.SetDocAt(start_idx + i, static_cast<doc_id_t>(inner_data.second));
           } else if (inner_data.first == imp_idx_) {
             dataset->metadata_.SetImpressionAt(start_idx + i, static_cast<data_size_t>(inner_data.second));
+          } else if (inner_data.first == secondary_label_idx_) {
+            dataset->metadata_.SetSecondaryLabelAt(start_idx + i, static_cast<label_t>(inner_data.second));
           }
         }
       }

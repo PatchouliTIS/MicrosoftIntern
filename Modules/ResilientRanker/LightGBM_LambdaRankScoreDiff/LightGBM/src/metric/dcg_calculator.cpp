@@ -4,6 +4,7 @@
  */
 #include <LightGBM/metric.h>
 #include <LightGBM/utils/log.h>
+#include <LightGBM/utils/exprtk.hpp>
 
 #include <algorithm>
 #include <cmath>
@@ -49,6 +50,43 @@ void DCGCalculator::Init(const std::vector<double>& input_label_gain) {
   for (data_size_t i = 0; i < kMaxPosition; ++i) {
     discount_[i] = 1.0 / std::log2(2.0 + i);
   }
+}
+
+void DCGCalculator::SetLabelGain(const std::vector<double>& input_label_gain) {
+  label_gain_.resize(input_label_gain.size());
+  for (size_t i = 0; i < input_label_gain.size(); ++i) {
+    label_gain_[i] = static_cast<double>(input_label_gain[i]);
+  }
+}
+
+void DCGCalculator::SetPositionDiscount(std::string pos_discount_exp) {
+  if (pos_discount_exp.empty()) {
+    Log::Debug("pos_discount_exp is empty, using default value: 1.0 / std::log2(2.0 + p)");
+    return;
+  }
+
+  typedef exprtk::symbol_table<double> symbol_table_t;
+  typedef exprtk::expression<double>   expression_t;
+  typedef exprtk::parser<double>       parser_t;
+
+  double p;
+
+  symbol_table_t symbol_table;
+  symbol_table.add_variable("p", p);
+  symbol_table.add_constants();
+
+  expression_t expression;
+  expression.register_symbol_table(symbol_table);
+
+  parser_t parser;
+  parser.compile(pos_discount_exp, expression);
+
+  discount_.resize(kMaxPosition);
+  for (p = 0; p < double(kMaxPosition); p += double(1.0)) {
+    discount_[data_size_t(p)] = expression.value();
+  }
+  Log::Debug("Replaced position discount with expression: %s", pos_discount_exp.c_str());
+  Log::Debug("Top3 position discount: %f, %f, %f", discount_[0], discount_[1], discount_[2]);
 }
 
 double DCGCalculator::CalMaxDCGAtK(data_size_t k, const label_t* label, data_size_t num_data) {

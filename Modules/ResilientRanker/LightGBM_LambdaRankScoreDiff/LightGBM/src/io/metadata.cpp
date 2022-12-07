@@ -19,13 +19,17 @@ Metadata::Metadata() {
   num_data_ = 0;
   num_queries_ = 0;
   num_docs_ = 0;
+  num_secondary_labels_ = 0;
   weight_load_from_file_ = false;
   query_load_from_file_ = false;
   init_score_load_from_file_ = false;
   doc_load_from_file_ = false;
   impression_load_from_file_ = false;
+  secondary_labels_load_from_file_ = false;
   last_impression_id_ = -1;
   total_set_impression_ = 0;
+  last_secondary_label_ = -1;
+  total_set_secondary_label_ = 0;
 }
 
 void Metadata::Init(const char* data_filename) {
@@ -33,6 +37,7 @@ void Metadata::Init(const char* data_filename) {
   data_filename_ = data_filename;
   // for lambdarank, it needs query data for partition data in distributed learning
   LoadQueryBoundaries();
+  LoadSecondaryLabels();
   LoadWeights();
   LoadQueryWeights();
   LoadInitialScore();
@@ -40,12 +45,14 @@ void Metadata::Init(const char* data_filename) {
   LoadDocPairs();
   LoadImpressionIDs();
   LoadNumImpressions();
+
+  Log::Info("INit:: Totally set secondary label for %d times, and last index is %d.", total_set_secondary_label_, last_secondary_label_);
 }
 
 Metadata::~Metadata() {
 }
 
-void Metadata::Init(data_size_t num_data, int weight_idx, int query_idx, int doc_idx, int imp_idx) {
+void Metadata::Init(data_size_t num_data, int weight_idx, int query_idx, int doc_idx, int imp_idx, int secondary_label_idx = -1) {
   num_data_ = num_data;
   label_ = std::vector<label_t>(num_data_);
   if (weight_idx >= 0) {
@@ -56,6 +63,15 @@ void Metadata::Init(data_size_t num_data, int weight_idx, int query_idx, int doc
     weights_ = std::vector<label_t>(num_data_, 0.0f);
     num_weights_ = num_data_;
     weight_load_from_file_ = false;
+  }
+  if (secondary_label_idx >= 0) {
+    if (!secondary_label_.empty()) {
+      Log::Info("Using secondary_label in data file, ignoring the additional secondary_label file");
+      secondary_label_.clear();
+    }
+    secondary_label_ = std::vector<label_t>(num_data_, 0.0f);
+    num_secondary_labels_ = num_data_;
+    secondary_labels_load_from_file_ = false;
   }
   if (query_idx >= 0) {
     if (!query_boundaries_.empty()) {
@@ -129,6 +145,18 @@ void Metadata::Init(const Metadata& fullset, const data_size_t* used_indices, da
     for (data_size_t i = 0; i < num_used_indices; ++i) {
       impressions_[i] = fullset.impressions_[used_indices[i]];
     }
+  }
+
+  if (!fullset.secondary_label_.empty()) {
+    secondary_label_ = std::vector<label_t>(num_used_indices);
+    num_secondary_labels_ = num_used_indices;
+#pragma omp parallel for schedule(static, 512) if (num_used_indices >= 1024)
+    for (data_size_t i = 0; i < num_used_indices; ++i) {
+      secondary_label_[i] = fullset.secondary_label_[used_indices[i]];
+    }
+  }
+  else {
+    num_secondary_labels_ = 0;
   }
 
   if (!fullset.init_score_.empty()) {
@@ -366,6 +394,10 @@ void Metadata::CheckOrPartition(data_size_t num_all_data, const std::vector<data
 
     Log::Fatal("distributed training is called, but we don't handle this case for lambdarank loss with scorediff");
   }
+
+  Log::Info("Totally set secondary label for %d times, and last index is %d.", total_set_secondary_label_, last_secondary_label_);
+
+
   if (num_queries_ > 0) {
     Log::Debug("Number of queries in %s: %i. Average number of rows per query: %f.",
       data_filename_.c_str(), static_cast<int>(num_queries_), static_cast<double>(num_data_) / num_queries_);
@@ -406,6 +438,22 @@ void Metadata::SetLabel(const label_t* label, data_size_t len) {
   #pragma omp parallel for schedule(static, 512) if (num_data_ >= 1024)
   for (data_size_t i = 0; i < num_data_; ++i) {
     label_[i] = Common::AvoidInf(label[i]);
+  }
+}
+
+void Metadata::SetSecondaryLabel(const label_t* label, data_size_t len) {
+  std::lock_guard<std::mutex> lock(mutex_);
+  if (label == nullptr) {
+    Log::Fatal("secondary label cannot be nullptr");
+  }
+  if (num_data_ != len) {
+    Log::Fatal("Length of secondary label is not same with #data");
+  }
+  if (secondary_label_.empty()) { secondary_label_.resize(num_data_); }
+
+#pragma omp parallel for schedule(static, 512) if (num_data_ >= 1024)
+  for (data_size_t i = 0; i < num_data_; ++i) {
+    secondary_label_[i] = Common::AvoidInf(label[i]);
   }
 }
 
@@ -497,6 +545,27 @@ void Metadata::SetImpression(const data_size_t* impression, data_size_t len) {
   }
   LoadNumImpressions();
   impression_load_from_file_ = false;
+}
+
+void Metadata::LoadSecondaryLabels() {
+  num_secondary_labels_ = 0;
+  std::string secondary_label_filename(data_filename_);
+  secondary_label_filename.append(".secondary_label");
+  TextReader<size_t> reader(secondary_label_filename.c_str(), false);
+  reader.ReadAllLines();
+  if (reader.Lines().empty()) {
+    return;
+  }
+  Log::Info("Loading secondary_labels...");
+  num_secondary_labels_ = static_cast<data_size_t>(reader.Lines().size());
+  secondary_label_ = std::vector<label_t>(num_secondary_labels_);
+#pragma omp parallel for schedule(static)
+  for (data_size_t i = 0; i < num_secondary_labels_; ++i) {
+    double tmp_label = 0.0f;
+    Common::Atof(reader.Lines()[i].c_str(), &tmp_label);
+    secondary_label_[i] = Common::AvoidInf(static_cast<label_t>(tmp_label));
+  }
+  secondary_labels_load_from_file_ = true;
 }
 
 void Metadata::LoadWeights() {

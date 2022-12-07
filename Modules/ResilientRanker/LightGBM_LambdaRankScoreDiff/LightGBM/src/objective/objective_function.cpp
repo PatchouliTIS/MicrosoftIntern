@@ -29,30 +29,8 @@ ObjectiveFunction* ObjectiveFunction::CreateObjectiveFunction(const std::string&
     return new BinaryLogloss(config);
   } else if (type == std::string("lambdarank")) {
     return new LambdarankNDCG(config);
-  } else if (type == std::string("lambdarank_scorediff")) {
-    return new LambdarankNDCGScoreDiff(config);
-  } else if (type == std::string("lambdarank_scorediff2")) {
-    return new LambdarankNDCGScoreDiff2(config);
-  } else if (type == std::string("lambdarank_scorediff3")) {
-    return new LambdarankNDCGScoreDiff3(config);
-  } else if (type == std::string("lambdarank_scorediff4")) {
-    return new LambdarankNDCGScoreDiff4(config);
-  } else if (type == std::string("lambdarank_scorediff5")) {
-    return new LambdarankNDCGScoreDiff5(config);
   } else if (type == std::string("lambdarank_scorediff6")) {
     return new LambdarankNDCGScoreDiff6(config);
-  } else if (type == std::string("lambdarank_rankdiff")) {
-    return new LambdarankNDCGRankDiff(config);
-  } else if (type == std::string("lambdarank_rankdiff2")) {
-    return new LambdarankNDCGRankDiff2(config);
-  } else if (type == std::string("lambdarank_rankdiff3")) {
-    return new LambdarankNDCGRankDiff3(config);
-  } else if (type == std::string("lambdarank_rankdiff4")) {
-    return new LambdarankNDCGRankDiff4(config);
-  } else if (type == std::string("lambdarank_rankdiff5")) {
-    return new LambdarankNDCGRankDiff5(config);
-  } else if (type == std::string("lambdarank_scorerankdiff")) {
-    return new LambdarankNDCGScoreRankDiff(config);
   } else if (type == std::string("rank_xendcg")) {
     return new RankXENDCG(config);
   } else if (type == std::string("multiclass")) {
@@ -95,30 +73,8 @@ ObjectiveFunction* ObjectiveFunction::CreateObjectiveFunction(const std::string&
     return new BinaryLogloss(strs);
   } else if (type == std::string("lambdarank")) {
     return new LambdarankNDCG(strs);
-  } else if (type == std::string("lambdarank_scorediff")) {
-    return new LambdarankNDCGScoreDiff(strs);
-  } else if (type == std::string("lambdarank_scorediff2")) {
-    return new LambdarankNDCGScoreDiff2(strs);
-  } else if (type == std::string("lambdarank_scorediff3")) {
-    return new LambdarankNDCGScoreDiff3(strs);
-  } else if (type == std::string("lambdarank_scorediff4")) {
-    return new LambdarankNDCGScoreDiff4(strs);
-  } else if (type == std::string("lambdarank_scorediff5")) {
-    return new LambdarankNDCGScoreDiff5(strs);
   } else if (type == std::string("lambdarank_scorediff6")) {
     return new LambdarankNDCGScoreDiff6(strs);
-  } else if (type == std::string("lambdarank_rankdiff")) {
-    return new LambdarankNDCGRankDiff(strs);
-  } else if (type == std::string("lambdarank_rankdiff2")) {
-    return new LambdarankNDCGRankDiff2(strs);
-  } else if (type == std::string("lambdarank_rankdiff3")) {
-    return new LambdarankNDCGRankDiff3(strs);
-  } else if (type == std::string("lambdarank_rankdiff4")) {
-    return new LambdarankNDCGRankDiff4(strs);
-  } else if (type == std::string("lambdarank_rankdiff5")) {
-    return new LambdarankNDCGRankDiff5(strs);
-  } else if (type == std::string("lambdarank_scorerankdiff")) {
-    return new LambdarankNDCGScoreRankDiff(strs);
   } else if (type == std::string("rank_xendcg")) {
     return new RankXENDCG(strs);
   } else if (type == std::string("multiclass")) {
