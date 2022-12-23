@@ -1,0 +1,9 @@
+{
+  "name": "GPU Utilization Report",
+  "version": "1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer-core": "^19.2.1"
+  }
+}
