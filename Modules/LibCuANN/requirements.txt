@@ -1,0 +1,4 @@
+Cython >= 0.29.*
+numpy >= 1.19.*
+# cupy == 11.2
+cupy-cuda11x

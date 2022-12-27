@@ -1,0 +1,30 @@
+{
+    "name": "MS-Turing-ANNS-1B",
+    "dataset": "base1b.fbin",
+    "trainset": null,
+    "queries": "query100K.fbin",
+    "gt": "query_gt100.bin",
+    "dtype": "float32",
+    "name_index_params": "index_params_8bit",
+    "name_search_params": "search_params_1",
+    "index_params_8bit": {
+	"num_clusters": 400000,
+	"dim_pq": 56,
+	"bit_pq": 8
+    },
+    "index_params_5bit": {
+	"num_clusters": 400000,
+	"dim_pq": 64,
+	"bit_pq": 5
+    },
+    "search_params_1": {
+	"topk": [100],
+	"refine_rate": [1, 4],
+	"num_probes": [16, 32, 64, 128, 256, 512, 1024]
+    },
+    "search_params_2": {
+	"topk": [10, 100, 1000],
+	"refine_rate": [1, 2, 4, 8],
+	"num_probes": [16, 32, 64, 128, 256, 512, 1024]
+    }
+}
