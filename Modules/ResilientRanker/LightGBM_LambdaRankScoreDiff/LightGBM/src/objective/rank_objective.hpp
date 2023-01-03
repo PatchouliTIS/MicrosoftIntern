@@ -386,6 +386,253 @@ class LambdarankNDCG : public RankingObjective {
   std::string pos_discount_exp_;
 };
 
+
+
+/*!
+ * \brief Objective function for ARP
+ */
+class ARP : public RankingObjective {
+public:
+  explicit ARP(const Config& config)
+    : RankingObjective(config),
+    sigmoid_(config.sigmoid),
+    norm_(config.lambdarank_norm),
+    truncation_level_(config.lambdarank_truncation_level) {
+    label_gain_ = config.label_gain;
+    secondary_label_gain_ = config.secondary_label_gain.empty() ? label_gain_ : config.secondary_label_gain;
+    secondary_label_weight_ = config.secondary_label_weight;
+    pos_discount_exp_ = config.pos_discount_exp;
+    // initialize DCG calculator
+    DCGCalculator::DefaultLabelGain(&label_gain_);
+    DCGCalculator::Init(label_gain_);
+    DCGCalculator::SetPositionDiscount(pos_discount_exp_);
+    sigmoid_table_.clear();
+    inverse_max_dcgs_.clear();
+    secondary_inverse_max_dcgs_.clear();
+    if (sigmoid_ <= 0.0) {
+      Log::Fatal("Sigmoid param %f should be greater than zero", sigmoid_);
+    }
+  }
+
+  explicit ARP(const std::vector<std::string>& strs)
+    : RankingObjective(strs) {}
+
+  ~ARP() {}
+
+  void Init(const Metadata& metadata, data_size_t num_data) override {
+    RankingObjective::Init(metadata, num_data);
+    DCGCalculator::CheckMetadata(metadata, num_queries_);
+    DCGCalculator::CheckLabel(label_, num_data_);
+    inverse_max_dcgs_.resize(num_queries_);
+    secondary_inverse_max_dcgs_.resize(num_queries_);
+#pragma omp parallel for schedule(static)
+    for (data_size_t i = 0; i < num_queries_; ++i) {
+      inverse_max_dcgs_[i] = DCGCalculator::CalMaxDCGAtK(
+        truncation_level_, label_ + query_boundaries_[i],
+        query_boundaries_[i + 1] - query_boundaries_[i]);
+
+      if (inverse_max_dcgs_[i] > 0.0) {
+        inverse_max_dcgs_[i] = 1.0f / inverse_max_dcgs_[i];
+      }
+    }
+
+    if (secondary_labels_ != nullptr) {
+      // calculate secondary label inverse max dcgs, set secondary label gain, then set label_gain back
+      DCGCalculator::SetLabelGain(secondary_label_gain_);
+#pragma omp parallel for schedule(static)
+      for (data_size_t i = 0; i < num_queries_; ++i) {
+        secondary_inverse_max_dcgs_[i] = DCGCalculator::CalMaxDCGAtK(
+          truncation_level_, secondary_labels_ + query_boundaries_[i],
+          query_boundaries_[i + 1] - query_boundaries_[i]);
+
+        if (secondary_inverse_max_dcgs_[i] > 0.0) {
+          secondary_inverse_max_dcgs_[i] = 1.0f / secondary_inverse_max_dcgs_[i];
+        }
+      }
+      DCGCalculator::SetLabelGain(label_gain_);
+    }
+
+    // construct sigmoid table to speed up sigmoid transform
+    ConstructSigmoidTable();
+  }
+
+  inline void GetGradientsForOneQuery(data_size_t query_id, data_size_t cnt,
+    const label_t* label, const label_t* secondary_label, const double* score,
+    score_t* lambdas,
+    score_t* hessians) const override {
+    // get max DCG on current query
+    const double inverse_max_dcg = inverse_max_dcgs_[query_id];
+    const double secondary_inverse_max_dcg = secondary_label != nullptr ? secondary_inverse_max_dcgs_[query_id] : inverse_max_dcg;
+    // initialize with zero
+    for (data_size_t i = 0; i < cnt; ++i) {
+      lambdas[i] = 0.0f;
+      hessians[i] = 0.0f;
+    }
+    // get sorted indices for scores
+    std::vector<data_size_t> sorted_idx(cnt);
+    for (data_size_t i = 0; i < cnt; ++i) {
+      sorted_idx[i] = i;
+    }
+    std::stable_sort(
+      sorted_idx.begin(), sorted_idx.end(),
+      [score](data_size_t a, data_size_t b) { return score[a] > score[b]; });
+    // get best and worst score
+    const double best_score = score[sorted_idx[0]];
+    data_size_t worst_idx = cnt - 1;
+    if (worst_idx > 0 && score[sorted_idx[worst_idx]] == kMinScore) {
+      worst_idx -= 1;
+    }
+    const double worst_score = score[sorted_idx[worst_idx]];
+    double sum_lambdas = 0.0;
+    // start accmulate lambdas by pairs that contain at least one document above truncation level
+    for (data_size_t i = 0; i < cnt - 1 && i < truncation_level_; ++i) {
+      if (score[sorted_idx[i]] == kMinScore) { continue; }
+      for (data_size_t j = i + 1; j < cnt; ++j) {
+        if (score[sorted_idx[j]] == kMinScore) { continue; }
+        data_size_t high_rank, low_rank;
+        bool secondary_label_triggered = false;
+        if (label[sorted_idx[i]] == label[sorted_idx[j]]) {
+          if (secondary_label != nullptr)
+          {
+            // secondary label
+            if (secondary_label[sorted_idx[i]] == secondary_label[sorted_idx[j]]) { continue; }
+            else if (secondary_label[sorted_idx[i]] > secondary_label[sorted_idx[j]]) {
+              high_rank = i;
+              low_rank = j;
+            }
+            else {
+              high_rank = j;
+              low_rank = i;
+            }
+            secondary_label_triggered = true;
+          }
+          else
+          {
+            // skip pairs with the same labels
+            continue;
+          }
+
+        }
+        else {
+          if (label[sorted_idx[i]] > label[sorted_idx[j]]) {
+            high_rank = i;
+            low_rank = j;
+          }
+          else {
+            high_rank = j;
+            low_rank = i;
+          }
+        }
+        const data_size_t high = sorted_idx[high_rank];
+        const int high_label = secondary_label_triggered ? static_cast<int>(secondary_label[high]) : static_cast<int>(label[high]);
+        const double high_score = score[high];
+        const double high_label_gain = secondary_label_triggered ? secondary_label_gain_[high_label] : label_gain_[high_label];
+        const double high_discount = DCGCalculator::GetDiscount(high_rank);
+        const data_size_t low = sorted_idx[low_rank];
+        const int low_label = secondary_label_triggered ? static_cast<int>(secondary_label[low]) : static_cast<int>(label[low]);
+        const double low_score = score[low];
+        const double low_label_gain = secondary_label_triggered ? secondary_label_gain_[low_label] : label_gain_[low_label];
+        const double low_discount = DCGCalculator::GetDiscount(low_rank);
+
+        const double delta_score = high_score - low_score;
+
+        // get dcg gap
+        const double dcg_gap = high_label_gain - low_label_gain;
+        // get discount of this pair
+        const double paired_discount = fabs(high_discount - low_discount);
+        // get delta NDCG
+        double delta_pair_NDCG = dcg_gap;
+        delta_pair_NDCG *= (secondary_label_triggered ? secondary_inverse_max_dcg * secondary_label_weight_ : inverse_max_dcg);
+        // regular the delta_pair_NDCG by score distance
+        if (norm_ && best_score != worst_score) {
+          delta_pair_NDCG /= (0.01f + fabs(delta_score));
+        }
+        // calculate lambda for this pair
+        double p_lambda = GetSigmoid(delta_score);
+        double p_hessian = p_lambda * (1.0f - p_lambda);
+        // update
+        p_lambda *= -sigmoid_ * delta_pair_NDCG;
+        p_hessian *= sigmoid_ * sigmoid_ * delta_pair_NDCG;
+        lambdas[low] -= static_cast<score_t>(p_lambda);
+        hessians[low] += static_cast<score_t>(p_hessian);
+        lambdas[high] += static_cast<score_t>(p_lambda);
+        hessians[high] += static_cast<score_t>(p_hessian);
+        // lambda is negative, so use minus to accumulate
+        sum_lambdas -= 2 * p_lambda;
+      }
+    }
+    if (norm_ && sum_lambdas > 0) {
+      double norm_factor = std::log2(1 + sum_lambdas) / sum_lambdas;
+      for (data_size_t i = 0; i < cnt; ++i) {
+        lambdas[i] = static_cast<score_t>(lambdas[i] * norm_factor);
+        hessians[i] = static_cast<score_t>(hessians[i] * norm_factor);
+      }
+    }
+  }
+
+  inline double GetSigmoid(double score) const {
+    if (score <= min_sigmoid_input_) {
+      // too small, use lower bound
+      return sigmoid_table_[0];
+    }
+    else if (score >= max_sigmoid_input_) {
+      // too large, use upper bound
+      return sigmoid_table_[_sigmoid_bins - 1];
+    }
+    else {
+      return sigmoid_table_[static_cast<size_t>((score - min_sigmoid_input_) *
+        sigmoid_table_idx_factor_)];
+    }
+  }
+
+  void ConstructSigmoidTable() {
+    // get boundary
+    min_sigmoid_input_ = min_sigmoid_input_ / sigmoid_ / 2;
+    max_sigmoid_input_ = -min_sigmoid_input_;
+    sigmoid_table_.resize(_sigmoid_bins);
+    // get score to bin factor
+    sigmoid_table_idx_factor_ =
+      _sigmoid_bins / (max_sigmoid_input_ - min_sigmoid_input_);
+    // cache
+    for (size_t i = 0; i < _sigmoid_bins; ++i) {
+      const double score = i / sigmoid_table_idx_factor_ + min_sigmoid_input_;
+      sigmoid_table_[i] = 1.0f / (1.0f + std::exp(score * sigmoid_));
+    }
+  }
+
+  const char* GetName() const override { return "lambdarank"; }
+
+protected:
+  /*! \brief Simgoid param */
+  double sigmoid_;
+  /*! \brief Normalize the lambdas or not */
+  bool norm_;
+  /*! \brief Truncation position for max DCG */
+  int truncation_level_;
+  /*! \brief Cache inverse max DCG, speed up calculation */
+  std::vector<double> inverse_max_dcgs_;
+  /*! \brief Cache secondary label inverse max DCG, speed up calculation */
+  std::vector<double> secondary_inverse_max_dcgs_;
+  /*! \brief Cache result for sigmoid transform to speed up */
+  std::vector<double> sigmoid_table_;
+  /*! \brief Gains for labels */
+  std::vector<double> label_gain_;
+  /*! \brief Gains for secondary labels */
+  std::vector<double> secondary_label_gain_;
+  /*! \brief Number of bins in simoid table */
+  size_t _sigmoid_bins = 1024 * 1024;
+  /*! \brief Minimal input of sigmoid table */
+  double min_sigmoid_input_ = -50;
+  /*! \brief Maximal input of sigmoid table */
+  double max_sigmoid_input_ = 50;
+  /*! \brief Factor that covert score to bin in sigmoid table */
+  double sigmoid_table_idx_factor_;
+  /*! \brief position discount expression */
+  std::string pos_discount_exp_;
+};
+
+
+
 /*!
  * \brief Objective function for Lambdrank with NDCG and ScoreDiff
  */
