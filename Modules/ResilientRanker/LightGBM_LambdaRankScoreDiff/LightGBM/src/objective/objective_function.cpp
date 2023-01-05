@@ -29,6 +29,8 @@ ObjectiveFunction* ObjectiveFunction::CreateObjectiveFunction(const std::string&
     return new BinaryLogloss(config);
   } else if (type == std::string("lambdarank")) {
     return new LambdarankNDCG(config);
+  } else if (type == std::string("arp")) {
+    return new ARP(config);
   } else if (type == std::string("lambdarank_scorediff6")) {
     return new LambdarankNDCGScoreDiff6(config);
   } else if (type == std::string("rank_xendcg")) {
@@ -71,6 +73,8 @@ ObjectiveFunction* ObjectiveFunction::CreateObjectiveFunction(const std::string&
     return new RegressionPoissonLoss(strs);
   } else if (type == std::string("binary")) {
     return new BinaryLogloss(strs);
+  } else if (type == std::string("arp")) {
+    return new ARP(strs);
   } else if (type == std::string("lambdarank")) {
     return new LambdarankNDCG(strs);
   } else if (type == std::string("lambdarank_scorediff6")) {
