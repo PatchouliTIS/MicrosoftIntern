@@ -1,0 +1,8 @@
+#ignore node_modules
+node_modules
+
+#ignore input files
+input
+
+#ignore output files
+dist

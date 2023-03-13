@@ -1,0 +1,9 @@
+{
+  "name": "cosmos_job_crawler",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer-core": "^19.2.1"
+  }
+}
