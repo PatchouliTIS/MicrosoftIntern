@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="DynamicVersion" BeforeTargets="XapCreateNugetPackage">
+    <PropertyGroup>
+        <PackageVersion>$(BUILD_BUILDNUMBER).3</PackageVersion>
+        <PackageVersion Condition="'$(BUILD_BUILDNUMBER)' == ''">$([System.DateTime]::UtcNow.ToString('yyyy.M.dHHmmss'))-local</PackageVersion>
+		<ManifestAuthors>%22@(ManifestAuthor, '%22, %22')%22</ManifestAuthors>
+		<ManifestOwners>%22@(ManifestOwner, '%22, %22')%22</ManifestOwners>
+		<ManifestIcmContacts>%22@(ManifestIcmContact, '%22, %22')%22</ManifestIcmContacts>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <ManifestLines Include="    %22Version%22: %22$(PackageVersion)%22," />
+        <ManifestLines Include="    %22Title%22: %22$(ManifestTitle)%22," />
+        <ManifestLines Include="    %22Description%22: %22$(ManifestDescription)%22," />
+        <ManifestLines Include="    %22Authors%22: [ $(ManifestAuthors) ]," />
+        <ManifestLines Include="    %22Owners%22: [ $(ManifestOwners) ]," />
+        <ManifestLines Include="    %22IcmContacts%22: [ $(ManifestIcmContacts) ]" />
+    </ItemGroup>
+
+    <MakeDir Directories="$(O)GeneratedXapManifest"/>
+    <WriteLinesToFile
+            File="$(O)GeneratedXapManifest\XapManifest.json"
+            Lines="{;@(ManifestLines);}"
+            Overwrite="true"/>
+
+    <ItemGroup>
+        <XapManifest Include="$(O)GeneratedXapManifest\XapManifest.json" />
+    </ItemGroup>
+    <OnError ExecuteTargets="$(CleanTarget)"/>
+  </Target>
+</Project>

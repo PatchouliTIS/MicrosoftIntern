@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"> 
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <EnlistmentRoot>$(MSBuildThisFileDirectory.TrimEnd('\\'))</EnlistmentRoot>
+
+    <!-- Ignore .NET Standard 2.0 Mismatch warnings -->    
+    <NoWarn>NU1701,NU5104</NoWarn>
+    
+    <InetRoot>$(EnlistmentRoot)</InetRoot>
+    <DisableNugetPackaging>true</DisableNugetPackaging>
+
+    <!-- background: http://stackoverflow.com/questions/3371545/visual-studio-2008-locks-custom-msbuild-task-assemblies -->
+    <GenerateResourceNeverLockTypeAssemblies>true</GenerateResourceNeverLockTypeAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSBuild.Extension.Pack">
+      <Version>1.9.1</Version>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

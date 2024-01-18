@@ -1,0 +1,11 @@
+{
+  "Enabled": true,
+  "Tools": {
+    "Roslyn": {
+      "Enabled": true,
+      "Inputs": {
+        "CopyLogsOnly": true
+      }
+    }
+  }
+}

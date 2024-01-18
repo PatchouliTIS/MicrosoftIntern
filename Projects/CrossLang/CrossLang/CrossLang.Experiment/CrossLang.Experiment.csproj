@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project=".\CrossLang.Settings.props" />
+	<PropertyGroup>
+		<XapProjectType>ExperimentProject</XapProjectType>
+		<TargetFramework>net7</TargetFramework>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<OutputPath>bin\$(Configuration)</OutputPath>
+		<IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
+		<AssemblyName>Xap.Shared.BFPR.Experiment</AssemblyName>
+		<AssemblyClsCompliant>false</AssemblyClsCompliant>
+		<XapCheckDuplicateResourceFolders>true</XapCheckDuplicateResourceFolders>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<NoWarn>$(NoWarn);CA1416;NU1702;NU1701;MSB3277;CA1822;NU1605</NoWarn>
+		<MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);CA1416;NU1702;NU1701;MSB3277;CA1822;NU1605</MSBuildWarningsAsMessages>
+		<AHAppTarget>net7.0</AHAppTarget>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DataSchemas\DataSchemas.csproj"></ProjectReference>
+		<ProjectReference Include="..\CrossLang\CrossLang.csproj" />
+		<PackageReference Include="Xap.Shared.CrossLang" />
+		<PackageReference Include="Xap.RCache" Version="1.0.8" />
+		<PackageReference Include="Xap.SDK" Version="9.*"></PackageReference>
+		<PackageReference Include="adsnext" Version="0.38192.0" />
+		<PackageReference Include="QR.SpellerAnswer" Version="0.38192.0" />
+		<PackageReference Include="Sydney.Triggering" Version="1.5.12" />
+
+	</ItemGroup>
+	<Import Project="..\NugetPackages.props" />
+	<Import Project=".\Extras.props" />
+	<Target Name="WriteVersionFiles" BeforeTargets="PreResolveAssemblies">
+		<WriteLinesToFile File="$(RootedOutputPath)\MajorVersion.txt" Lines="$(ExperimentMajorVersion)" Overwrite="true" />
+		<WriteLinesToFile File="$(RootedOutputPath)\MinorVersion.txt" Lines="$(ExperimentMinorVersion)" Overwrite="true" />
+	</Target>
+	<Import Project=".\PackageClosureCheck.targets" />
+</Project>

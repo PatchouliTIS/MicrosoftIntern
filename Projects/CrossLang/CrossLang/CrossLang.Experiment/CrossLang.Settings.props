@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- When running locally you can check if AH has loaded your experiment here http://localhost:89/diag/listexp/ -->
+	<!-- Workflow information-->
+	<PropertyGroup>
+		<BUILD_BUILDNUMBER Condition=" '$(BUILD_BUILDNUMBER)' == '' ">2.0</BUILD_BUILDNUMBER>
+		<!-- Use these two properties to control the starting Experiment for AH-->
+		<SplitIndex>$(BUILD_BUILDNUMBER.IndexOf('.'))</SplitIndex>
+		<ExperimentMajorVersion>$(BUILD_BUILDNUMBER.Substring(0, $(SplitIndex)))</ExperimentMajorVersion>
+		<ExperimentMajorVersion>$(ExperimentMajorVersion.Replace(".", ""))</ExperimentMajorVersion>
+		<ExperimentMinorVersion>$(BUILD_BUILDNUMBER.Substring($(SplitIndex)))</ExperimentMinorVersion>
+		<ExperimentMinorVersion>$(ExperimentMinorVersion.Substring(1))</ExperimentMinorVersion>
+		<ExperimentMinorVersion>$(ExperimentMinorVersion.Replace(".", ""))</ExperimentMinorVersion>
+
+		<ExperimentName>BFPR</ExperimentName>
+		<BUILD_BUILDNUMBER Condition="$(BUILD_BUILDNUMBER) == ''">2.0</BUILD_BUILDNUMBER>
+		<ExperimentVersion>$(ExperimentMajorVersion).$(ExperimentMinorVersion)</ExperimentVersion>
+		<PixpEndpoint>pixp$(USERNAME)</PixpEndpoint>
+
+		<!--Toggle this switch off if you intend to put the build in PIXP using the script dropped in the output -->
+		<CreateRCache Condition="'$(CreateRCache)' == ''">false</CreateRCache>
+		<RemoveOriginalCache>false</RemoveOriginalCache>
+	</PropertyGroup>
+</Project>

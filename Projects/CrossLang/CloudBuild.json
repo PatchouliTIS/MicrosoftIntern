@@ -1,0 +1,13 @@
+{
+  "Branch": "master",
+  "EnlistmentRootPaths": {
+    "SourceRootDirs": [
+      "Xap.Shared.BFPR"
+    ],
+    "VersionGenerationMode": "SkipVersionGeneration"
+  },
+  "MSBuild": {
+    "Version": "15.0"
+  },
+  "QuickBuildArgs": "-Jan2018Flags -QTestFeb2018Flags"
+}

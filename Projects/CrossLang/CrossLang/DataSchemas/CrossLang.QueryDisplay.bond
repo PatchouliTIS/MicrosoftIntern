@@ -1,0 +1,9 @@
+namespace CrossLang
+
+[Parallaxable("true")]
+struct QueryDisplay
+{
+    1: string TargetQuery;
+    2: string TargetLanguage;
+    3: string TargetMarket;
+}

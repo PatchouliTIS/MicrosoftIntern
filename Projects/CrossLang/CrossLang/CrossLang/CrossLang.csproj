@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+	<XapProjectType>WorkflowProject</XapProjectType>
+		<TargetFramework>net7.0</TargetFramework>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>Xap.Shared.CrossLang</RootNamespace>
+		<AssemblyName>Xap.Shared.CrossLang</AssemblyName>
+		<OutputPath>bin\$(Configuration)</OutputPath>
+		<IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
+		<EnableXapAnalyzer>false</EnableXapAnalyzer>
+		<EnableDefaultItems>false</EnableDefaultItems>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<ManifestTitle>Xap.Shared.CrossLang product</ManifestTitle>
+		<ManifestDescription>Xap.Shared.CrossLang</ManifestDescription>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<NoWarn>$(NoWarn);CA1416;NU1702;NU1701;MSB3277;CA1822;NU1605</NoWarn>
+		<MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);CA1416;NU1702;NU1701;MSB3277;CA1822;NU1605</MSBuildWarningsAsMessages>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DataSchemas\DataSchemas.csproj" />
+		<ProjectReference Include="..\CrossLang.Plugins\CrossLang.Plugins.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Xap.SDK" Version="9.*"></PackageReference>
+		<ManifestAuthor Include="REDMOND\\julios" />
+		<ManifestOwner Include="REDMOND\\julios" />
+		<ManifestOwner Include="REDMOND\\XapCore" />
+		<ManifestIcmContact Include="BINGPLATXAP\\Search-XAPTier3" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="GeneratedXapManifest\XapManifest.json" />
+		
+	</ItemGroup>
+	<ItemGroup>
+		<QCustomInput Include="..\DataSchemas\**\*.bond">
+			<Visible>false</Visible>
+		</QCustomInput>
+		<QCustomInput Include="..\DataSchemas\**\*.idl">
+			<Visible>false</Visible>
+		</QCustomInput>
+		<QCustomInput Include=".\GeneratedXapManifest\XapManifest.json">
+			<Visible>false</Visible>
+		</QCustomInput>
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<Compile Include="CrossLangCache.cs" />
+		<Compile Include="CrossLangWorkflow.cs" />
+	</ItemGroup>
+	
+	<ItemGroup>
+      <None Include="..\NugetPackages.props" Link="NugetPackages.props" />
+    </ItemGroup>
+	<Import Project="..\NugetPackages.props" />
+	<Import Project="..\VersionBump.targets" />
+</Project>

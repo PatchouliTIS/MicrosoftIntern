@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Dependency_Package" AfterTargets="Build" DependsOnTargets="GetXapDependencies" Condition="$(XapProjectType)=='ExperimentProject'">
+
+    <ItemGroup>
+        <!-- PackagesRefs is populated by the GetXapDependencies target and PackageReference is the itemgroup in the csproj -->
+        <MissingPackageRefsAux Include="@(PackagesRefs)" Exclude="@(PackageReference)" />
+        <MissingPackageRefs Include="@(MissingPackageRefsAux)" Exclude="Xap.Shared.CrossLang" />
+    </ItemGroup>
+    <Error Text="Project for $(AssemblyName) is missing the following packages in the closure: @(MissingPackageRefs->'%3CPackageReference Include=&quot;%(Identity)&quot; Version=&quot;%(Version)&quot; %2F%3E'). Please add them in an ItemGroup as direct references to ensure proper consumption of all packages." Condition="@(MissingPackageRefs->Count()) > 0" />
+  </Target>
+</Project>

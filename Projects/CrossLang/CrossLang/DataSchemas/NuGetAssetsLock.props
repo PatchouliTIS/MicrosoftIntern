@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <NuGetDeterministicPropsWasImported>true</NuGetDeterministicPropsWasImported>
+  </PropertyGroup>
+  <Import Project="Before.$(MSBuildThisFile)" Condition="Exists('Before.$(MSBuildThisFile)')" />
+  <ItemGroup>
+    <PackageReference Include="DataSchemasBaseline">
+      <Version>[3.36883.0]</Version>
+      <Sha512>9KcGZxbWDwoxLdZiTmZQNxyLotzqOIPRs9jnbWs77LunUm5qQZ3TPidnTSIleqInu2Oj+bUWB8NKSgpAlHeBSg==</Sha512>
+      <Path>dataschemasbaseline/3.36883.0</Path>
+      <HashFile>dataschemasbaseline.3.36883.0.nupkg.sha512</HashFile>
+    </PackageReference>
+    <PackageReference Include="MSBuild.Extension.Pack">
+      <Version>[1.9.1]</Version>
+      <Sha512>g/luls9xj1aqB/Zfn7Xwxo/FTYSndWzX1i8VXY2gPDHCLajIbOHJ+1j0E7dj4t9BZcKp0PuhY3fXAaFAcg92TA==</Sha512>
+      <Path>msbuild.extension.pack/1.9.1</Path>
+      <HashFile>msbuild.extension.pack.1.9.1.nupkg.sha512</HashFile>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Xap.Sdk">
+      <Version>[3.0.17]</Version>
+      <Sha512>8FnXGTPcda0seTFhxx2fc+S+++5N4HkXOrkcV+mj//PQdk07LjWygmeAuW8gJNRwIZlJAEsU7iH5BaDlqYcU+g==</Sha512>
+      <Path>xap.sdk/3.0.17</Path>
+      <HashFile>xap.sdk.3.0.17.nupkg.sha512</HashFile>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="After.$(MSBuildThisFile)" Condition="Exists('After.$(MSBuildThisFile)')" />
+</Project>
