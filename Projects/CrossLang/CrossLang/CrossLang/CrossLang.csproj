@@ -24,7 +24,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Xap.SDK" Version="9.*"></PackageReference>
 		<ManifestAuthor Include="REDMOND\\julios" />
 		<ManifestOwner Include="REDMOND\\julios" />
 		<ManifestOwner Include="REDMOND\\XapCore" />
@@ -32,7 +31,8 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="GeneratedXapManifest\XapManifest.json" />
-		
+		<Content Include="..\VersionBump.targets"></Content>
+		<Content Include="..\NugetPackages.props">  </Content>
 	</ItemGroup>
 	<ItemGroup>
 		<QCustomInput Include="..\DataSchemas\**\*.bond">
@@ -55,6 +55,10 @@
 	<ItemGroup>
       <None Include="..\NugetPackages.props" Link="NugetPackages.props" />
     </ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="Xap.Sdk" Version="9.110.5" />
+	</ItemGroup>
 	<Import Project="..\NugetPackages.props" />
 	<Import Project="..\VersionBump.targets" />
 </Project>

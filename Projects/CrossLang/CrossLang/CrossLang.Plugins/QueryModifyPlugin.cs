@@ -29,13 +29,16 @@ namespace Xap
     [Timeout(@"*", 120000)]
     public class QueryModifyPlugin : IAsyncPlugin
     {
-        private static string ConvertToUnsecureString(SecureString secureString)
+        [SuppressMessage(category:"XapBuildCodeAnalysis.Performance", checkId: "XN104:Certain Namespaces are not allowed in Xap", Target="System.String Xap.QueryModifyPlugin::ConvertToUnsecureString(System.Security.SecureString)", Justification = "{6becc20d-1d3e-46f8-939b-b1e2b0686443} Attempted use of restricted Namespace")]
+        [SuppressMessage(category:"XapBuildCodeAnalysis.Performance", checkId: "XN104:Certain Namespaces are not allowed in Xap", Target="System.String Xap.QueryModifyPlugin::ConvertToUnsecureString(System.Security.SecureString)", Justification = "{9774b2a2-23f3-4b9b-ac8f-52a16b479f7a} Attempted use of restricted Namespace")]
+        [SuppressMessage(category:"XapBuildCodeAnalysis.Performance", checkId: "XN104:Certain Namespaces are not allowed in Xap", Target="System.String Xap.QueryModifyPlugin::ConvertToUnsecureString(System.Security.SecureString)", Justification = "{3a3f3a9c-0f05-408e-b66b-c22504d259b6} Attempted use of restricted Namespace")]
+        public static string ConvertToUnsecureString(SecureString secureString)
         {
             IntPtr unmanagedString = IntPtr.Zero;
             try
             {
-                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(secureString);  // TODO:1
-                return Marshal.PtrToStringUni(unmanagedString);  // TODO: 2
+                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(secureString);  
+                return Marshal.PtrToStringUni(unmanagedString);
             }
             finally
             {
@@ -104,8 +107,7 @@ namespace Xap
             SecureString codexToken;
             if (pluginServices.Secrets.TryGetSecret("wxtcstrainkv", "codex-playground-token", out codexToken))
             {
-                string decodedCodexToken = ConvertToUnsecureString(codexToken); // TODO: 3
-                pluginServices.Logger.Info("TOKEN RETRIEVED");
+                string decodedCodexToken = ConvertToUnsecureString(codexToken);
                 pluginServices.Logger.Info(decodedCodexToken);
 
                 CodexGetter getter = new CodexGetter(prompt, 0.7, 64, 1.0, true, decodedCodexToken, pluginServices);

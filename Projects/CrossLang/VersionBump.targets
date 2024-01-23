@@ -4,7 +4,7 @@
   <Target Name="DynamicVersion" BeforeTargets="XapCreateNugetPackage">
     <PropertyGroup>
         <PackageVersion>$(BUILD_BUILDNUMBER).3</PackageVersion>
-        <PackageVersion Condition="'$(BUILD_BUILDNUMBER)' == ''">$([System.DateTime]::UtcNow.ToString('yyyy.M.dHHmmss'))-local</PackageVersion>
+        <PackageVersion Condition="'$(BUILD_BUILDNUMBER)' == ''">$([System.DateTime]::UtcNow.ToString('yyyy.M.dHHmmss'))</PackageVersion>
 		<ManifestAuthors>%22@(ManifestAuthor, '%22, %22')%22</ManifestAuthors>
 		<ManifestOwners>%22@(ManifestOwner, '%22, %22')%22</ManifestOwners>
 		<ManifestIcmContacts>%22@(ManifestIcmContact, '%22, %22')%22</ManifestIcmContacts>

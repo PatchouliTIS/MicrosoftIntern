@@ -25,9 +25,11 @@
 		<BondSchema Include="CrossLang.QueryDisplay.bond">
 		</BondSchema>
 	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Xap.Sdk" Version="9.110.5" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Update="DataSchemasBaseline" Version="4.*" />
-		<PackageReference Include="Xap.SDK" Version="9.*"></PackageReference>
 	</ItemGroup>
 </Project>
