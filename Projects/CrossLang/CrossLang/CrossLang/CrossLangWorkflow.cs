@@ -297,6 +297,14 @@
             this.XapPartnerPlugin_Events_EventsWorkflow.Inputs.webResults = WebAnswer.webResults;
         }
 
+        #region WebAnswer
+        protected override void BindWebAnswer()
+        {
+            base.BindWebAnswer();
+            this.WebAnswer.Inputs.augmentsAndVariants = this.VariantSetPlugin.modifiedUserAugmentations;
+        }
+        #endregion WebAnswer
+
 
         #region VariantSetPlugin
         [Timeout("*", 10000)]

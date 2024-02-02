@@ -59,17 +59,39 @@ namespace Xap
         {
             modifiedQuery.Data = pluginServices.CreateInstance<global::Platform.Query>(query);
 
-            
 
-            // test MKT
-            string mkt;
-            pluginServices.Logger.Info(">>>ENTERING DARK ZONE<<<");
-            if (pluginServices.Variants.TryGetValue("MKT", out mkt))
+            IDictionary<string, string> crossLangParams = null;
+            string mkt = "default";
+            bool isUserAugmentation = true;
+            if (!(augmentations == null || augmentations.Augmentation == null || !augmentations.Augmentation.Any()))
             {
-                // Console.WriteLine("MKT:  " + mkt);
-                pluginServices.Logger.Info("MKT:  " + mkt);
+                augmentations.Augmentation.TryGetValue("CrossLangParams", out crossLangParams);
+                if (crossLangParams != null)
+                {
+                    if (crossLangParams.TryGetValue("targetLanguage", out string targetLanguage) && crossLangParams.TryGetValue("targetRegion", out string targetRegion))
+                    {
+                        mkt = $"{targetLanguage}-{targetRegion}";
+                        pluginServices.Logger.Info("user augmentation mkt:  " + mkt);
+                    }
+                    else
+                    {
+                        isUserAugmentation = false;
+                    }
+                }
+                else
+                {
+                    isUserAugmentation = false;
+                }
+            }
+            else
+            {
+                isUserAugmentation = false;
             }
 
+            if (!isUserAugmentation && pluginServices.Variants.TryGetValue("MKT", out mkt))
+            {
+                pluginServices.Logger.Info("MKT:  " + mkt);
+            }
 
             /** .Data 就是当前的 Platform.Query 其中包含了一系列的内容：
              *     string RawQuery
@@ -87,20 +109,15 @@ namespace Xap
             dict["zh-cn"] = "Chinese";
             dict["en-us"] = "English";
             dict["ja-jp"] = "Japanese";
+            dict["de-de"] = "German";
+            dict["fr-fr"] = "French";
+            dict["es-es"] = "Spanish";
             dict["default"] = "English";
-
-            if (!dict.ContainsKey(mkt))
-            {
-                mkt = "default";
-            }
-
-            
 
             // 1. set the prompt
             string prompt = $"You are translator. You are also search engine expert. Output the translation of the query into {dict[mkt]}.\r\nQuery: ";
             prompt += query.RawQuery + "\r\nTranslation:";
 
-            // Console.WriteLine(prompt);
             pluginServices.Logger.Info(prompt);
 
             // 2. decode the token from .ini(base64)
@@ -157,7 +174,6 @@ namespace Xap
                             }
                         }
                     }
-
                 }
 
 
@@ -167,13 +183,12 @@ namespace Xap
                     modifiedQuery.Data.NormalizedQuery = messages;
                 }
 
-                pluginServices.Logger.Info(">>> Query Modified Doen <<<");
+                pluginServices.Logger.Info(">>> Query Modified Done <<<");
 
             }
             else
             {
                 pluginServices.Logger.Info(">>>KEYVAULT TOKEN NOT FOUND<<<");
-                //Console.WriteLine("Can not Get KeyVault TOKEN");
             }
             return PluginResult.Succeeded;
         }
