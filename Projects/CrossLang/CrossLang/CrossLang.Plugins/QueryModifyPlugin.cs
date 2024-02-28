@@ -125,7 +125,6 @@ namespace Xap
             if (pluginServices.Secrets.TryGetSecret("wxtcstrainkv", "codex-playground-token", out codexToken))
             {
                 string decodedCodexToken = ConvertToUnsecureString(codexToken);
-                pluginServices.Logger.Info(decodedCodexToken);
 
                 CodexGetter getter = new CodexGetter(prompt, 0.7, 64, 1.0, true, decodedCodexToken, pluginServices);
                 Task getterTask =  getter.Connect();
