@@ -1,0 +1,10 @@
+{
+  // ID is overwriten by our build process here just for FYI
+  //"Id": "CrossLangCache",
+  "Version": "1.0.0-alpha",
+  "Title": "CrossLangCache product",
+  "Description": "Some description for CrossLangCache",
+  "Authors": [ "REDMOND\\v-xuananchen" ],
+  "Owners": [ "REDMOND\\v-xuananchen", "CrossLangCacheTeam" ],
+  "IcmContacts": [ "test_ICM_ID" ]
+}

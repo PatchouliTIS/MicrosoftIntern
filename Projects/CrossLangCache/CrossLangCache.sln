@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossLangCache.Experiment", "CrossLangCache.Experiment\CrossLangCache.Experiment.csproj", "{595DC0C3-F184-436F-A38D-5732B1D93BC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataSchemas", "DataSchemas\DataSchemas.csproj", "{D25DB9EB-8D52-429B-B583-C9F3FC59A045}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossLangCache", "CrossLangCache\CrossLangCache.csproj", "{265F20F8-7822-4638-B4B6-D6AB97436462}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossLangCache.Plugins", "CrossLangCache.Plugins\CrossLangCache.Plugins.csproj", "{DF0D092A-13AE-48CB-AEA7-DD1E128B4037}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossLangCache.Tests", "CrossLangCache.Tests\CrossLangCache.Tests.csproj", "{62A0FCF1-55F6-48B4-87F5-705CDEB2311F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{595DC0C3-F184-436F-A38D-5732B1D93BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595DC0C3-F184-436F-A38D-5732B1D93BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595DC0C3-F184-436F-A38D-5732B1D93BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{595DC0C3-F184-436F-A38D-5732B1D93BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D25DB9EB-8D52-429B-B583-C9F3FC59A045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D25DB9EB-8D52-429B-B583-C9F3FC59A045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D25DB9EB-8D52-429B-B583-C9F3FC59A045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D25DB9EB-8D52-429B-B583-C9F3FC59A045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{265F20F8-7822-4638-B4B6-D6AB97436462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265F20F8-7822-4638-B4B6-D6AB97436462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265F20F8-7822-4638-B4B6-D6AB97436462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265F20F8-7822-4638-B4B6-D6AB97436462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0D092A-13AE-48CB-AEA7-DD1E128B4037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0D092A-13AE-48CB-AEA7-DD1E128B4037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0D092A-13AE-48CB-AEA7-DD1E128B4037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0D092A-13AE-48CB-AEA7-DD1E128B4037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A0FCF1-55F6-48B4-87F5-705CDEB2311F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A0FCF1-55F6-48B4-87F5-705CDEB2311F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A0FCF1-55F6-48B4-87F5-705CDEB2311F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A0FCF1-55F6-48B4-87F5-705CDEB2311F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E42DD4AF-C23E-480B-AE9A-09BFA6216A5B}
+	EndGlobalSection
+EndGlobal

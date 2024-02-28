@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<XapProjectType>DataSchemaProject</XapProjectType>
+		<AssemblyName>NotUsedLocalDataSchemas</AssemblyName>
+		<TargetFramework>net7</TargetFramework>
+		<OutputPath>bin\$(Configuration)</OutputPath>
+		<IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<NoWarn>$(NoWarn);CA1416;NU1702;NU1701;MSB3277;CA1822;NU1605</NoWarn>
+		<MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);CA1416;NU1702;NU1701;MSB3277;CA1822;NU1605</MSBuildWarningsAsMessages>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+	<ItemGroup>
+		<QCustomInput Include=".\**\*.bond">
+			<Visible>false</Visible>
+		</QCustomInput>
+		<QCustomInput Include=".\**\*.idl">
+			<Visible>false</Visible>
+		</QCustomInput>
+	</ItemGroup>
+	<Import Project=".\NugetPackages.props" />
+	<ItemGroup>
+		<PackageReference Include="Xap.Sdk" Version="9.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Update="DataSchemasBaseline" Version="4.*" />
+	</ItemGroup>
+</Project>

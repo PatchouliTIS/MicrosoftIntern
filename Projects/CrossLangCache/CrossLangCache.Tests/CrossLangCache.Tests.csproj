@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<XapProjectType>TestProject</XapProjectType>
+		<TargetFramework>net7.0</TargetFramework>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<AssemblyName>Xap.Shared.CrossLangCache.Tests</AssemblyName>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<NoWarn>$(NoWarn);CA1416;NU1702;NU1701;MSB3277;CA1822;NU1605</NoWarn>
+		<MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);CA1416;NU1702;NU1701;MSB3277;CA1822;NU1605</MSBuildWarningsAsMessages>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DataSchemas\DataSchemas.csproj"></ProjectReference>
+		<ProjectReference Include="..\CrossLangCache.Plugins\CrossLangCache.Plugins.csproj" />
+		<ProjectReference Include="..\CrossLangCache\CrossLangCache.csproj" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="2.2.3" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.3" />
+		<PackageReference Include="coverlet.collector" Version="3.0.2" />
+		<PackageReference Include="Xap.Sdk" Version="9.*" />
+	</ItemGroup>
+</Project>

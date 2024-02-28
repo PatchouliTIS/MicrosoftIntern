@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<Import Project=".\CrossLang.Settings.props" />
+	<Import Project=".\CrossLangCache.Settings.props" />
 	<PropertyGroup>
 		<XapProjectType>ExperimentProject</XapProjectType>
 		<TargetFramework>net7</TargetFramework>
@@ -7,7 +7,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<OutputPath>bin\$(Configuration)</OutputPath>
 		<IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
-		<AssemblyName>Xap.Shared.CrossLang.Experiment</AssemblyName>
+		<AssemblyName>Xap.Shared.CrossLangCache.Experiment</AssemblyName>
 		<AssemblyClsCompliant>false</AssemblyClsCompliant>
 		<XapCheckDuplicateResourceFolders>true</XapCheckDuplicateResourceFolders>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -19,20 +19,11 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\DataSchemas\DataSchemas.csproj"></ProjectReference>
-		<ProjectReference Include="..\CrossLang\CrossLang.csproj" />
-		<PackageReference Include="Xap.Sdk" Version="9.110.5" />
-		<PackageReference Include="Xap.Shared.CrossLang" />
-		<PackageReference Include="Xap.RCache" Version="1.0.8" />
-		<PackageReference Include="adsnext" Version="0.38192.0" />
-		<PackageReference Include="QR.SpellerAnswer" Version="0.38192.0" />
-		<PackageReference Include="Sydney.Triggering" Version="1.5.12" />
-
+		<ProjectReference Include="..\CrossLangCache\CrossLangCache.csproj" />
+		<PackageReference Include="Xap.Sdk" Version="9.*" />
 	</ItemGroup>
-	<Import Project="..\NugetPackages.props" />
-	<Import Project=".\Extras.props" />
 	<Target Name="WriteVersionFiles" BeforeTargets="PreResolveAssemblies">
 		<WriteLinesToFile File="$(RootedOutputPath)\MajorVersion.txt" Lines="$(ExperimentMajorVersion)" Overwrite="true" />
 		<WriteLinesToFile File="$(RootedOutputPath)\MinorVersion.txt" Lines="$(ExperimentMinorVersion)" Overwrite="true" />
 	</Target>
-	<Import Project=".\PackageClosureCheck.targets" />
 </Project>
