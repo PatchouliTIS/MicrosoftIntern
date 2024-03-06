@@ -14,18 +14,24 @@ namespace CrossLangCache.Plugins
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "2", Justification = "Configs guaranteed non-null by ApplicationHost")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "3", Justification = "Outputs guaranteed non-null by ApplicationHost")]
         public PluginResult Execute(PluginServices pluginServices,
-                                    global::Platform.Query query,
-                                    global::Platform.Augmentations augmentations,
                                     PluginOutput<global::Platform.Query> modifiedQuery,
                                     PluginOutput<global::Platform.Augmentations> modifiedAugmentations,
                                     PluginOutput<global::Platform.LegacyPluginAugmentsAndVariantsData> modifiedUserAugmentations,
-                                    PluginOutput<global::Platform.StringData> targetMKT)
+                                    PluginOutput<global::Platform.StringData> targetMKT,
+                                    global::Platform.Query query = null,
+                                    global::Platform.Augmentations augmentations = null)
         {
-            modifiedQuery.Data = pluginServices.CreateInstance<global::Platform.Query>(query);
-            modifiedAugmentations.Data = pluginServices.CreateInstance<global::Platform.Augmentations>(augmentations);
+            pluginServices.Logger.Info("Is BaseQuery Null:{0}", query == null);
+            pluginServices.Logger.Info("Is BaseQuery String Null:{0}", String.IsNullOrEmpty(query.RawQuery));
+            modifiedQuery.Data = query;
+            pluginServices.Logger.Info("Is modifiedQuery Null:{0}", modifiedQuery.Data == null);
+            pluginServices.Logger.Info("Is modifiedQuery String Null:{0}", String.IsNullOrEmpty(modifiedQuery.Data.RawQuery));
+            modifiedAugmentations.Data = augmentations;
             targetMKT.Data = pluginServices.CreateInstance<global::Platform.StringData>();
-            // modify the variants via Platform.Augmentation
+            targetMKT.Data.Value = "zh-cn";
 
+
+            // modify the variants via Platform.Augmentation
             if (!pluginServices.Variants.TryGetValue("MKT", out string value))
             {
                 pluginServices.Logger.Info("No MKT Variant exist");
@@ -113,6 +119,8 @@ namespace CrossLangCache.Plugins
                     modifiedUserAugmentations.Data = overrideAugementations;
                 }
             }
+
+
 
 
             return PluginResult.Succeeded;

@@ -38,6 +38,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Include="AnswerLoggerPlugin.cs" />
 	  <Compile Include="CacheQueryPlugin.cs" />
 	  <Compile Include="CrossLangAugmentPlugin.cs" />
 	</ItemGroup>

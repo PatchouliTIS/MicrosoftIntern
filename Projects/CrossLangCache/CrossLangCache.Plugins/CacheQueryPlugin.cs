@@ -8,9 +8,6 @@ using Xap.PluginFramework;
 
 namespace CrossLangCache.Plugins
 {
-    [MajorVersionForLipstick(1)]
-    [EnableLegacyCache(true)]
-    [Timeout(@"*", 300)]
     public class CacheQueryPlugin : IPlugin
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Justification = "PluginServices guaranteed non-null by ApplicationHost")]
@@ -20,29 +17,42 @@ namespace CrossLangCache.Plugins
         public PluginResult Execute(PluginServices pluginServices,
                                     PluginOutput<global::Platform.Query> outputQuery,
                                     global::Platform.Query baseQuery,
-                                    global::Platform.Augmentations augmentations,
                                     global::Platform.StringData targetMKT)
         {
             pluginServices.Logger.Info("ENTERING QueryCachePool");
-            outputQuery.Data = pluginServices.CreateInstance<global::Platform.Query>(baseQuery);
+
+
+            pluginServices.Logger.Info("Is BaseQuery Null:{0}", baseQuery == null);
+            if (baseQuery == null)
+            {
+                return PluginResult.Succeeded;
+            }
 
             StringSimilarity ss = new StringSimilarity(pluginServices);
 
             string mkt;
+            if (targetMKT == null)
+            {
+                pluginServices.Logger.Info("targetMKT is NULL");
+                return PluginResult.Succeeded;
+            }
+            else
+            {
+                mkt = targetMKT.Value;
+            }
 
-            // access MKT via Variants or Augmentations
-            if(targetMKT.Value == null ||  String.IsNullOrEmpty(targetMKT.Value))
+            if (targetMKT.Value == null)
             {
                 if (pluginServices.Variants.TryGetValue("MKT", out mkt))
                 {
                     pluginServices.Logger.Info("Get MKT Succuss:" + mkt);
-                    
+
                 }
                 else
                 {
                     pluginServices.Logger.Info("Get MKT Failed: No MKT exists");
                 }
-            } 
+            }
             else
             {
                 mkt = targetMKT.Value;
@@ -50,9 +60,17 @@ namespace CrossLangCache.Plugins
 
 
             ss.GetTransQuery(baseQuery.RawQuery, mkt, out string transQuery);
-            pluginServices.Logger.Info("TRANS QUERY: " + transQuery);
-            outputQuery.Data.RawQuery = transQuery;
-            outputQuery.Data.NormalizedQuery = transQuery;
+            if(transQuery != null)
+            {
+                pluginServices.Logger.Info("TRANS QUERY: " + transQuery);
+                outputQuery.Data = pluginServices.CreateInstance<global::Platform.Query>();
+                outputQuery.Data.RawQuery = transQuery;
+                outputQuery.Data.NormalizedQuery = transQuery;
+            } else
+            {
+                outputQuery.Data = null;
+            }
+            
 
             return PluginResult.Succeeded;
 
@@ -61,6 +79,8 @@ namespace CrossLangCache.Plugins
 
 
 
+
+    #region StringSimilarity
     /**
      * A simple string similarity algorithm using BiGram and inverted indexing 
      * to compare the user's query with the query in the Cache and select the 
@@ -74,6 +94,7 @@ namespace CrossLangCache.Plugins
         private string[] eng2fr;
         private Dictionary<string, List<int>> invertedIndex;
         private PluginServices pluginServices;
+        private const double THRESHOLD = 0.6;
         public StringSimilarity()
         {
             this.invertedIndex = new Dictionary<string, List<int>>();
@@ -143,6 +164,11 @@ namespace CrossLangCache.Plugins
             query = query.ToLower();
 
             int similarQueryIndex = findMostSimilarString(query);
+            if (similarQueryIndex == -1)
+            {
+                transQuery = null;
+                return;
+            }
             if (mkt.Equals("zh-cn"))
             {
                 transQuery = this.eng2chn[similarQueryIndex];
@@ -166,10 +192,9 @@ namespace CrossLangCache.Plugins
 
         private int findMostSimilarString(string query)
         {
-            int q = 2; // 设置Q值，可以根据实际需求调整
+            int q = 2; // set the value of Q-gram according to task needs
 
             int mostSimilarStringIndex = 0;
-            // int highestSimilarity = 0;
 
             HashSet<string> queryQGramSet = generateQGramSet(query, q);
             Dictionary<int, int> similarityScores = new Dictionary<int, int>();
@@ -190,11 +215,10 @@ namespace CrossLangCache.Plugins
             }
 
             double maxScore = 0.0;
-            // 选出相似度最大的字符串
+            // pick up the query string with the highest similarity
             foreach (KeyValuePair<int, int> pair in similarityScores)
             {
                 // Calculate
-
                 double currentScore = 2 * (double)pair.Value / (double)(queryPool[pair.Key].Length + query.Length);
                 if (maxScore < currentScore)
                 {
@@ -203,8 +227,13 @@ namespace CrossLangCache.Plugins
                 }
 
                 pluginServices.Logger.Info(this.queryPool[pair.Key] + "\t" + currentScore);
-                // Console.WriteLine(this.queryPool[pair.Key] + "\t" + currentScore);
 
+            }
+
+            // use threshold to trigger cache workflow
+            if (maxScore <= THRESHOLD)
+            {
+                mostSimilarStringIndex = -1;
             }
 
             return mostSimilarStringIndex;
@@ -244,5 +273,8 @@ namespace CrossLangCache.Plugins
         }
 
 
+        
     }
+
+    #endregion
 }
