@@ -28,12 +28,13 @@ namespace Plugin.Tests
             Console.WriteLine("CacheQueryPlugin TESTING");
             var query = ExecutionServices.CreateInstance<Platform.Query>(query => query.RawQuery = "Tips for visiting the Summer Palace");
             var augmentations = ExecutionServices.CreateInstance<Platform.Augmentations>();
-            var targetMKT = ExecutionServices.CreateInstance<Platform.StringData>("zh-cn");
+            var targetMKT = ExecutionServices.CreateInstance<Platform.StringData>();
+            targetMKT.Value = "zh-cn";
             var input_query = Task.FromResult(query);
             var input_augmentations = Task.FromResult(augmentations);
             var intput_targetMKT = Task.FromResult(targetMKT);
 
-            var result = cacheQueryPlugin.Execute(input_query, input_augmentations, intput_targetMKT);
+            var result = cacheQueryPlugin.Execute(input_query, intput_targetMKT);
 
             Console.WriteLine(cacheQueryPlugin.outputQuery.Result.RawQuery);
 
