@@ -18,17 +18,22 @@ namespace CrossLangCache.Plugins
         public PluginResult Execute(PluginServices pluginServices,
                                     PluginOutput<global::Platform.LegacyQueryResponseData> output,
                                     global::Platform.Query inputQuery = null,
-                                    global::Platform.LegacyQueryResponseData input=null)
+                                    global::Platform.LegacyQueryResponseData input = null,
+                                    global::Platform.LegacyQueryResponseData WAoutput = null)
         {
             pluginServices.Logger.Info("ENTERING Aggregate");
 
+            if (input == null)
+            {
+                pluginServices.Logger.Info("INPUT DATA IS NULL!!");
+            }
 
             output.Data = pluginServices.CreateInstance<global::Platform.LegacyQueryResponseData>();
             output.Data = input;
             output.Data.LegacyAqr = input.LegacyAqr.LightClone();
 
             pluginServices.Logger.Info("Is Query Null:{0}", inputQuery == null);
-            if(inputQuery != null)
+            if (inputQuery != null)
             {
                 pluginServices.Logger.Info("Query:{0}", inputQuery.RawQuery);
             }
@@ -71,7 +76,61 @@ namespace CrossLangCache.Plugins
                             {
                                 foreach (var item in addData.LegacyAqr.ListAnswers.Elements)
                                 {
-                                    pluginServices.Logger.Info("CURRENT DATA:\nLinkSourceUrl:{0}\nElementText:{1}\nLinkClickUrl:{2}\n", item.ElTitle.LinkSourceUrl, item.ElTitle.ElementText, item.ElTitle.LinkClickUrl);
+                                    pluginServices.Logger.Info("CURRENT AnswerData:    Uri:{0}      ServiceName:{1}      KifResponse:{2}      KifResponseLength:{3}", item.Uri, item.ServiceName, item.KifResponseSegment.Array, item.KifResponseSegment.Count);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+            if (WAoutput == null)
+            {
+                pluginServices.Logger.Info("WAoutput DATA IS NULL!!");
+            }
+
+
+            pluginServices.Logger.Info("Is LegacyQueryResponseData Null:{0}", WAoutput == null);
+
+
+
+            if (WAoutput == null)
+            {
+                pluginServices.Logger.Info("WAoutput Answer -> LegacyQueryResponseData is Empty");
+            }
+            else
+            {
+                pluginServices.Logger.Info("Retrieving WAoutput Answer LegacyQueryResponseData");
+                if (WAoutput.LegacyAqr == null)
+                {
+                    pluginServices.Logger.Info("WAoutput Answer.LegacyAqr is nll");
+
+                }
+                else
+                {
+                    if (WAoutput.LegacyAqr.ListAnswers == null)
+                    {
+                        pluginServices.Logger.Info("WAoutput Answer.LegacyAqr.ListAnswers is nll");
+                    }
+                    else
+                    {
+                        if (WAoutput.LegacyAqr.ListAnswers.Elements == null)
+                        {
+                            pluginServices.Logger.Info("WAoutput Answer.LegacyAqr.ListAnswers.Element is nll");
+                        }
+                        else
+                        {
+                            if (WAoutput.LegacyAqr.ListAnswers.Elements.First() == null)
+                            {
+                                pluginServices.Logger.Info("WAoutput Answer.LegacyAqr.ListAnswers.Element.First() is nll");
+                            }
+                            else
+                            {
+                                foreach (var item in WAoutput.LegacyAqr.ListAnswers.Elements)
+                                {
+                                    pluginServices.Logger.Info("WAoutput CURRENT AnswerData:    Uri:{0}      ServiceName:{1}      KifResponse:{2}      KifResponseLength:{3}", item.Uri, item.ServiceName, item.KifResponseSegment.Array, item.KifResponseSegment.Count);
                                 }
                             }
                         }

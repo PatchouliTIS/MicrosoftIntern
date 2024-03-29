@@ -1,0 +1,9 @@
+Given a description and a list of components, every component contains name, display_name and description. Find top {{top_k}} most matching components with description, only return the top {{top_k}} component names.
+description: {{description}}
+a list of components:
+{{components}}
+
+Response format:
+- component name 1
+- component name 2
+- ...

@@ -20,9 +20,13 @@ namespace Xap.Shared.CrossLang
         protected Task<global::Platform.Augmentations> Augmentations;
         protected Task<global::Local.LocationContext_1> LocationContext;
         protected Task<global::Cortana.CU.RequestData> cuRequestData;
+        protected Task<global::QueryIndex.CanonicalQueriesOutputV3> preWebV3PrecisionOutput;
         #endregion
+
+
         #region OutputFields
         protected Task<global::Platform.LegacyQueryResponseData> output;
+        protected Task<AnswersRanker.RankedContent_1> outputRanker;
         #endregion
 
 
@@ -31,22 +35,26 @@ namespace Xap.Shared.CrossLang
         {
             this.Execute(
                 outputData: out this.output,
+                outputRanker: out this.outputRanker,
                 Query: this.Query,
                 UserIdentification: this.UserIdentification,
                 InstrumentationData: this.InstrumentationData,
                 Augmentations: this.Augmentations,
                 LocationContext: this.LocationContext,
-                cuRequestData: this.cuRequestData);
+                cuRequestData: this.cuRequestData,
+                preWebV3PrecisionOutput: this.preWebV3PrecisionOutput);
         }
 
         public void Execute(
             out Task<global::Platform.LegacyQueryResponseData> outputData,
+            out Task<AnswersRanker.RankedContent_1> outputRanker,
             Task<global::Platform.Query> Query = null,
             Task<global::Platform.UserIdentification> UserIdentification = null,
             Task<global::Platform.InstrumentationData> InstrumentationData = null,
             Task<global::Platform.Augmentations> Augmentations = null,
             Task<global::Local.LocationContext_1> LocationContext = null,
-            Task<global::Cortana.CU.RequestData> cuRequestData = null)
+            Task<global::Cortana.CU.RequestData> cuRequestData = null,
+            Task<global::QueryIndex.CanonicalQueriesOutputV3> preWebV3PrecisionOutput = null)
         {
             this.Query = Query;
             this.UserIdentification = UserIdentification;
@@ -54,165 +62,172 @@ namespace Xap.Shared.CrossLang
             this.Augmentations = Augmentations;
             this.LocationContext = LocationContext;
             this.cuRequestData = cuRequestData;
+            this.preWebV3PrecisionOutput = preWebV3PrecisionOutput;
 
-
-            this.BindReverseGeocoder();
-            this.ReverseGeocoder.ExecuteForInheritance();
-
-            this.BindCrossLangAugmentPlugin();
-            this.CrossLangAugmentPlugin.ExecuteForInheritance();
-
-            this.BindSessionReader();
-            this.SessionReader.ExecuteForInheritance();
-
-
-            this.BindCqnaPreweb();
-            this.CqnaPreweb.ExecuteForInheritance();
-
-
-            this.BindCacheQueryPlugin();
-            this.CacheQueryPlugin.ExecuteForInheritance();
-
-            this.BindLocationShift();
-            this.LocationShift.ExecuteForInheritance();
-
-            this.BingQueryMTServiceInputs();
-            this.BingQueryMTWorkflow.ExecuteForInheritance();
-
-
-            this.BindLanguagePrediction();
-            this.QueryLanguage.ExecuteForInheritance();
-
-
-            this.BindCALMultiQueryGeneratorCondition();
-            AsyncIf(this.WBMultiQueryWorkflowCondition.ExecuteForInheritance()).Then(() =>
+            this.BindQIConditionPlugin();
+            AsyncIf(this.QIConditionPlugin.ExecuteForInheritance()).Then(() =>
             {
-                this.BindCALMultiQueryGeneratorWorkflow();
-                this.WBMultiQueryWorkflow.ExecuteForInheritance();
+                this.BindReverseGeocoder();
+                this.ReverseGeocoder.ExecuteForInheritance();
+
+                this.BindCrossLangAugmentPlugin();
+                this.CrossLangAugmentPlugin.ExecuteForInheritance();
+
+
+
+                this.BindCqnaPreweb();
+                this.CqnaPreweb.ExecuteForInheritance();
+
+
+                this.BindCacheQueryPlugin();
+                this.CacheQueryPlugin.ExecuteForInheritance();
+
+
+                this.BingQueryMTServiceInputs();
+                this.BingQueryMTWorkflow.ExecuteForInheritance();
+
+
+                this.BindLanguagePrediction();
+                this.QueryLanguage.ExecuteForInheritance();
+
+
+                this.BindCALMultiQueryGeneratorCondition();
+                AsyncIf(this.WBMultiQueryWorkflowCondition.ExecuteForInheritance()).Then(() =>
+                {
+                    this.BindCALMultiQueryGeneratorWorkflow();
+                    this.WBMultiQueryWorkflow.ExecuteForInheritance();
+                });
+
+
+
+                this.BindNewlyNavObjectStoreLookupMQWorkflow();
+                this.NewlyNavObjectStoreLookupMQWorkflow.ExecuteForInheritance();
+
+                this.BindXapQuServiceAnswer();
+                this.XapQuServiceAnswer.ExecuteForInheritance();
+
+                this.BindXapQuAthena();
+                this.XapQuAthena.ExecuteForInheritance();
+
+                this.BindXapQuWithOMA();
+                this.XapQuWithOMA.ExecuteForInheritance();
+
+                this.BindHybridLes();
+                this.HybridLes.ExecuteForInheritance();
+
+                this.BindLangDetector();
+                this.LangDetector.ExecuteForInheritance();
+
+                this.BindQRNeutralQueryClassifier();
+                this.QRNeutralQueryClassifier.ExecuteForInheritance();
+
+                this.BindConvertQueryLanguage();
+                this.ConvertQueryLanguage.ExecuteForInheritance();
+
+
+
+
+                this.BindSpellerAnswer();
+
+                this.BindSpellerAnswerSecond();
+                this.SpellerAnswerSecond.ExecuteForInheritance();
+
+                this.BindSpellerCombiner();
+                this.SpellerCombiner.ExecuteForInheritance();
+
+
+                this.BindSpellerProcessorPlugin();
+                this.SpellerProcessorPlugin.ExecuteForInheritance();
+
+                this.BindPreQueryParserConversationEngine();
+                this.PreQueryParserConversationEngine.ExecuteForInheritance();
+
+                this.BindQueryParserV3();
+                this.QueryParserV3.ExecuteForInheritance();
+
+
+                this.BindDolphinAdapterWorkflow();
+                this.DolphinAdapterWorkflow.ExecuteForInheritance();
+
+
+                this.BindQASWithSpeller();
+                this.QASWithSpeller.ExecuteForInheritance();
+
+                this.BindContextualQRSelectorWithSpeller();
+                this.ContextualQRSelectorWithSpeller.ExecuteForInheritance();
+
+                this.BindBuildCalOutput();
+                this.BuildCalOutput.ExecuteForInheritance();
+
+
+                this.BindCALMultiQuery();
+                this.CALMultiQuery.ExecuteForInheritance();
+
+
+                this.BindCombinedAlterationService();
+                this.CombinedAlterationService.ExecuteForInheritance();
+
+                this.BindisNoResultsEnabled();
+                this.isNoResultsEnabled.ExecuteForInheritance();
+
+                this.BindQRAggregator();
+
+
+                this.BindQASMigrationWorkflow();
+                this.QASMigrationWorkflow.ExecuteForInheritance();
+
+
+                this.BindContextualQLFMain();
+                this.ContextualQLFMain.ExecuteForInheritance();
+
+                this.BindFlightAssignmentServiceWithSegmentRelevanceLBFA();
+                this.FlightAssignmentServiceWithSegmentRelevanceLBFA.ExecuteForInheritance();
+
+                this.BindSpellerFLE();
+                this.SpellerFLE.ExecuteForInheritance();
+
+                this.BindWebAnswer();
+                this.WebAnswer.ExecuteForInheritance();
+
+
+                this.BindORCAQueryLanguageCondition();
+                AsyncIf(this.ORCAQueryLanguageCondition.ExecuteForInheritance())
+                .Then(() =>
+                {
+                    this.BindORCAQueryLanguagePassthrough();
+                    ORCAQueryLanguagePassthrough.ExecuteForInheritance();
+                });
+
+
+
+
+                this.BindQueryIndex();
+                this.QueryIndex.ExecuteForInheritance();
+
+
+
+                //this.BindAQRCombiner();
+                //this.AQRCombiner.ExecuteForInheritance();
+
+                this.BindAnswerLoggerPlugin();
+                this.AnswerLoggerPlugin.ExecuteForInheritance();
+
+
+                this.BindCacheAnswersRankingPlugin();
+                this.CacheAnswersRankingPlugin.ExecuteForInheritance();
+
+                this.output = this.CacheAnswersRankingPlugin.MOP3CrossLangCacheReponseData;
+                this.outputRanker = this.CacheAnswersRankingPlugin.MOP3CrossLangCacheKnobRankedContent;
+            }).Else(() =>
+            {
+                this.output = null;
+                this.outputRanker = null;
             });
 
 
+            outputData = this.output;
+            outputRanker = this.outputRanker;
 
-            this.BindNewlyNavObjectStoreLookupMQWorkflow();
-            this.NewlyNavObjectStoreLookupMQWorkflow.ExecuteForInheritance();
-
-            this.BindXapQuServiceAnswer();
-            this.XapQuServiceAnswer.ExecuteForInheritance();
-
-            this.BindXapQuAthena();
-            this.XapQuAthena.ExecuteForInheritance();
-
-            this.BindXapQuWithOMA();
-            this.XapQuWithOMA.ExecuteForInheritance();
-
-            this.BindHybridLes();
-            this.HybridLes.ExecuteForInheritance();
-
-            this.BindLangDetector();
-            this.LangDetector.ExecuteForInheritance();
-
-            this.BindQRNeutralQueryClassifier();
-            this.QRNeutralQueryClassifier.ExecuteForInheritance();
-
-            this.BindConvertQueryLanguage();
-            this.ConvertQueryLanguage.ExecuteForInheritance();
-
-
-
-
-            this.BindSpellerAnswer();
-            this.SpellerAnswer.ExecuteForInheritance();
-
-
-            this.BindSpellerAnswerSecond();
-            this.SpellerAnswerSecond.ExecuteForInheritance();
-
-            this.BindSpellerCombiner();
-            this.SpellerCombiner.ExecuteForInheritance();
-
-
-            this.BindSpellerProcessorPlugin();
-            this.SpellerProcessorPlugin.ExecuteForInheritance();
-
-            this.BindPreQueryParserConversationEngine();
-            this.PreQueryParserConversationEngine.ExecuteForInheritance();
-
-            this.BindQueryParserV3();
-            this.QueryParserV3.ExecuteForInheritance();
-
-
-            this.BindDolphinAdapterWorkflow();
-            this.DolphinAdapterWorkflow.ExecuteForInheritance();
-
-
-            this.BindQASWithSpeller();
-            this.QASWithSpeller.ExecuteForInheritance();
-
-            this.BindContextualQRSelectorWithSpeller();
-            this.ContextualQRSelectorWithSpeller.ExecuteForInheritance();
-
-            this.BindBuildCalOutput();
-            this.BuildCalOutput.ExecuteForInheritance();
-
-
-            this.BindCALMultiQuery();
-            this.CALMultiQuery.ExecuteForInheritance();
-
-
-            this.BindCombinedAlterationService();
-            this.CombinedAlterationService.ExecuteForInheritance();
-
-            this.BindisNoResultsEnabled();
-            this.isNoResultsEnabled.ExecuteForInheritance();
-
-            this.BindQRAggregator();
-            this.QRAggregator.ExecuteForInheritance();
-
-
-
-            this.BindQASMigrationWorkflow();
-            this.QASMigrationWorkflow.ExecuteForInheritance();
-
-
-            this.BindContextualQLFMain();
-            this.ContextualQLFMain.ExecuteForInheritance();
-
-            this.BindFlightAssignmentServiceWithSegmentRelevanceLBFA();
-            this.FlightAssignmentServiceWithSegmentRelevanceLBFA.ExecuteForInheritance();
-
-            this.BindSpellerFLE();
-            this.SpellerFLE.ExecuteForInheritance();
-
-            this.BindWebAnswer();
-            this.WebAnswer.ExecuteForInheritance();
-
-
-            this.BindORCAQueryLanguageCondition();
-            AsyncIf(this.ORCAQueryLanguageCondition.ExecuteForInheritance())
-            .Then(() =>
-            {
-                this.BindORCAQueryLanguagePassthrough();
-                ORCAQueryLanguagePassthrough.ExecuteForInheritance();
-            });
-
-            this.BindORCADeepIntentWorkflow();
-            ORCADeepIntentWorkflow.ExecuteForInheritance();
-
-
-
-            this.BindQueryIndex();
-            this.QueryIndex.ExecuteForInheritance();
-
-
-
-            //this.BindAQRCombiner();
-            //this.AQRCombiner.ExecuteForInheritance();
-
-            this.BindAnswerLoggerPlugin();
-            this.AnswerLoggerPlugin.ExecuteForInheritance();
-
-
-            outputData = this.AnswerLoggerPlugin.output;
         }
 
 
@@ -850,6 +865,26 @@ namespace Xap.Shared.CrossLang
         {
             this.AnswerLoggerPlugin.Inputs.inputQuery = this.CacheQueryPlugin.outputQuery;
             this.AnswerLoggerPlugin.Inputs.input = this.WebAnswer.webResponseAqr;
+            this.AnswerLoggerPlugin.Inputs.WAoutput = this.WebAnswer.output;
+        }
+        #endregion
+
+
+
+        #region CacheAnswersRankingPlugin
+        public virtual CrossLangCache.Plugins.ICacheAnswersRankingPlugin_ForInheritance CacheAnswersRankingPlugin { get; } = WorkflowServices.CreateInstance<CrossLangCache.Plugins.ICacheAnswersRankingPlugin_ForInheritance>();
+        protected void BindCacheAnswersRankingPlugin()
+        {
+            this.CacheAnswersRankingPlugin.Inputs.WAinput = this.AnswerLoggerPlugin.output;
+        }
+        #endregion
+
+
+        #region QIConditionPlugin
+        public virtual CrossLangCache.Plugins.IQIConditionPlugin_ForInheritance QIConditionPlugin { get; } = WorkflowServices.CreateInstance<CrossLangCache.Plugins.IQIConditionPlugin_ForInheritance>();
+        protected void BindQIConditionPlugin()
+        {
+            this.QIConditionPlugin.Inputs.preWebV3PrecisionOutput = this.preWebV3PrecisionOutput;
         }
         #endregion
 

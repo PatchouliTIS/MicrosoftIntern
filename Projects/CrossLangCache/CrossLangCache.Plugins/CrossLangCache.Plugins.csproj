@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<EnableXapAssemblyAnalysis>true</EnableXapAssemblyAnalysis>
+		<EnableXapAssemblyAnalysis>false</EnableXapAssemblyAnalysis>
 		<XapProjectType>PluginProject</XapProjectType>
 		<TargetFramework>net7</TargetFramework>
 		<DefineConstants>CRv2ToNuGetCompilation</DefineConstants>
@@ -39,8 +39,16 @@
 
 	<ItemGroup>
 	  <Compile Include="AnswerLoggerPlugin.cs" />
+	  <Compile Include="CacheAnswersRankingPlugin.cs" />
 	  <Compile Include="CacheQueryPlugin.cs" />
 	  <Compile Include="CrossLangAugmentPlugin.cs" />
+	  <Compile Include="QIConditionPlugin.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="CacheAnswersRankingConfig.ini">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 

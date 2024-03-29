@@ -1,0 +1,12 @@
+Create an AML component acordding to component description: {{description}}. 
+Consider the following markdown document content:
+{{refs}}
+Output a component_spec.yaml file and code files, following below structure:
+file name: component_spec.yaml
+```yaml
+file content
+```
+file name: <code file name>
+```
+code content
+```

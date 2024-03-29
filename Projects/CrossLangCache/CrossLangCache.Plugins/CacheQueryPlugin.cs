@@ -66,6 +66,9 @@ namespace CrossLangCache.Plugins
                 outputQuery.Data = pluginServices.CreateInstance<global::Platform.Query>();
                 outputQuery.Data.RawQuery = transQuery;
                 outputQuery.Data.NormalizedQuery = transQuery;
+                outputQuery.Data.WordBrokenQuery = baseQuery.WordBrokenQuery;
+                outputQuery.Data.WordBrokenToRawQueryMapping = baseQuery.WordBrokenToRawQueryMapping;
+                outputQuery.Data.QueryLanguage = baseQuery.QueryLanguage;
             } else
             {
                 outputQuery.Data = null;
