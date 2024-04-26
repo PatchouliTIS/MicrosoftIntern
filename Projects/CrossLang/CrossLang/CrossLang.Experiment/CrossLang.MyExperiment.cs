@@ -29,7 +29,6 @@ namespace Xap.Shared.BFPR
             this.Workflows = new List<IExperimentWorkflow>()
             {
                 new ExperimentWorkflow<Xap.Shared.CrossLang.ICrossLangWorkflow_1>(),
-                new ExperimentWorkflow<Xap.Shared.CrossLang.ICrossLangCache_1>(),
                 new ExperimentWorkflow<Xap.IBingFirstPageResults_69>(),
                 new ExperimentWorkflow<Assistant.IBingFirstPageResults_34>(),
                 new ExperimentWorkflow<WindowsPhone8.IBingFirstPageResults_40>(),

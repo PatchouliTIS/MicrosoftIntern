@@ -21,7 +21,6 @@
 		<ProjectReference Include="..\DataSchemas\DataSchemas.csproj"></ProjectReference>
 		<ProjectReference Include="..\CrossLang\CrossLang.csproj" />
 		<PackageReference Include="Xap.Sdk" Version="9.110.5" />
-		<PackageReference Include="Xap.Shared.CrossLang" />
 		<PackageReference Include="Xap.RCache" Version="1.0.8" />
 		<PackageReference Include="adsnext" Version="0.38192.0" />
 		<PackageReference Include="QR.SpellerAnswer" Version="0.38192.0" />

@@ -20,16 +20,6 @@ namespace Plugin.Tests
         [TestMethod]
         public void TestQueryModifyViaInterface()
         {
-            // create token
-            var secrets = new System.Security.SecureString();
-            secrets.AppendChar('A');
-            secrets.AppendChar('P');
-            secrets.AppendChar('E');
-            secrets.AppendChar('X');
-
-            
-
-
             // create query
             Xap.IQueryModifyPlugin queryModifyPlugin = ExecutionServices.CreateInstance<Xap.IQueryModifyPlugin>();
             queryModifyPlugin.SetEnvironment("DevMachine");
