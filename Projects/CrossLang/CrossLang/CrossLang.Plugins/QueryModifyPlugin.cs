@@ -230,48 +230,46 @@ namespace Xap
 
             public async Task ReceiveData(ClientWebSocket websocket)
             {
-                var buffer = new byte[1024];
-                var result = await websocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-                while (websocket.State == WebSocketState.Open || !result.CloseStatus.HasValue)
+                var buffer = new ArraySegment<byte>(new byte[1024]);
+                while (websocket.State == WebSocketState.Open)
                 {
+                    var result = await websocket.ReceiveAsync(buffer, CancellationToken.None);
+                    if (result.MessageType == WebSocketMessageType.Close)
+                    {
+                        break;
+                    }
 
-                    var message = Encoding.Default.GetString(buffer, 0, result.Count);
+                    var message = Encoding.UTF8.GetString(buffer.Array, buffer.Offset, result.Count);
                     var jsonDocument = JsonDocument.Parse(message);
                     var root = jsonDocument.RootElement;
 
-
-                    if (root.TryGetProperty("type", out var typeProperty) && typeProperty.GetString() == "status" &&
-            root.TryGetProperty("details", out var detailsProperty) && detailsProperty.GetString() == "Done")
+                    if (root.TryGetProperty("type", out var typeProperty))
                     {
-                        // If the server sends a "Done" message, return
-                        return;
-                    }
-                    else if (root.TryGetProperty("type", out var messageType) && messageType.GetString() == "sse")
-                    {
-                        var choicesArray = root.GetProperty("payload").GetProperty("choices").EnumerateArray();
-
-                        // Make sure there is at least one choice
-                        if (choicesArray.Any())
+                        var type = typeProperty.GetString();
+                        switch (type)
                         {
-                            string text = choicesArray.First().GetProperty("text").GetString();
+                            case "status":
+                                if (root.TryGetProperty("details", out var detailsProperty) && detailsProperty.GetString() == "Done")
+                                {
+                                    return;
+                                }
+                                break;
+                            case "sse":
+                                var choicesArray = root.GetProperty("payload").GetProperty("choices").EnumerateArray();
+                                if (choicesArray.Any())
+                                {
+                                    var text = choicesArray.First().GetProperty("text").GetString();
+                                    pluginServices.Logger.Info("CodexGetter Text:" + text);
 
-                            // Console.WriteLine("Receive Data: " + text);
-
-                            pluginServices.Logger.Info("CodexGetter Text:" + text);
-
-                            if (streaming)
-                            {
-                                messages.Enqueue(text);
-                            }
-                            else
-                            {
-                                while (messages.TryDequeue(out _)) ;
-                                messages.Enqueue(text);
-                            }
+                                    if (!streaming)
+                                    {
+                                        messages.Clear(); // Clear the queue if not in streaming mode
+                                    }
+                                    messages.Enqueue(text);
+                                }
+                                break;
                         }
                     }
-
-                    result = await websocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
                 }
             }
 

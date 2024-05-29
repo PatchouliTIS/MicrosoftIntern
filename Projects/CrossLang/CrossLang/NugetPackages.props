@@ -52,7 +52,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AAPAnswer2">
-			<Version>[1.0.2414]</Version>
+			<Version>[1.0.2524]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="abar">
@@ -104,15 +104,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdCopyProcessor">
-			<Version>[1.22.12]</Version>
+			<Version>[1.22.20]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdProcessor">
-			<Version>[1.12.0]</Version>
+			<Version>[1.12.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdResponseGenerator">
-			<Version>[1.186.0]</Version>
+			<Version>[1.197.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdsCache">
@@ -124,27 +124,27 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdsComposition">
-			<Version>[1.340.0]</Version>
+			<Version>[1.376.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdServiceLogPassthrough">
-			<Version>[1.6.3]</Version>
+			<Version>[1.7.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdServiceMain">
-			<Version>[1.305.0]</Version>
+			<Version>[1.331.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdsFlight">
-			<Version>[1.2.3]</Version>
+			<Version>[1.2.4]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdsLab">
-			<Version>[2.1.4]</Version>
+			<Version>[2.2.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdsPlusLogger">
-			<Version>[1.0.16]</Version>
+			<Version>[1.0.18]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdsPlusLogger.deprecated">
@@ -152,11 +152,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdsResponseWorkflow">
-			<Version>[1.42.0]</Version>
+			<Version>[1.45.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AdsvMoneyForAplus">
-			<Version>[1.484.0]</Version>
+			<Version>[1.504.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AhDebugSerialize">
@@ -168,7 +168,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AIM.Product">
-			<Version>[1.1.1310181503]</Version>
+			<Version>[1.1.1404032015]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.aim.targetsrequest">
@@ -176,11 +176,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AIService">
-			<Version>[2.0.69]</Version>
+			<Version>[2.0.83]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Api">
-			<Version>[1.0.38]</Version>
+			<Version>[1.0.40]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AppExtension">
@@ -188,7 +188,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.AuctionRuntime">
-			<Version>[1.0.379]</Version>
+			<Version>[1.0.403]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.auctionruntime.notmigrated">
@@ -200,15 +200,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.BadgeAnnotation">
-			<Version>[3.1.10]</Version>
+			<Version>[3.1.11]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.BaseAdConverter">
-			<Version>[1.170.0]</Version>
+			<Version>[1.179.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.BaseAdsWorkflow">
-			<Version>[1.357.0]</Version>
+			<Version>[1.385.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.baseimpressionemitter">
@@ -216,7 +216,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.BCS.Workflows">
-			<Version>[0.1.5]</Version>
+			<Version>[0.1.10]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.BingAnswerMetrics">
@@ -224,7 +224,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.BingGriffin">
-			<Version>[1.42.0]</Version>
+			<Version>[1.44.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.BingNextActionDecoration">
@@ -256,7 +256,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ClickPrediction">
-			<Version>[1.9.1]</Version>
+			<Version>[1.9.3]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.clickresolution">
@@ -272,7 +272,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.CountAggregator">
-			<Version>[1.40.0]</Version>
+			<Version>[1.45.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.cpdadssettings">
@@ -300,7 +300,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.DecorationRenderingSetGenerator">
-			<Version>[1.41.16]</Version>
+			<Version>[1.42.7]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Demographics">
@@ -308,7 +308,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.DeviceDetection">
-			<Version>[2.22.0]</Version>
+			<Version>[2.25.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.DLIS">
@@ -320,7 +320,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.DPE">
-			<Version>[2.2.9]</Version>
+			<Version>[2.2.11]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.DynamicDescription">
@@ -336,15 +336,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.EncryptionKeyStore">
-			<Version>[2.0.0]</Version>
+			<Version>[2.2.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.EntitySelection">
-			<Version>[1.44.0]</Version>
+			<Version>[1.47.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Extractor">
-			<Version>[1.7.5]</Version>
+			<Version>[1.7.6]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.FaviconAnnotation">
@@ -352,15 +352,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.FourthLineAnnotation">
-			<Version>[1.6.4]</Version>
+			<Version>[1.6.5]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.FraudDetection">
-			<Version>[1.0.50]</Version>
+			<Version>[1.0.58]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.FrontierAH">
-			<Version>[1.43.0]</Version>
+			<Version>[1.44.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.grabbers">
@@ -368,7 +368,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5291915+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Hermes">
-			<Version>[1.14.0]</Version>
+			<Version>[1.14.6]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.HotelRatingAnnotation">
@@ -376,7 +376,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ImageRelevance">
-			<Version>[3.3.0]</Version>
+			<Version>[3.3.5]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.instantconfig">
@@ -384,7 +384,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.IntelliGene.Workflows">
-			<Version>[2.2.3]</Version>
+			<Version>[2.4.4]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.IPv6Mapping">
@@ -404,7 +404,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Location">
-			<Version>[1.56.0]</Version>
+			<Version>[1.62.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.LogEvents">
@@ -412,11 +412,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Logging">
-			<Version>[1.572.0]</Version>
+			<Version>[1.607.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.MarketDetection">
-			<Version>[1.74.0]</Version>
+			<Version>[1.76.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ModelBasedClickCurve">
@@ -428,11 +428,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.NativePostAdsWorkflows">
-			<Version>[1.20231106.314914664]</Version>
+			<Version>[1.20240418.140444267]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.NativePreAdsWorkflow">
-			<Version>[1.20231106.314902225]</Version>
+			<Version>[1.20240418.140418870]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Osdlis.Deprecated">
@@ -440,7 +440,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.OutputDelegation">
-			<Version>[1.6.3]</Version>
+			<Version>[1.6.7]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.pa.offerselection.plugins">
@@ -456,15 +456,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PageTemplateSetCache">
-			<Version>[1.0.165]</Version>
+			<Version>[1.0.193]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PaidSearchForNative.Product">
-			<Version>[1.20231106.315116941]</Version>
+			<Version>[1.20240418.140754635]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Personalization">
-			<Version>[1.5.45]</Version>
+			<Version>[1.5.50]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PersonalizedRecommendation">
@@ -476,7 +476,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Policy">
-			<Version>[1.203.0]</Version>
+			<Version>[1.231.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PostAds">
@@ -484,15 +484,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PostPolicy">
-			<Version>[1.21.0]</Version>
+			<Version>[1.24.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PreAdsSignals">
-			<Version>[1.38.0]</Version>
+			<Version>[1.47.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PreviousVisitAnnotation">
-			<Version>[2.9.5]</Version>
+			<Version>[2.9.8]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PriceExtension">
@@ -500,7 +500,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ProductAdsDecoration">
-			<Version>[1.2.16]</Version>
+			<Version>[1.2.22]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ProductAdsQASWorkflow">
@@ -508,15 +508,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ProductAdsWorkflow">
-			<Version>[2.99.0]</Version>
+			<Version>[2.115.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.PromotionDecoration">
-			<Version>[2.7.4]</Version>
+			<Version>[2.7.6]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ProviderArbitration">
-			<Version>[1.9.1]</Version>
+			<Version>[1.9.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.publisherexclusion">
@@ -536,7 +536,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.QRDT">
-			<Version>[1.0.86]</Version>
+			<Version>[1.0.88]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.QRDT.deprecated">
@@ -544,7 +544,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Queene">
-			<Version>[1.22.0]</Version>
+			<Version>[1.30.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.QueryFilter">
@@ -556,7 +556,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.QuerySuppression">
-			<Version>[1.275.0]</Version>
+			<Version>[1.277.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.querysuppressiondeprecated">
@@ -568,19 +568,19 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Request">
-			<Version>[1.319.0]</Version>
+			<Version>[1.337.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.RequestAugmentsHandler">
-			<Version>[1.121.0]</Version>
+			<Version>[1.141.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ResponseProcessor">
-			<Version>[1.33.0]</Version>
+			<Version>[1.35.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.RichAdsDecorations">
-			<Version>[1.42.13]</Version>
+			<Version>[1.42.16]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.RichAdsLogger">
@@ -596,7 +596,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.SCPMBEmitter">
-			<Version>[1.11.65]</Version>
+			<Version>[1.11.94]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.ShoppableAds">
@@ -604,11 +604,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Sitelinks">
-			<Version>[1.6.5]</Version>
+			<Version>[1.6.6]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.SitelinksBackfill">
-			<Version>[1.34.1]</Version>
+			<Version>[1.34.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.SmartAnnotation">
@@ -616,7 +616,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.SmartRouter">
-			<Version>[1.88.0]</Version>
+			<Version>[1.98.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.snapshots">
@@ -636,11 +636,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5448948+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.SponsoredAdsRequest">
-			<Version>[1.182.0]</Version>
+			<Version>[1.185.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.SponsoredAdsResponse">
-			<Version>[1.62.0]</Version>
+			<Version>[1.68.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.SponsoredAdsVariantGenerator">
@@ -648,15 +648,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.StrSnippet">
-			<Version>[2.9.1]</Version>
+			<Version>[2.9.3]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.SyncDCQueene">
-			<Version>[1.34.0]</Version>
+			<Version>[1.46.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Targeting">
-			<Version>[1.33.0]</Version>
+			<Version>[1.36.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.targetingfilter">
@@ -664,11 +664,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.TextAdsDecoration">
-			<Version>[1.26.13]</Version>
+			<Version>[1.32.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.TrafficScoring">
-			<Version>[1.9.0]</Version>
+			<Version>[1.10.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.urlnormalizer">
@@ -680,7 +680,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.Variants">
-			<Version>[1.144.1]</Version>
+			<Version>[1.149.7]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Ads.VerticalAdsRequest">
@@ -692,7 +692,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.wfcontrolplugin">
-			<Version>[1.43.0]</Version>
+			<Version>[1.51.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ads.xap.lux">
@@ -724,7 +724,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AdsExternalProviders">
-			<Version>[202311.7.1639379223]</Version>
+			<Version>[202404.24.600196446]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="adslistingads">
@@ -760,7 +760,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AdsQstatsFeatureExtractor">
-			<Version>[1.0.32]</Version>
+			<Version>[1.0.33]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="adsvmoney">
@@ -768,7 +768,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AdsWPO">
-			<Version>[2023.1107.1182509]</Version>
+			<Version>[2024.425.1052427]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="adswpo.notmigrated">
@@ -796,7 +796,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ahapluscommon">
-			<Version>[2.0.163]</Version>
+			<Version>[2.0.173]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AIP">
@@ -808,7 +808,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AlgoBlockEditorial">
-			<Version>[23.331.475826827]</Version>
+			<Version>[24.304.337620901]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AlgoLevelUtil">
@@ -816,23 +816,23 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AlgoShoppingAnswer">
-			<Version>[1.0.133]</Version>
+			<Version>[1.0.152]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AlgoSpacing">
-			<Version>[23.712.1024290480]</Version>
+			<Version>[24.125.122985607]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5604331+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AlgoStories">
-			<Version>[1.0.46]</Version>
+			<Version>[1.0.51]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AlgoTruncation">
-			<Version>[1.0.90]</Version>
+			<Version>[1.0.105]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AlphaAnswerVnext">
-			<Version>[2.20.1]</Version>
+			<Version>[2.24.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AmazonInline">
@@ -856,7 +856,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Answer.Shared">
-			<Version>[1.20221205.1185428]</Version>
+			<Version>[1.20240214.1012802]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="answer.shared.deprecated">
@@ -872,7 +872,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AnswersRanker">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.425.1043449]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="answersrankerpositioner">
@@ -880,23 +880,23 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AnswersRanker_Cycle_2">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.425.1043449]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AnswersTriggering">
-			<Version>[2023.1030.1599412449]</Version>
+			<Version>[2023.1117.1690147022]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AnswersTriggering.DDAG">
-			<Version>[2023.1030.1599412449]</Version>
+			<Version>[2023.1117.1690147022]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AnswersTriggering.DLIS">
-			<Version>[2023.1106.1637275440]</Version>
+			<Version>[2024.415.556214705]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AnswersTriggering.QU">
-			<Version>[2023.1106.1637275440]</Version>
+			<Version>[2024.415.556214705]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="apibase">
@@ -908,7 +908,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="aplusnext.aplusnextmain">
-			<Version>[1.0.560]</Version>
+			<Version>[1.0.594]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="aplusnext.otherpageresults">
@@ -924,11 +924,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AplusNext_CaptionsPlugins">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.424.1141558]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AppCategory">
-			<Version>[1.11.22]</Version>
+			<Version>[1.11.24]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5760568+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="appcategory.notmigrated">
@@ -980,11 +980,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ARBGenericAnswers">
-			<Version>[1.0.186]</Version>
+			<Version>[1.0.207]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ArtemisXap">
-			<Version>[2023.10.4]</Version>
+			<Version>[2024.2.12]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ascv2">
@@ -1000,15 +1000,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AutosAnswer">
-			<Version>[2023.1106.1637914930]</Version>
+			<Version>[2024.419.576168362]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AutosAnswer_2">
-			<Version>[2023.1106.1637914930]</Version>
+			<Version>[2024.419.576168362]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="AutoSuggest">
-			<Version>[2.2.28322626]</Version>
+			<Version>[2.2.28453250]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="autosuggest.deprecated">
@@ -1040,7 +1040,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BCEducation.MathUpsell">
-			<Version>[1.0.22]</Version>
+			<Version>[1.0.41]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BCEducation.Services">
@@ -1096,7 +1096,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Bing.Collections.Xap">
-			<Version>[0.20231102.193013]</Version>
+			<Version>[0.20240309.15621]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.5916833+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="bing.local">
@@ -1164,7 +1164,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6073094+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BingCN.BFPREnpage">
-			<Version>[1.0.17]</Version>
+			<Version>[1.0.18]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6073094+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BingCopyright">
@@ -1176,7 +1176,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6073094+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BingGC">
-			<Version>[1.1412.3]</Version>
+			<Version>[1.1492.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6073094+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="binggc.deprecated">
@@ -1200,7 +1200,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6073094+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BingNotifications">
-			<Version>[1.0.130]</Version>
+			<Version>[1.0.139]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6073094+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="bingnow.reactive">
@@ -1224,11 +1224,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6073094+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BingVideoBrowsing">
-			<Version>[1.20230110.46113543]</Version>
+			<Version>[1.20240417.565022644]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6229363+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BingVideoResults">
-			<Version>[1.20231030.1595843640]</Version>
+			<Version>[1.20240424.600478265]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6229363+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="BingWholeSale">
@@ -1244,7 +1244,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6229363+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Blis">
-			<Version>[1.168.4]</Version>
+			<Version>[1.184.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6229363+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="blis.deprecated">
@@ -1312,7 +1312,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6385588+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Captions">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.424.1141558]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6385588+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="captions.deprecated">
@@ -1324,15 +1324,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6385588+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Captionspostweb">
-			<Version>[9.93.129]</Version>
+			<Version>[9.93.175]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6385588+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Captions_Cycle_2">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.424.1141558]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6385588+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Captions_Cycle_3">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.424.1141558]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6385588+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="cardreplace">
@@ -1340,7 +1340,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6385588+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="CasualGamesWorkflow">
-			<Version>[0.8.0]</Version>
+			<Version>[0.30.4]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6385588+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="celebviraltweet">
@@ -1412,7 +1412,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6541858+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="CJKMainWorkflow">
-			<Version>[1.0.11]</Version>
+			<Version>[1.0.22]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6541858+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="CJKMSNJVAcademic">
@@ -1476,15 +1476,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.6541858+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="CodexMiddleware">
-			<Version>[2023.1107.1013126]</Version>
+			<Version>[2024.424.1141558]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6541858+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ComplexSymptom">
-			<Version>[4.5.13]</Version>
+			<Version>[4.5.15]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6541858+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ConditionHero">
-			<Version>[4.0.153]</Version>
+			<Version>[4.1.13]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.6698069+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="constraintindexrunner">
@@ -1712,15 +1712,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7010645+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Cricket">
-			<Version>[2023.1011.1503287042]</Version>
+			<Version>[2024.322.431504342]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7010645+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Crisp">
-			<Version>[2023.1107.1638523022]</Version>
+			<Version>[2024.424.601953722]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7010645+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Crisp_Cycle_2">
-			<Version>[2023.1107.1638523022]</Version>
+			<Version>[2024.424.601953722]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7010645+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="crox">
@@ -1788,7 +1788,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7166812+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DeepLeo">
-			<Version>[1.0.307]</Version>
+			<Version>[1.0.402]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7166812+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DeepLeoBFPR">
@@ -1796,7 +1796,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7166812+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Deeplinks">
-			<Version>[23.11.30200]</Version>
+			<Version>[24.4.240800]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7166812+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DeepQR">
@@ -1836,7 +1836,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7323136+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Dictionary">
-			<Version>[1.0.222]</Version>
+			<Version>[1.20240424.1192258]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7323136+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="dictionary.deprecated">
@@ -1872,7 +1872,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7323136+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DirectionAnswer">
-			<Version>[1.0.258]</Version>
+			<Version>[1.0.314]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7323136+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="directionanswer.notmigrated">
@@ -1880,11 +1880,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7323136+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DirectionAnswer_Cycle_2">
-			<Version>[1.0.258]</Version>
+			<Version>[1.0.314]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7323136+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DirectionAnswer_Cycle_3">
-			<Version>[1.0.258]</Version>
+			<Version>[1.0.314]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7323136+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Dirt.Answers">
@@ -1900,7 +1900,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7323136+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DocListExpansion">
-			<Version>[1.20231107.1637280481]</Version>
+			<Version>[1.20240424.599912583]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="documents">
@@ -1908,7 +1908,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Dolphin">
-			<Version>[1.0.160]</Version>
+			<Version>[1.0.164]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="dolphin.notmigrated">
@@ -1916,7 +1916,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DolphinAdapter">
-			<Version>[1.0.21]</Version>
+			<Version>[1.0.47]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DomainDeals">
@@ -1944,7 +1944,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Dragonfly">
-			<Version>[1.0.63]</Version>
+			<Version>[1.0.66]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="dreammap">
@@ -1960,11 +1960,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DynamicSearchBox">
-			<Version>[1.0.28322248]</Version>
+			<Version>[1.0.28562926]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DynamicSearchBox.Moments">
-			<Version>[1.0.28322246]</Version>
+			<Version>[1.0.28562923]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DynamicSearchBox.Shared">
@@ -1972,7 +1972,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7479504+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DynamicSearchBox.TopLevelWorkflow">
-			<Version>[1.0.28322249]</Version>
+			<Version>[1.0.28562927]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7635619+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="DynamicShopAns">
@@ -1984,11 +1984,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7635619+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EdgeUpsell">
-			<Version>[1.0.46]</Version>
+			<Version>[1.0.50]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7635619+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Education">
-			<Version>[1.0.106]</Version>
+			<Version>[1.0.113]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7635619+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Education.GeometryCalculator">
@@ -2020,7 +2020,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7635619+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Entertainment">
-			<Version>[2023.1024.1065310]</Version>
+			<Version>[2024.305.1085113]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7635619+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entertainmentvideo">
@@ -2040,7 +2040,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7635619+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entityidlookupanswer">
-			<Version>[2023.1107.1107052825]</Version>
+			<Version>[2024.424.424080027]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entityidlookupanswer.deprecated">
@@ -2056,19 +2056,19 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entityidlookupanswer_cycle_2">
-			<Version>[2023.1107.1107052825]</Version>
+			<Version>[2024.424.424080027]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entityidlookupanswer_cycle_3">
-			<Version>[2023.1107.1107052825]</Version>
+			<Version>[2024.424.424080027]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entityidlookupanswer_cycle_4">
-			<Version>[2023.1107.1107052825]</Version>
+			<Version>[2024.424.424080027]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EntityIndexAnswer">
-			<Version>[2023.1103.1103204451]</Version>
+			<Version>[2024.319.319165619]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entityindexanswer.notmigrated">
@@ -2076,7 +2076,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entityindexanswer_cycle_2">
-			<Version>[2023.1103.1103204451]</Version>
+			<Version>[2024.319.319165619]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entitylinking">
@@ -2088,7 +2088,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EntityPlugin">
-			<Version>[202311.7.1094317]</Version>
+			<Version>[202404.24.1125219]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="entityplugin.deprecated">
@@ -2100,11 +2100,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EntityPlugin_Cycle_2">
-			<Version>[202311.7.1094317]</Version>
+			<Version>[202404.24.1125219]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7791918+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EntityPlugin_Cycle_3">
-			<Version>[202311.7.1094317]</Version>
+			<Version>[202404.24.1125219]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EntityPreview">
@@ -2112,7 +2112,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EntityXap">
-			<Version>[1.20231107.1140601]</Version>
+			<Version>[1.20240425.1093816]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="eq">
@@ -2120,7 +2120,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ESportContainer">
-			<Version>[3.2.47]</Version>
+			<Version>[3.3.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EsportsLocal">
@@ -2136,11 +2136,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EventsAnswer">
-			<Version>[1.20221214.1835687641]</Version>
+			<Version>[1.20240418.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="EventsAnswer.DDAG">
-			<Version>[1.20221214.1835687641]</Version>
+			<Version>[1.20240418.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="eventscatalog">
@@ -2176,7 +2176,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.7948111+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="FactCarouselRanker">
-			<Version>[3.73.22]</Version>
+			<Version>[3.73.26]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8104335+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="factoid">
@@ -2188,7 +2188,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8104335+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="FalconAnswers">
-			<Version>[1.20231103.1195517]</Version>
+			<Version>[1.20240418.1220217]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8104335+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="falconplugins">
@@ -2200,7 +2200,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8104335+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="FeatureCacheVNext">
-			<Version>[1.1.34716549]</Version>
+			<Version>[1.1.43719651]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8104335+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="FeedsAnswer">
@@ -2220,7 +2220,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8104335+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Finance">
-			<Version>[1.1.87]</Version>
+			<Version>[1.2.10]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8104335+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="finance.currency">
@@ -2248,7 +2248,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="FlightStatus">
-			<Version>[1.0.94]</Version>
+			<Version>[1.20240328.1215511]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="flightstatus.deprecated">
@@ -2260,7 +2260,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="FollowableWeb">
-			<Version>[1.20231106.1632634683]</Version>
+			<Version>[1.20240418.570620764]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="food">
@@ -2268,7 +2268,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="FoodIngredients">
-			<Version>[1.0.42]</Version>
+			<Version>[1.0.47]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="FrequentSearches">
@@ -2280,27 +2280,27 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GcDLIS">
-			<Version>[1.25.0]</Version>
+			<Version>[1.30.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GcDLIS.AddressParserWorkflow">
-			<Version>[1.56.1]</Version>
+			<Version>[1.61.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GcDLIS.AttentionModelsWorkflow">
-			<Version>[0.37.0]</Version>
+			<Version>[0.57.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GcDLIS.ConfidenceModelWorkflow">
-			<Version>[1.59.0]</Version>
+			<Version>[1.70.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GcDLIS.DeepSpellerWorkflow">
-			<Version>[0.10.0]</Version>
+			<Version>[0.23.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GcDLIS.GcCalWorkflow">
-			<Version>[0.43.0]</Version>
+			<Version>[0.52.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8260565+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="geocoding">
@@ -2312,7 +2312,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8417141+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GeoFE">
-			<Version>[1.257.0]</Version>
+			<Version>[1.270.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8417141+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="geofe.deprecated">
@@ -2328,11 +2328,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.8417141+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GigServices.Answers">
-			<Version>[1.20231106.1635336551]</Version>
+			<Version>[1.20240425.606597662]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8417141+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GigServices.DLIS">
-			<Version>[1.20231002.1454325904]</Version>
+			<Version>[1.20240410.527773681]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.8417141+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="GlobalFacts">
@@ -2748,7 +2748,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HealthCalculator">
-			<Version>[5.0.38]</Version>
+			<Version>[5.0.39]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="healthconditionsanswer">
@@ -2756,15 +2756,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HealthMainlineAnswer">
-			<Version>[6.1.162]</Version>
+			<Version>[6.1.174]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HealthMainlinePillsAnswer">
-			<Version>[1.3.1]</Version>
+			<Version>[1.5.11]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HealthQnA">
-			<Version>[1.0.7]</Version>
+			<Version>[1.1.15]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HealthRecommendation">
@@ -2772,11 +2772,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HealthTaskpane">
-			<Version>[1.0.53]</Version>
+			<Version>[1.0.65]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HealthUndersideXap">
-			<Version>[1.0.17]</Version>
+			<Version>[1.0.18]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="helpandtips">
@@ -2804,15 +2804,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HomeRemedy">
-			<Version>[1.3.0]</Version>
+			<Version>[1.3.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HotelRentalPackages">
-			<Version>[1.0.145]</Version>
+			<Version>[1.0.147]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9354410+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="HotNewsTaskPaneDarwin">
-			<Version>[1.20230925.1410834423]</Version>
+			<Version>[1.20231116.1685016432]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="hyperlocal">
@@ -2820,7 +2820,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ImageAnswer">
-			<Version>[1.1.902]</Version>
+			<Version>[1.1.982]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="imageapi">
@@ -2836,7 +2836,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ImageInsights">
-			<Version>[1.0.239]</Version>
+			<Version>[1.0.243]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ImageInsights.Common">
@@ -2856,7 +2856,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ImageSpaceV">
-			<Version>[1.0.40696330]</Version>
+			<Version>[1.0.41732689]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="implicitappsearch">
@@ -2892,7 +2892,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="InProductSurvey">
-			<Version>[1.0.27]</Version>
+			<Version>[1.0.32]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9510801+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="InsightsBadge">
@@ -2900,11 +2900,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9666983+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="IntentMatch">
-			<Version>[1.3.19]</Version>
+			<Version>[1.3.24]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9666983+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="interleaving">
-			<Version>[0.40190.0]</Version>
+			<Version>[1.40190.7]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9666983+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ipblis">
@@ -2928,15 +2928,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:12.9666983+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="JobsSearch">
-			<Version>[1.0.388]</Version>
+			<Version>[1.0.417]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9666983+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="JobsSearchFPR">
-			<Version>[1.0.81]</Version>
+			<Version>[1.0.82]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9666983+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="JointProviderArbitration">
-			<Version>[202311.7.1638032702]</Version>
+			<Version>[202404.19.576228481]</Version>
 			<LastUpgraded>2023-08-23T15:42:12.9666983+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="kalmiyaranker">
@@ -3224,7 +3224,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Local.Pbx">
-			<Version>[1.0.313]</Version>
+			<Version>[1.0.338]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="local.pbx.notmigrated">
@@ -3240,7 +3240,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Local.PbxConfig">
-			<Version>[1.0.366]</Version>
+			<Version>[1.0.387]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Local.QU">
@@ -3264,11 +3264,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Local.UrpProxy">
-			<Version>[1.0.34]</Version>
+			<Version>[1.0.42]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="local.xapqu">
-			<Version>[1.0.391]</Version>
+			<Version>[1.0.410]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="LocalAds">
@@ -3280,7 +3280,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="LocalEntityRetrieval">
-			<Version>[1.0.525]</Version>
+			<Version>[1.0.539]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0291913+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="localentityretrieval.notmigrated">
@@ -3312,7 +3312,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0448273+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="LocationExtraction">
-			<Version>[1.0.265]</Version>
+			<Version>[1.0.294]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0448273+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="locationextraction.deprecated">
@@ -3340,7 +3340,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0448273+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="LocationUnderstanding">
-			<Version>[1.0.48]</Version>
+			<Version>[1.0.52]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0448273+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="lomo">
@@ -3364,11 +3364,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="LyricsSearch">
-			<Version>[2023.901.1224541]</Version>
+			<Version>[2024.418.1002705]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MAExpansion">
-			<Version>[1.1.1]</Version>
+			<Version>[1.1.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="maps">
@@ -3380,7 +3380,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MapsAnswer">
-			<Version>[1.524.0]</Version>
+			<Version>[1.565.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="mapsanswer.deprecated">
@@ -3388,11 +3388,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MapsAnswer_cycle_2">
-			<Version>[1.524.0]</Version>
+			<Version>[1.565.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MapsAutoSuggest">
-			<Version>[1.5.54]</Version>
+			<Version>[1.5.72]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="mapsautosuggest.notmigrated">
@@ -3408,7 +3408,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="maps_cycle_2">
-			<Version>[1.0.21]</Version>
+			<Version>[1.0.23]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0604477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="maren">
@@ -3456,7 +3456,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.0916944+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Microsoft.Falcon.FalconFederator">
-			<Version>[1.0.34]</Version>
+			<Version>[1.0.37]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.0916944+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="microsoftrewards">
@@ -3464,7 +3464,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1073267+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MitAnswer">
-			<Version>[1.0.76]</Version>
+			<Version>[1.0.79]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1073267+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MiuraXap">
@@ -3472,7 +3472,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1073267+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MMAnswerRanking">
-			<Version>[1.20231018.13311]</Version>
+			<Version>[1.20240228.55001]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1073267+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MMAnswerTrigger">
@@ -3500,11 +3500,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1229576+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MMDiverseAnswerResults">
-			<Version>[1.20230213.223727403]</Version>
+			<Version>[1.20240123.114343860]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1229576+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MMDiverseContent">
-			<Version>[1.20231009.1487186103]</Version>
+			<Version>[1.20240408.518284020]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1229576+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MMMixRanking">
@@ -3528,7 +3528,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1385655+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MMQueryClassifierService">
-			<Version>[1.0.749]</Version>
+			<Version>[1.0.864]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1385655+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="mmrelatedentities">
@@ -3536,7 +3536,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1385655+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MMRelatedEntities.Core">
-			<Version>[1.63.222]</Version>
+			<Version>[1.63.242]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1385655+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="mmrelatedentities.deprecated">
@@ -3548,7 +3548,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1385655+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MMRelatedEntities.Scenarios_cycle_2">
-			<Version>[1.23.45]</Version>
+			<Version>[1.23.47]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1385655+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="mmrelatedentitiesxap">
@@ -3572,11 +3572,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1541936+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MonetizableQueries">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.418.1010618]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1541936+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Mortgage">
-			<Version>[1.0.12]</Version>
+			<Version>[1.1.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1541936+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MPCluster">
@@ -3636,7 +3636,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1854477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.Chat">
-			<Version>[1.0.40892278]</Version>
+			<Version>[1.0.45439773]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.1854477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.CollectionsSearch">
@@ -3644,7 +3644,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.1854477+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.Curation">
-			<Version>[1.0.19]</Version>
+			<Version>[1.0.20]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2010719+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.EQnA">
@@ -3656,7 +3656,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2010719+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.ImageGenerator">
-			<Version>[1.0.40786912]</Version>
+			<Version>[1.0.45731494]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2010719+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.ImageGenerator.Wrapper.Bfpr">
@@ -3668,7 +3668,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2010719+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.ImageResultsPage">
-			<Version>[1.11.40125141]</Version>
+			<Version>[1.12.45577115]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2010719+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.ImageResultsPage.notmigrated">
@@ -3688,7 +3688,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2010719+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.Knowledge">
-			<Version>[3.1.40937143]</Version>
+			<Version>[3.1.45721359]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2010719+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.Knowledge.BlobCache">
@@ -3704,7 +3704,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2010719+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.MediaCanvas">
-			<Version>[1.0.23]</Version>
+			<Version>[1.0.25]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.MonetizationSignals">
@@ -3716,35 +3716,35 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.PageData">
-			<Version>[1.1.35917793]</Version>
+			<Version>[1.1.40933511]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.Personalization">
-			<Version>[1.0.40919481]</Version>
+			<Version>[1.0.41747387]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.QueryUnderstanding">
-			<Version>[1.20231107.25326]</Version>
+			<Version>[1.20240423.65824]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.RQ">
-			<Version>[1.0.63]</Version>
+			<Version>[1.0.91]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.RS">
-			<Version>[1.1.125]</Version>
+			<Version>[1.1.130]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.SharedPlugins">
-			<Version>[1.20231023.51326]</Version>
+			<Version>[1.20240403.43025]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.Smrs">
-			<Version>[1.0.40640315]</Version>
+			<Version>[1.0.45278312]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="multimedia.structuredindex">
-			<Version>[1.20230920.1383403860]</Version>
+			<Version>[1.20240425.607114085]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2166874+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Multimedia.UnifiedSegmentServices.Workflows">
@@ -3792,7 +3792,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2323126+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MultimediaSpaceV">
-			<Version>[1.0.40878800]</Version>
+			<Version>[1.0.44969036]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2323126+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="multimediaworkflows">
@@ -3800,7 +3800,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2323126+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="MultimediaWpo">
-			<Version>[1.0.28]</Version>
+			<Version>[1.0.38]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2323126+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="music">
@@ -3864,7 +3864,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2479384+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="News.QueryStatsWithAlteration">
-			<Version>[2.20230920.1384699862]</Version>
+			<Version>[2.20240131.156257641]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2479384+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="news.recommendedtopics">
@@ -3884,7 +3884,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2479384+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsAnswerPostProcessor">
-			<Version>[3.20230215.232023428]</Version>
+			<Version>[3.20240403.491568664]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsAnswerVNext">
@@ -3892,7 +3892,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="newsanswervnext.notmigrated">
-			<Version>[1.20231026.1575696733]</Version>
+			<Version>[1.20240313.384219120]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="newsanswervnext.notmigrated_cycle_2">
@@ -3904,15 +3904,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsAthena">
-			<Version>[1.20231017.1528591504]</Version>
+			<Version>[1.20240202.165257164]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsClassifierWorkflow">
-			<Version>[1.20231025.1571185081]</Version>
+			<Version>[1.20240206.185323515]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsDarwinFastTrack">
-			<Version>[1.20230512.699661200]</Version>
+			<Version>[1.20240415.554779622]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="newsdatahost">
@@ -3920,7 +3920,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsDocumentIndex">
-			<Version>[1.20221011.1498452963]</Version>
+			<Version>[1.20231205.1788472980]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2635609+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsEditorialHeroVideo">
@@ -3952,7 +3952,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2791890+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="newsosanswer">
-			<Version>[1.20231107.1638854523]</Version>
+			<Version>[1.20240425.606192183]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2791890+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="newsqasadapter">
@@ -3980,7 +3980,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.2948143+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsSuppression">
-			<Version>[1.20231026.1576290754]</Version>
+			<Version>[1.20240229.305802725]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.2948143+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="NewsTimeline">
@@ -4048,11 +4048,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3104393+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Offensive">
-			<Version>[3.7.9]</Version>
+			<Version>[4.0.137]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3104393+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="OffersAnswer">
-			<Version>[1.21.57]</Version>
+			<Version>[1.21.66]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3104393+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="office">
@@ -4088,7 +4088,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3104393+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="OnlineMemory">
-			<Version>[1.0.105]</Version>
+			<Version>[1.0.107]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3260622+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="onlinememory.notmigrated">
@@ -4096,7 +4096,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3260622+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="OnlineOffers">
-			<Version>[1.0.12]</Version>
+			<Version>[1.0.22]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3260622+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="OnlineQueryIntelligencePublisher">
@@ -4108,7 +4108,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3260622+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="opendataanswer">
-			<Version>[1.1.1639]</Version>
+			<Version>[1.1.1784]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3260622+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="opendatapostweb">
@@ -4128,7 +4128,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3260622+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ORCA">
-			<Version>[1.0.142]</Version>
+			<Version>[1.0.200]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3260622+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Orion">
@@ -4152,7 +4152,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3260622+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="OSDLIS">
-			<Version>[1.0.74]</Version>
+			<Version>[1.1.202404052]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="osdlis.notmigrated">
@@ -4160,11 +4160,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="OutputDelegation">
-			<Version>[1.0.14]</Version>
+			<Version>[1.0.15]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="packagetracking">
-			<Version>[2.0.35]</Version>
+			<Version>[2.0.68]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="pagepreviewanswer">
@@ -4172,7 +4172,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="PageReco.Microservice">
-			<Version>[1.0.452]</Version>
+			<Version>[1.0.530]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="pagination">
@@ -4180,7 +4180,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ParseSearchHistoryContext">
-			<Version>[1.2.18]</Version>
+			<Version>[1.3.10]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Patents">
@@ -4192,7 +4192,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="PdsRules">
-			<Version>[23.11.61900]</Version>
+			<Version>[24.4.250500]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3416880+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="pdsrules.notmigrated">
@@ -4244,7 +4244,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3573158+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="PersonalBing.Profile">
-			<Version>[1.0.363]</Version>
+			<Version>[1.0.370]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3573158+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="PersonalBing.TrackLinks">
@@ -4264,7 +4264,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3573158+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="PersonalizationFeatureStoreAccessor">
-			<Version>[1.0.26]</Version>
+			<Version>[1.0.182]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3573158+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="personalizedheadline">
@@ -4308,7 +4308,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3729381+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="PostwebComposer">
-			<Version>[1.0.150]</Version>
+			<Version>[1.0.152]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3729381+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="postwebrecommendation">
@@ -4324,11 +4324,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.3729381+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="PreMakoSignalCondition">
-			<Version>[1.1.2]</Version>
+			<Version>[1.1.6]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3729381+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Prism.ImageFeed">
-			<Version>[1.0.40920934]</Version>
+			<Version>[1.0.45740210]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.3729381+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="proactive.lists">
@@ -4420,7 +4420,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4041897+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QR.CALHttpWrapper">
-			<Version>[1.0.0]</Version>
+			<Version>[1.0.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4041897+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QR.CALQASReducer">
@@ -4440,7 +4440,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4041897+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QR.ContextMerger">
-			<Version>[2.0.1]</Version>
+			<Version>[2.0.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4041897+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QR.ConvertQueryLanguage">
@@ -4544,7 +4544,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4354419+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QR.VariantConverter">
-			<Version>[1.2.2]</Version>
+			<Version>[1.2.3]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4354419+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QR.VariantReducer">
@@ -4564,7 +4564,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4354419+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QueryIndex">
-			<Version>[1.16.155]</Version>
+			<Version>[1.16.156]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4354419+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QueryIndexParserAnswer">
@@ -4600,11 +4600,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4510662+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QuerySuggestion.QnA">
-			<Version>[1.231103.34819]</Version>
+			<Version>[1.240313.34432]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4510662+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="QuerySuggestion.SRS">
-			<Version>[3.231102.58533]</Version>
+			<Version>[3.240304.14124]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4510662+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="randomriddle">
@@ -4612,7 +4612,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4510662+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RCPolicy">
-			<Version>[23.1026.1575126960]</Version>
+			<Version>[24.122.108482043]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4510662+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RDCaption">
@@ -4624,7 +4624,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4510662+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RealEstate">
-			<Version>[2023.1106.1636603444]</Version>
+			<Version>[2024.424.606408425]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4666916+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RecentActivities">
@@ -4652,7 +4652,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4666916+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RecoAPI.XapService">
-			<Version>[1.0.1]</Version>
+			<Version>[1.0.12]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4666916+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="recommendations.apps">
@@ -4692,11 +4692,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4823190+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RelatedQnA">
-			<Version>[2.293.1]</Version>
+			<Version>[2.318.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4823190+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RelatedSearch">
-			<Version>[1.231103.37671]</Version>
+			<Version>[1.240423.35263]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4823190+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="relatedsearch.notmigrated">
@@ -4704,7 +4704,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4823190+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RelatedVideosURP">
-			<Version>[1.20231016.1524720721]</Version>
+			<Version>[1.20240412.538731666]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4823190+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RelevanceAsAPlatform">
@@ -4760,11 +4760,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4979448+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Retail">
-			<Version>[20231107.5.1]</Version>
+			<Version>[20240425.1.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4979448+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Retail.Api">
-			<Version>[20231107.5.1]</Version>
+			<Version>[20240425.1.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4979448+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Retail.QueryCategorizer">
@@ -4776,7 +4776,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.4979448+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RetailExploreBy">
-			<Version>[1.0.153]</Version>
+			<Version>[1.0.159]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.4979448+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="retailexploreby.notmigrated">
@@ -4792,11 +4792,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5135669+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RetailPersonalizedZI">
-			<Version>[2.0.773]</Version>
+			<Version>[20240423.1.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5135669+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RetailPersonalizedZI.Microservice">
-			<Version>[1.0.987]</Version>
+			<Version>[1.0.1130]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5135669+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RetailQasLogger">
@@ -4820,11 +4820,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5135669+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RewardsService">
-			<Version>[1.0.11]</Version>
+			<Version>[1.0.17]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5135669+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RichCalendar">
-			<Version>[1.3.9]</Version>
+			<Version>[1.7.20]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5135669+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RichCaptionData">
@@ -4852,7 +4852,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5291942+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RichDeveloper">
-			<Version>[2023.1106.1123]</Version>
+			<Version>[2024.4.25082115]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5291942+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RichDiscussions">
@@ -4868,7 +4868,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5291942+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="RichNavChildAnswer">
-			<Version>[23.718.1052601003]</Version>
+			<Version>[24.220.258575164]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5291942+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="richpackagetracking">
@@ -4932,7 +4932,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5448185+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Robocop">
-			<Version>[1.0.67]</Version>
+			<Version>[1.0.68]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5448185+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="robocop.deprecated">
@@ -4964,7 +4964,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5605100+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SearchHistory">
-			<Version>[1.1.28312165]</Version>
+			<Version>[1.1.28515356]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5605100+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="searchhistory.notmigrated">
@@ -5004,7 +5004,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SerpShoppingAnswer">
-			<Version>[20231106.2.1]</Version>
+			<Version>[20240424.1.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="servicestatusanswer">
@@ -5020,31 +5020,31 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SharedSegments">
-			<Version>[1.11.32]</Version>
+			<Version>[1.143.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ShopCreative">
-			<Version>[1.0.53]</Version>
+			<Version>[1.0.66]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Shopping.QueryUnderstanding">
-			<Version>[20231023.1.1]</Version>
+			<Version>[20240425.1.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ShoppingAPI">
-			<Version>[20231107.2.1]</Version>
+			<Version>[20240424.2.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ShoppingAPI.Core">
-			<Version>[20231107.2.1]</Version>
+			<Version>[20240424.2.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ShoppingCodex">
-			<Version>[20231025.1.1]</Version>
+			<Version>[20240407.1.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ShoppingContentAnswer">
-			<Version>[20231030.1.1]</Version>
+			<Version>[20240423.1.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5760735+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="shoppingsources">
@@ -5056,7 +5056,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5916937+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Shoreline">
-			<Version>[1.0.44]</Version>
+			<Version>[1.0.47]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5916937+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="showtimes">
@@ -5072,7 +5072,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5916937+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ShowtimesAnswer">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.425.1043449]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5916937+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="showtimesanswer.notmigrated">
@@ -5080,11 +5080,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.5916937+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ShowtimesAnswer_Cycle_2">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.425.1043449]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5916937+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="ShowtimesAnswer_Cycle_3">
-			<Version>[2023.1107.1094317]</Version>
+			<Version>[2024.425.1043449]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.5916937+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="sitelinkbackfillannotation">
@@ -5180,7 +5180,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6229404+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SocratesQnA">
-			<Version>[1.0.413]</Version>
+			<Version>[1.0.426]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6229404+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SoftwareExplore">
@@ -5188,7 +5188,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6229404+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SpaceV">
-			<Version>[1.573.33]</Version>
+			<Version>[1.573.38]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6229404+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="spark">
@@ -5224,23 +5224,23 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6385658+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SportsArena">
-			<Version>[2023.1107.1639119902]</Version>
+			<Version>[2024.424.603403324]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6385658+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SportsContainer">
-			<Version>[1.20231107.1022530]</Version>
+			<Version>[1.20240424.1222548]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6385658+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SportsLite">
-			<Version>[1.20231107.1161153]</Version>
+			<Version>[1.20240424.1210116]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6385658+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SportsLiteAjax">
-			<Version>[1.20231107.1161153]</Version>
+			<Version>[1.20240424.1210116]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6385658+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SportsReco.Microservice">
-			<Version>[1.0.701]</Version>
+			<Version>[1.0.978]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6385658+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="SportsShoppingQueryBubbles">
@@ -5284,7 +5284,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6541921+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TazaQueryVectorCache">
-			<Version>[0.0.87]</Version>
+			<Version>[0.0.89]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6541921+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="tech">
@@ -5308,11 +5308,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6699017+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TechGenericAnswer">
-			<Version>[1.1.53]</Version>
+			<Version>[1.1.80]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6704257+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="techgenericanswer_cycle_2">
-			<Version>[1.1.50]</Version>
+			<Version>[1.1.54]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6704257+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="techhelp">
@@ -5320,7 +5320,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6704257+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TechInstallables">
-			<Version>[2023.11.7154836]</Version>
+			<Version>[2024.4.18100425]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6704257+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="techranking">
@@ -5344,7 +5344,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6704257+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Therapy">
-			<Version>[1.0.7]</Version>
+			<Version>[1.1.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6704257+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="timeline">
@@ -5356,7 +5356,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6704257+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TimeZone">
-			<Version>[1.0.113]</Version>
+			<Version>[1.20240418.1174633]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6859497+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TimeZone.Legacy">
@@ -5380,11 +5380,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.6859497+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Toolbox">
-			<Version>[1.0.92]</Version>
+			<Version>[1.0.112]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6859497+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TopicExploration">
-			<Version>[1.231026.29836]</Version>
+			<Version>[1.240304.59160]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.6859497+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TopicView">
@@ -5412,7 +5412,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TranslateThis">
-			<Version>[1.0.368]</Version>
+			<Version>[1.0.395]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="translatoranswer">
@@ -5424,19 +5424,19 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelCarRental">
-			<Version>[1.0.93]</Version>
+			<Version>[1.0.102]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelFlightBook">
-			<Version>[1.0.466]</Version>
+			<Version>[1.0.530]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelGenericAnswer">
-			<Version>[1.0.20]</Version>
+			<Version>[1.0.34]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelGrowthXap">
-			<Version>[1.1.21]</Version>
+			<Version>[1.1.24]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelGrowthXap_Dynamic">
@@ -5444,27 +5444,27 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelRightRail">
-			<Version>[1.0.24]</Version>
+			<Version>[1.0.29]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7016040+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelTimeAnswer">
-			<Version>[1.6.879]</Version>
+			<Version>[1.6.973]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7172299+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelTimeAnswer_Cycle_2">
-			<Version>[1.6.879]</Version>
+			<Version>[1.6.973]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7172299+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelTimeAnswer_Dynamic_1">
-			<Version>[1.6.879]</Version>
+			<Version>[1.6.973]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7172299+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelTimeAnswer_PlgsBundle">
-			<Version>[1.6.879]</Version>
+			<Version>[1.6.973]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7172299+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TravelTrainBook">
-			<Version>[1.0.72]</Version>
+			<Version>[1.0.86]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7172299+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="trendingarticles">
@@ -5472,7 +5472,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7172299+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TrendingNews">
-			<Version>[1.20231106.1633378507]</Version>
+			<Version>[1.20240425.606998530]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7172299+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="TrendingNewsDarwin">
@@ -5508,7 +5508,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7328541+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Underside">
-			<Version>[1.0.681]</Version>
+			<Version>[1.0.685]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7328541+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="UndersideBFPR">
@@ -5520,7 +5520,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7328541+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="UnifiedQUBFPR">
-			<Version>[2023.817.1165653]</Version>
+			<Version>[2024.129.1114143]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7328541+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="UnifiedQUCore">
@@ -5540,7 +5540,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7328541+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="UserLocation">
-			<Version>[2.11.4]</Version>
+			<Version>[3.0.6]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7328541+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="UserLocationApi">
@@ -5564,15 +5564,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7484762+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="UserStore">
-			<Version>[1.23.11031731]</Version>
+			<Version>[1.24.4241918]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7484762+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="UserStore_Cycle_2">
-			<Version>[1.23.11031731]</Version>
+			<Version>[1.24.4241918]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7484762+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="UserStore_Cycle_4">
-			<Version>[1.23.11031731]</Version>
+			<Version>[1.24.4241918]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7484762+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="userunderstanding">
@@ -5592,7 +5592,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7641038+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Vaccine">
-			<Version>[1.0.9]</Version>
+			<Version>[1.1.2]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7641038+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="valentine">
@@ -5608,11 +5608,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7641038+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="VideoAnswer">
-			<Version>[1.20231101.153433]</Version>
+			<Version>[1.20240424.34335]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7641038+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="VideoAPlus">
-			<Version>[1.20231024.1566696603]</Version>
+			<Version>[1.20240422.590701802]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7641038+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="videochannel">
@@ -5640,11 +5640,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7797286+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="VideoReco">
-			<Version>[1.20231024.1566434175]</Version>
+			<Version>[1.20240422.590958968]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7797286+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="VideosById">
-			<Version>[1.20231016.1524720721]</Version>
+			<Version>[1.20240104.15477604]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7797286+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="VideoSports">
@@ -5668,11 +5668,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7797286+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="WatchCanvas">
-			<Version>[1.20231025.1569764942]</Version>
+			<Version>[1.20240422.591391804]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7797286+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Weather">
-			<Version>[2.0.90]</Version>
+			<Version>[2.0.116]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7953586+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="weather.deprecated">
@@ -5684,7 +5684,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7797286+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="web.composer">
-			<Version>[1.40190.1]</Version>
+			<Version>[1.40190.4]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7953586+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Web3Segment">
@@ -5700,7 +5700,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.7953586+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="WebQnACombiner">
-			<Version>[1.0.230]</Version>
+			<Version>[1.0.241]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.7953586+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="webviewcache">
@@ -5752,7 +5752,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.8109959+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="WPO.EntityEdit">
-			<Version>[1.0.232]</Version>
+			<Version>[1.0.252]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.8109959+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="wpoadsfashion">
@@ -5780,7 +5780,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.8266100+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Xap.AdsOnly">
-			<Version>[1.87.0]</Version>
+			<Version>[1.110.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.8266100+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.conditional">
@@ -5788,7 +5788,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.8266100+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Xap.DataStore">
-			<Version>[1.0.10]</Version>
+			<Version>[1.0.11]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.8266100+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.falcon">
@@ -5796,7 +5796,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.8266100+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Xap.GenSERP">
-			<Version>[1.0.33]</Version>
+			<Version>[1.0.124]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.8266100+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.isnoresultsenabled">
@@ -5804,15 +5804,15 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.8422382+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Xap.Newsvertical">
-			<Version>[1.20230921.1388663881]</Version>
+			<Version>[1.20240424.600581761]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.8422382+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Xap.Platform">
-			<Version>[1.0.208]</Version>
+			<Version>[1.0.243]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.8422382+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.platform.deprecated.do.not.use">
-			<Version>[1.40190.18]</Version>
+			<Version>[1.40190.19]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.8422382+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.platform.legacy_wf">
@@ -5840,7 +5840,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.8578621+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.platform.notmigrated">
-			<Version>[2.40190.87]</Version>
+			<Version>[2.40190.99]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.8578621+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.postwebcomposer">
@@ -5896,11 +5896,11 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.8891097+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.service.urpanswer.product.notmigrated_cycle_2">
-			<Version>[1.40190.8]</Version>
+			<Version>[1.40190.24]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.9047348+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Xap.Shared.BFPR">
-			<Version>[20231107.40941576.1]</Version>
+			<Version>[20240425.45751884.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.9047348+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="Xap.Shared.DSBFPR">
@@ -5908,7 +5908,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.9047348+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.shared.otherpage">
-			<Version>[20231107.40941109.1]</Version>
+			<Version>[20240425.45751884.1]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.9047348+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xap.shared.regional">
@@ -5932,7 +5932,7 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.9203602+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="xapcore">
-			<Version>[1.1.4]</Version>
+			<Version>[1.1.5]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.9203602+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="XapExample">
@@ -5972,26 +5972,56 @@ Done you just upgraded the nuget packages
 			<LastUpgraded>2023-08-23T15:42:13.9359844+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="XMarketplace">
-			<Version>[1.20231107.1639461912]</Version>
+			<Version>[20240425.0.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.9359844+00:00</LastUpgraded>
 		</PackageReference>
 		<PackageReference Include="youplus">
 			<Version>[0.40190.0]</Version>
 			<LastUpgraded>2023-08-23T15:42:13.9359844+00:00</LastUpgraded>
 		</PackageReference>
-		<PackageReference Include="SHResponseCreator" Version="[1.0.10]">
+		<PackageReference Include="SHResponseCreator" Version="[1.1.20]">
 			<LastUpgraded>2023-11-06T23:29:38.7565766+00:00</LastUpgraded>
 		</PackageReference>
-		<PackageReference Include="Ads.BoostPreAds" Version="[1.20230926.254446162]" InDirect="true" />
-		<PackageReference Include="Ads.BoostPostAds" Version="[1.20231031.213146950]" InDirect="true" />
-		<PackageReference Include="VideoResults" Version="[1.20231011.1497416344]" InDirect="true" />
-		<PackageReference Include="Multimedia.VideoCopilot" Version="[1.0.22]" InDirect="true" />
-		<PackageReference Include="Multimedia.VideoEngagement" Version="[1.0.36]" InDirect="true" />
-		<PackageReference Include="SportsArena.DDAG" Version="[2023.1107.1639119902]" InDirect="true" />
-		<PackageReference Include="SportsArena.Triggering" Version="[2023.1107.1639119902]" InDirect="true" />
-		<PackageReference Include="CoachMark" Version="[1.1.5]" InDirect="true" />
-		<PackageReference Include="WholePageTab" Version="[1.20230921.1213352]" InDirect="true" />
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<PackageReference Include="Ads.BoostPreAds" Version="[1.20240205.194458171]" InDirect="true" />
+		<PackageReference Include="Ads.BoostPostAds" Version="[1.20240416.153514159]" InDirect="true" />
+		<PackageReference Include="RetailAds" Version="[20240301.1.1]" InDirect="true" />
+		<PackageReference Include="VideoResults" Version="[1.20240409.523668483]" InDirect="true" />
+		<PackageReference Include="Multimedia.VideoCopilot" Version="[1.0.46]" InDirect="true" />
+		<PackageReference Include="Multimedia.VideoEngagement" Version="[1.0.40]" InDirect="true" />
+		<PackageReference Include="CasualGamesRecoWorkflow" Version="[0.21.3]" InDirect="true" />
+		<PackageReference Include="DirectionAnswerGPT" Version="[1.0.314]" InDirect="true" />
+		<PackageReference Include="UserUnderstandingAPI" Version="[20240422.1.1]" InDirect="true" />
+		<PackageReference Include="RetailModules" Version="[20240422.1.1]" InDirect="true" />
+		<PackageReference Include="SportsArena.DDAG" Version="[2024.424.603403324]" InDirect="true" />
+		<PackageReference Include="TechHelpAnswer" Version="[2024.4.17081606]" InDirect="true" />
+		<PackageReference Include="Xap.Shared.CrossLangCache" Version="[2024.3.29100257]" InDirect="true" />
+		<PackageReference Include="QR.PRFShell" Version="[1.0.2]" InDirect="true" />
+		<PackageReference Include="SportsArena.Triggering" Version="[2024.424.603403324]" InDirect="true" />
+		<PackageReference Include="CoachMark" Version="[1.1.37]" InDirect="true" />
+		<PackageReference Include="WholePageTab" Version="[1.20240419.1194808]" InDirect="true" />
+		<PackageReference Include="FeedsAnswerVNext" Version="[1.20240422.590894403]" InDirect="true" />
 		<PackageReference Include="SAupsell" Version="[1.0.3]" InDirect="true" />
+		<PackageReference Include="WebmasterPromotion" Version="[2.0.6]" InDirect="true" />
+		<PackageReference Include="EdgeWorkspaces" Version="[1.0.19]" InDirect="true" />
 		<PackageReference Include="HealthPersonalization" Version="[1.3.0]" InDirect="true" />
+		<PackageReference Include="HealthFeedBingWorkflow" Version="[1.0.8]" InDirect="true" />
+		<PackageReference Include="TaxExpertAnswers" Version="[1.0.5]" InDirect="true" />
+		<PackageReference Include="SH.SERPServeCache" Version="[1.0.52]" InDirect="true" />
+		<PackageReference Include="Learning" Version="[41.0.0]" InDirect="true" />
+		<PackageReference Include="ContentOnebox.Answers" Version="[1.20240422.85150]" InDirect="true" />
+		<PackageReference Include="QR.LocationInfoAdapter" Version="[1.0.2]" InDirect="true" />
+		<PackageReference Include="QR.PRFAggregator" Version="[1.0.1]" InDirect="true" />
+		<PackageReference Include="AnswersTriggering.NRT" Version="[1.0.4]" InDirect="true" />
 	</ItemGroup>
 </Project>
