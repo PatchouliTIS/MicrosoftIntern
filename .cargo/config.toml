@@ -1,0 +1,5 @@
+[registries]
+Deeprank = { index = "sparse+https://pkgs.dev.azure.com/msasg/Bing_and_IPG/_packaging/Deeprank/Cargo/index/" }
+
+[source.crates-io]
+replace-with = "Deeprank"
