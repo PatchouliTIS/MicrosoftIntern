@@ -7,7 +7,7 @@
 		<AssemblyName>Xap.Shared.CrossLang</AssemblyName>
 		<OutputPath>bin\$(Configuration)</OutputPath>
 		<IntermediateOutputPath>$(OutputPath)</IntermediateOutputPath>
-		<EnableXapAnalyzer>false</EnableXapAnalyzer>
+		<EnableXapAnalyzer>true</EnableXapAnalyzer>
 		<EnableDefaultItems>false</EnableDefaultItems>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<ManifestTitle>Xap.Shared.CrossLang product</ManifestTitle>

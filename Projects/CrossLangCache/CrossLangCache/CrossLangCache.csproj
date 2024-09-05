@@ -32,6 +32,7 @@
 	<ItemGroup>
 		<Content Include="GeneratedXapManifest\XapManifest.json" />
 		<Content Include="..\VersionBump.targets"></Content>
+		<Content Include="..\NugetPackages.props"></Content>
 	</ItemGroup>
 	<ItemGroup>
 		<QCustomInput Include="..\DataSchemas\**\*.bond">
@@ -40,6 +41,7 @@
 		<QCustomInput Include="..\DataSchemas\**\*.idl">
 			<Visible>false</Visible>
 		</QCustomInput>
+		<Compile Include="CrossLangCache_AnswersRanking.cs" />
 		<Compile Include="CrossLangCache_MainWorkflow.cs" />
 		<QCustomInput Include=".\GeneratedXapManifest\XapManifest.json">
 			<Visible>false</Visible>

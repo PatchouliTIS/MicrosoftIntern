@@ -10,6 +10,10 @@ using Entities.Containment;
 using Kif2Bond.WholePageCache;
 using Xap.AnswersWireFormat;
 using System.Diagnostics.CodeAnalysis;
+using LanguageGeneration;
+using Kif;
+using Kif2Bond.Kif;
+using PD.Travel.TrainBook;
 
 namespace CrossLangCache.Plugins
 {
@@ -25,9 +29,8 @@ namespace CrossLangCache.Plugins
         public PluginResult Execute(PluginServices pluginServices,
                                     [ConfigFile("CacheAnswersRankingConfig.ini")]
                                     Platform.BoolData CrosslangCachePlace,
-                                    Platform.LegacyQueryResponseData WAinput,
-                                    PluginOutput<AnswersRanker.RankedContent_1> MOP3CrossLangCacheKnobRankedContent,
-                                    PluginOutput<Platform.LegacyQueryResponseData> MOP3CrossLangCacheReponseData)
+                                    CollectionPluginOutput<IEnumerable<Platform.Int32Data>> answerId,
+                                    PluginOutput<AnswersRanker.RankedContent_1> rankedContent)
         {
             pluginServices.Logger.Info("CrossLangCache AnswersRankingPlugin execute.");
             var finalLog = "CrossLangCache AnswersRankingPlugin complete.";
@@ -40,123 +43,49 @@ namespace CrossLangCache.Plugins
                 pluginServices.Logger.Info(finalLog);
                 return new PluginResult(true);
             }
-
-
-
             pluginServices.Logger.Info("CrossLangCache to be placed at MOP-3. crosslangcache knob ranked content and ADO to be created.");
 
-            var rankedContent = CreateCrossLangCacheRankedContentAtMOP3(pluginServices);
-            MOP3CrossLangCacheKnobRankedContent.Data = rankedContent;
-            pluginServices.Logger.Info("CrossLangCache knob ranked content created with Service: {0}, Scenario: {1}, AnswerId: {2}.", rankedContent.ServiceName, rankedContent.AnswerScenario, rankedContent.AnswerId);
 
-            // use LegacyQueryResponseData directly
-            var response = CreateCrossLangCacheReponseAtMOP3(pluginServices, WAinput, rankedContent.AnswerId);
-            MOP3CrossLangCacheReponseData.Data = response;
-            pluginServices.Logger.Info("CrossLangCache Response Data created");
 
+            // get answerId & RankedContent
+            rankedContent.Data = CreateCrossLangCacheRankedContentAtMOP3(pluginServices);
+            var id = pluginServices.CreateInstance<Platform.Int32Data>();
+            id.Value = (int)rankedContent.Data.AnswerId;
+            answerId.Data = new List<Platform.Int32Data> { id };
+            pluginServices.Logger.Info("CrossLangCache Answer ID Generated");
 
 
             pluginServices.Logger.Info(finalLog);
             return new PluginResult(true);
         }
 
-
-
-        [SuppressMessage(category: "XapBuildCodeAnalysis.CodeRestrictions", checkId: "XN123:Users of protected framework methods must apply for an exception.", Target = "AnswersRanker.RankedContent_1 CrossLangCache.Plugins.CacheAnswersRankingPlugin::CreateCrossLangCacheRankedContentAtMOP3(Xap.PluginFramework.PluginServices)", Justification = "{07b60061-d893-4d5c-bf29-fcf0b8abbd64} In order to use protected framework methods you must first receive an exception from the XAP team.")]
+        [SuppressMessage("XapBuildCodeAnalysis.CodeRestrictions", "XN123:Users of protected framework methods must apply for an exception.", Target = "AnswersRanker.RankedContent_1 CrossLangCache.Plugins.CacheAnswersRankingPlugin::CreateCrossLangCacheRankedContentAtMOP3(Xap.PluginFramework.PluginServices)", Justification = "{07b60061-d893-4d5c-bf29-fcf0b8abbd64} In order to use protected framework methods you must first receive an exception from the XAP team.")]
         public static AnswersRanker.RankedContent_1 CreateCrossLangCacheRankedContentAtMOP3(PluginServices pluginServices)
         {
-            pluginServices.Logger.Verbose("CreateCrossLangCacheRankedContentAtMOP3 begin.");
-
-
-
-            var lsrc = pluginServices.LegacyShimRequestContext;
-
-
+            pluginServices.Logger.Info("CreateCrossLangCacheRankedContentAtMOP3 begin.");
+            ILegacyShimRequestContext legacyShimRequestContext = pluginServices.LegacyShimRequestContext;
+            uint var = (legacyShimRequestContext != null) ? ((uint)legacyShimRequestContext.GetNextLegacyAdoContextId()) : 0u;
 
             var rankedContent = pluginServices.CreateInstance<AnswersRanker.RankedContent_1>();
             rankedContent.ServiceName = Service;
             rankedContent.AnswerScenario = Scenario;
-            rankedContent.AnswerFeed = Scenario;
+            rankedContent.AnswerFeed = Feed;
             rankedContent.Confidence = 1;
             rankedContent.VirtualServiceName = Service;
-            rankedContent.AnswerId = lsrc == null ? 0 : (uint)lsrc.GetNextLegacyAdoContextId();
+            rankedContent.AnswerId = var;
             rankedContent.AnswerDesiredPosition = 7;
             rankedContent.AnswerOwnerAliases = "zhaotaipan";
             rankedContent.AnswerPossibleNamedPositions = new List<string> { "MOP-3" };
             rankedContent.ByPassDarwinRankers = true;
             rankedContent.IsMultiTurn = true;
+            rankedContent.SuppressMe = false;
 
-            pluginServices.Logger.Verbose("Dummy RankedContent created with Service: {0}, Scenario: {1}, Feed: {2}, Confidence: {3}, VirtualService: {4}, AnswerId: {5}, AnswerDesiredPosition: {6}, AnswerPossibleNamedPositions: {7}, ByPassDarwinRankers: {8}, IsMultiTurn: {9}.",
+            pluginServices.Logger.Info("Dummy RankedContent created with Service: {0}, Scenario: {1}, Feed: {2}, Confidence: {3}, VirtualService: {4}, AnswerId: {5}, AnswerDesiredPosition: {6}, AnswerPossibleNamedPositions: {7}, ByPassDarwinRankers: {8}, IsMultiTurn: {9}.",
                                                                             rankedContent.ServiceName, rankedContent.AnswerScenario, rankedContent.AnswerFeed, rankedContent.Confidence, rankedContent.VirtualServiceName, rankedContent.AnswerId, rankedContent.AnswerDesiredPosition, string.Join(" ", rankedContent.AnswerPossibleNamedPositions), rankedContent.ByPassDarwinRankers, rankedContent.IsMultiTurn);
 
-            pluginServices.Logger.Verbose("CreateCrossLangCacheRankedContentAtMOP3 complete.");
+            pluginServices.Logger.Info("CreateCrossLangCacheRankedContentAtMOP3 complete.");
             return rankedContent;
         }
 
-        private static global::Platform.LegacyQueryResponseData CreateCrossLangCacheReponseAtMOP3(PluginServices pluginServices, Platform.LegacyQueryResponseData WAinput, uint answerid)
-        {
-            pluginServices.Logger.Verbose("CreateCrossLangCacheReponseAtMOP3 begin.");
-
-            if (WAinput == null)
-            {
-                pluginServices.Logger.Info("INPUT webResponseAqr IS NULL!!");
-            }
-
-            // 1. copy from webResponseAqr
-            var outputResponse = pluginServices.CreateInstance<global::Platform.LegacyQueryResponseData>();
-            outputResponse.LegacyAqr = WAinput.LegacyAqr.LightClone();
-
-            // 2. change Scenario, Service Name etc. in AnswerData
-            if (outputResponse == null)
-            {
-                pluginServices.Logger.Info("CreateBondAQR is Empty");
-            }
-            else
-            {
-                pluginServices.Logger.Info("Receiving WebAnswer.webResponseAqr");
-                if (outputResponse.LegacyAqr == null)
-                {
-                    pluginServices.Logger.Info("outputResponse.LegacyAqr is nll");
-
-                }
-                else
-                {
-                    if (outputResponse.LegacyAqr.ListAnswers == null)
-                    {
-                        pluginServices.Logger.Info("outputResponse.LegacyAqr.ListAnswers is nll");
-                    }
-                    else
-                    {
-                        if (outputResponse.LegacyAqr.ListAnswers.Elements == null)
-                        {
-                            pluginServices.Logger.Info("outputResponse.LegacyAqr.ListAnswers.Element is nll");
-                        }
-                        else
-                        {
-                            if (outputResponse.LegacyAqr.ListAnswers.Elements.First() == null)
-                            {
-                                pluginServices.Logger.Info("outputResponse.LegacyAqr.ListAnswers.Element.First() is nll");
-                            }
-                            else
-                            {
-                                foreach (var item in outputResponse.LegacyAqr.ListAnswers.Elements)
-                                {
-                                    pluginServices.Logger.Info("Modify AnswersData");
-                                    item.AnswerScenario = Scenario;
-                                    item.AnswerFeed = Feed;
-                                    item.ServiceName = Service;
-                                    item.UxDisplayHint = "KifResponse";
-                                    item.SimpleDisplayText = "CrossLangCache LegacyQueryResponseData";
-                                    item.IdInContext = answerid;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            pluginServices.Logger.Verbose("CreateCrossLangCacheReponseAtMOP3 complete.");
-            return outputResponse;
-        }
     }
 }

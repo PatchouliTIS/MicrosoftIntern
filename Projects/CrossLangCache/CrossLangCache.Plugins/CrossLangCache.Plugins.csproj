@@ -38,9 +38,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Include="AnswerLoggerPlugin.cs" />
 	  <Compile Include="CacheAnswersRankingPlugin.cs" />
 	  <Compile Include="CacheQueryPlugin.cs" />
+	  <Compile Include="CacheResultPlugin.cs" />
 	  <Compile Include="CrossLangAugmentPlugin.cs" />
 	  <Compile Include="QIConditionPlugin.cs" />
 	</ItemGroup>

@@ -26,19 +26,26 @@ namespace Plugin.Tests
             cacheQueryPlugin.SetStaticVariant("MKT", "ZH-CN");
 
             Console.WriteLine("CacheQueryPlugin TESTING");
-            var query = ExecutionServices.CreateInstance<Platform.Query>(query => query.RawQuery = "Tips for visiting the Summer Palace");
             var augmentations = ExecutionServices.CreateInstance<Platform.Augmentations>();
             var targetMKT = ExecutionServices.CreateInstance<Platform.StringData>();
+            var pre = ExecutionServices.CreateInstance<global::QueryIndex.CanonicalQueriesOutputV3>();
+            pre.RankedCanonicalQueries = new List<global::QueryIndex.CanonicalQueryCandidateV3>();
+            var candidateV3 = ExecutionServices.CreateInstance<global::QueryIndex.CanonicalQueryCandidateV3>();
+            candidateV3.CanonicalQuery = "how to park in summer palace";
+            pre.RankedCanonicalQueries.Add(candidateV3);
             targetMKT.Value = "zh-cn";
-            var input_query = Task.FromResult(query);
-            var input_augmentations = Task.FromResult(augmentations);
             var intput_targetMKT = Task.FromResult(targetMKT);
 
-            var result = cacheQueryPlugin.Execute(input_query, intput_targetMKT);
+            var input_pre = Task.FromResult(pre);
 
-            Console.WriteLine(cacheQueryPlugin.outputQuery.Result.RawQuery);
+            var result = cacheQueryPlugin.Execute(input_pre, intput_targetMKT);
+
+            Console.WriteLine("CacheQueryPlugin OUTPUT:{0}\n{1}", cacheQueryPlugin.Url.Result.Count(), cacheQueryPlugin.Url.Result.First().Value);
 
             Assert.IsTrue(result.Result.Success);
         }
+
+
+
     }
 }

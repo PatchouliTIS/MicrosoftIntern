@@ -31,7 +31,8 @@ namespace CrossLangCache.Plugins
             {
                 pluginServices.Logger.Info("QI Output is NULL!");
                 return new PluginConditionResult(false, false);
-            } else
+            }
+            else
             {
                 if (preWebV3PrecisionOutput.RankedCanonicalQueries == null)
                 {
@@ -48,11 +49,12 @@ namespace CrossLangCache.Plugins
                     double annScore = answer.ANNSearchScore;             // ANN similarity score 
                     if (answer.Service == SERVICE_NAME.ToLower() && answer.Scenario == SCENARIO_NAME.ToLower())
                     {
-                        if(QQSimilarityScore >= 0.9 && annScore >= 0.8)
+                        if (QQSimilarityScore >= 0.9 && annScore >= 0.8)
                         {
                             pluginServices.Logger.Info("QueryIndex Triggered --> CrossLangSearch");
                             return new PluginConditionResult(true, true);
-                        } else
+                        }
+                        else
                         {
                             pluginServices.Logger.Info("Failed QueryIndex Trigger --> QQSimilarityScore:{0}  annScore:{1}", QQSimilarityScore, annScore);
                             return new PluginConditionResult(false, false);
@@ -64,6 +66,5 @@ namespace CrossLangCache.Plugins
             pluginServices.Logger.Info("No CrossLangSearch Service Detected in QueryIndex Output");
             return new PluginConditionResult(false, false);
         }
-
     }
 }
