@@ -363,6 +363,7 @@
 
 
         #region AggregateFinalResponsePlugin
+        [Timeout("*", 10000)]
         public virtual IAggregateFinalResponsePlugin_ForInheritance AggregateFinalResponsePlugin { get; } = WorkflowServices.CreateInstance<IAggregateFinalResponsePlugin_ForInheritance>();
         protected virtual void BindAggregateFinalResponsePlugin()
         {

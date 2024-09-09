@@ -93,9 +93,6 @@ namespace Xap
                 pluginServices.Logger.Info("MKT:  " + mkt);
             }
 
-
-            Console.WriteLine("FINAL MKT:{0}", mkt);
-
             /** .Data 就是当前的 Platform.Query 其中包含了一系列的内容：
              *     string RawQuery
              *     string NormalizedQuery
@@ -122,7 +119,6 @@ namespace Xap
             prompt += query.RawQuery + "\r\nTranslation:";
 
             pluginServices.Logger.Info(prompt);
-            Console.WriteLine(prompt);
 
             // 2. decode the token from .ini(base64)
             SecureString codexToken;
@@ -166,7 +162,6 @@ namespace Xap
                             }
 
                             pluginServices.Logger.Info("current msg:" + message);
-                            Console.WriteLine("current msg:" + message);
                             messages += message;
 
 

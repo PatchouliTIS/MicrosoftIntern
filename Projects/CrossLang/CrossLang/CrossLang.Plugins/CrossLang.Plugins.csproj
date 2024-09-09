@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<EnableXapAssemblyAnalysis>false</EnableXapAssemblyAnalysis>
+		<EnableXapAssemblyAnalysis>true</EnableXapAssemblyAnalysis>
 		<XapProjectType>PluginProject</XapProjectType>
 		<TargetFramework>net7</TargetFramework>
 		<DefineConstants>CRv2ToNuGetCompilation</DefineConstants>
