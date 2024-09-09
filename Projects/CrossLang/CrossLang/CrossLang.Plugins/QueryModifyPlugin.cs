@@ -188,7 +188,7 @@ namespace Xap
                 }
 
                 pluginServices.Logger.Info(">>> Query Modified Done <<<");
-                Console.WriteLine("Modified Query:" + modifiedQuery.Data.RawQuery);
+                pluginServices.Logger.Info("Modified Query:" + modifiedQuery.Data.RawQuery);
 
             }
             else
